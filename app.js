@@ -1,8 +1,8 @@
 
-const ROOT='https://raw.githubusercontent.com/weijiale399-prog/nce1-review/main/';
+const ROOT='./';
 const $=id=>document.getElementById(id);
 let lessonData=null;
-async function getJson(path){const response=await fetch(ROOT+path,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});if(!response.ok)throw new Error('读取 '+path+' 失败：HTTP '+response.status);return response.json()}
+async function getJson(path){const response=await fetch(new URL(ROOT+path,window.location.href),{cache:'no-store',headers:{'Cache-Control':'no-cache'}});if(!response.ok)throw new Error('读取 '+path+' 失败：HTTP '+response.status);return response.json()}
 function el(tag,cls,text){const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node}
 function speak(text){if(!('speechSynthesis'in window)){alert('此浏览器不支持语音朗读');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-GB';u.rate=Number($('rate').value);speechSynthesis.speak(u)}
 function stop(){if('speechSynthesis'in window)speechSynthesis.cancel()}
