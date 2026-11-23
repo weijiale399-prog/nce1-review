@@ -1,0 +1,118 @@
+{
+  "lesson": 1,
+  "title": "Excuse me!",
+  "source": "用户提供的第1课课文图片",
+  "dialogue": [
+    {
+      "en": "Excuse me!",
+      "zh": "劳驾！打扰一下！"
+    },
+    {
+      "en": "Yes?",
+      "zh": "什么事？有什么事吗？"
+    },
+    {
+      "en": "Is this your handbag?",
+      "zh": "这是你的手提包吗？"
+    },
+    {
+      "en": "Pardon?",
+      "zh": "请再说一遍？"
+    },
+    {
+      "en": "Yes, it is.",
+      "zh": "是的，是我的。"
+    },
+    {
+      "en": "Thank you very much.",
+      "zh": "非常感谢你。"
+    }
+  ],
+  "fourTypes": {
+    "base": "This is your handbag.",
+    "affirmative": {
+      "en": "This is your handbag.",
+      "zh": "这是你的手提包。"
+    },
+    "negative": {
+      "en": "This is not your handbag.",
+      "zh": "这不是你的手提包。"
+    },
+    "generalQuestion": {
+      "en": "Is this your handbag?",
+      "zh": "这是你的手提包吗？"
+    },
+    "specialQuestion": {
+      "en": "Whose handbag is this?",
+      "zh": "这是谁的手提包？"
+    }
+  },
+  "vocabulary": [
+    {
+      "word": "excuse",
+      "phonetic": "/ɪkˈskjuːz/",
+      "meaning": "v. 原谅；在 Excuse me 中表示劳驾、打扰"
+    },
+    {
+      "word": "handbag",
+      "phonetic": "/ˈhændbæɡ/",
+      "meaning": "n. 手提包"
+    },
+    {
+      "word": "pardon",
+      "phonetic": "/ˈpɑːdn/",
+      "meaning": "int. 请再说一遍？"
+    },
+    {
+      "word": "thank",
+      "phonetic": "/θæŋk/",
+      "meaning": "v. 感谢"
+    },
+    {
+      "word": "very",
+      "phonetic": "/ˈveri/",
+      "meaning": "adv. 很；非常"
+    },
+    {
+      "word": "much",
+      "phonetic": "/mʌtʃ/",
+      "meaning": "adv. 非常；许多"
+    }
+  ],
+  "phrases": [
+    {
+      "phrase": "Excuse me.",
+      "meaning": "劳驾；打扰一下。用于礼貌地引起别人的注意。"
+    },
+    {
+      "phrase": "Pardon?",
+      "meaning": "请再说一遍？没听清对方的话时使用。"
+    },
+    {
+      "phrase": "Thank you very much.",
+      "meaning": "非常感谢。"
+    },
+    {
+      "phrase": "Yes, it is.",
+      "meaning": "是的。用于回答 Is ...? 开头的一般疑问句。"
+    }
+  ],
+  "grammar": [
+    {
+      "title": "This is ...",
+      "description": "这是……。语法句型：This + is + 名词/名词短语，用来指认眼前的人或物。"
+    },
+    {
+      "title": "Is this ...?",
+      "description": "这是……吗？语法句型：Is + this + 名词/名词短语？构成一般疑问句。"
+    },
+    {
+      "title": "Yes, it is.",
+      "description": "是的。这里 it 代替前面提到的 handbag，避免重复名词。"
+    },
+    {
+      "title": "Whose handbag is this?",
+      "description": "这是谁的手提包？语法句型：Whose + 名词 + is + this？询问所属关系。"
+    }
+  ]
+}
