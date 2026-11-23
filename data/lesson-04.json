@@ -1,0 +1,179 @@
+{
+  "lesson": 4,
+  "title": "Is this your ...?",
+  "subtitle": "物品归属巩固 · 肯定回答与否定回答",
+  "contentNote": "本课为教材配套练习主题的原创巩固内容，不是教材逐字课文。",
+  "dialogue": [
+    {
+      "en": "Is this your pencil?",
+      "zh": "这是你的铅笔吗？"
+    },
+    {
+      "en": "Yes, it is.",
+      "zh": "是的，是我的。"
+    },
+    {
+      "en": "Is that her dress?",
+      "zh": "那是她的连衣裙吗？"
+    },
+    {
+      "en": "No, it isn't. Her dress is blue.",
+      "zh": "不，不是。她的连衣裙是蓝色的。"
+    },
+    {
+      "en": "Is this his car?",
+      "zh": "这是他的汽车吗？"
+    },
+    {
+      "en": "Yes, it is.",
+      "zh": "是的，是他的。"
+    }
+  ],
+  "fourTypes": {
+    "base": "That is her dress.",
+    "affirmative": {
+      "en": "That is her dress.",
+      "zh": "那是她的连衣裙。"
+    },
+    "negative": {
+      "en": "That is not her dress.",
+      "zh": "那不是她的连衣裙。"
+    },
+    "generalQuestion": {
+      "en": "Is that her dress?",
+      "zh": "那是她的连衣裙吗？"
+    },
+    "specialQuestion": {
+      "en": "Whose dress is that?",
+      "zh": "那是谁的连衣裙？"
+    }
+  },
+  "vocabulary": [
+    {
+      "word": "this",
+      "phonetic": "/ðɪs/",
+      "meaning": "pron./det. 這個；這",
+      "examples": [
+        "Is this your this?",
+        "That is her this."
+      ]
+    },
+    {
+      "word": "that",
+      "phonetic": "/ðæt/",
+      "meaning": "pron./det. 那個；那",
+      "examples": [
+        "Is this your that?",
+        "That is her that."
+      ]
+    },
+    {
+      "word": "your",
+      "phonetic": "/jɔː/",
+      "meaning": "det. 你的；你们的",
+      "examples": [
+        "Is this your your?",
+        "That is her your."
+      ]
+    },
+    {
+      "word": "his",
+      "phonetic": "/hɪz/",
+      "meaning": "det. 他的",
+      "examples": [
+        "Is this your his?",
+        "That is her his."
+      ]
+    },
+    {
+      "word": "her",
+      "phonetic": "/hɜː/",
+      "meaning": "det. 她的",
+      "examples": [
+        "Is this your her?",
+        "That is her her."
+      ]
+    },
+    {
+      "word": "pencil",
+      "phonetic": "/ˈpensəl/",
+      "meaning": "n. 铅笔",
+      "examples": [
+        "Is this your pencil?",
+        "That is her pencil."
+      ]
+    },
+    {
+      "word": "dress",
+      "phonetic": "/dres/",
+      "meaning": "n. 连衣裙",
+      "examples": [
+        "Is this your dress?",
+        "That is her dress."
+      ]
+    },
+    {
+      "word": "skirt",
+      "phonetic": "/skɜːt/",
+      "meaning": "n. 裙子",
+      "examples": [
+        "Is this your skirt?",
+        "That is her skirt."
+      ]
+    },
+    {
+      "word": "shirt",
+      "phonetic": "/ʃɜːt/",
+      "meaning": "n. 衬衫",
+      "examples": [
+        "Is this your shirt?",
+        "That is her shirt."
+      ]
+    },
+    {
+      "word": "car",
+      "phonetic": "/kɑː/",
+      "meaning": "n. 汽车",
+      "examples": [
+        "Is this your car?",
+        "That is her car."
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phrase": "Is that ...?",
+      "meaning": "那是……吗？用 that 指距离说话人较远的单数人或物。"
+    },
+    {
+      "phrase": "That is ...",
+      "meaning": "那是……。用来指认离说话人较远的单数人或物。"
+    },
+    {
+      "phrase": "Whose ... is that?",
+      "meaning": "那是谁的……？用 whose 询问所属关系。"
+    },
+    {
+      "phrase": "No, it isn't.",
+      "meaning": "不，不是。否定回答的常用形式。"
+    }
+  ],
+  "grammar": [
+    {
+      "title": "this 和 that",
+      "description": "this 通常指离说话人近的单数人或物；that 通常指离说话人较远的单数人或物。"
+    },
+    {
+      "title": "物主限定词",
+      "description": "your、his、her 放在名词前，表示所属关系。语法句型：物主限定词 + 名词。"
+    },
+    {
+      "title": "一般疑问句回答",
+      "description": "Is 开头的问题，肯定回答用 Yes, it is.，否定回答用 No, it isn't."
+    },
+    {
+      "title": "whose 特殊疑问句",
+      "description": "Whose + 名词 + is + that? 用来询问“那是谁的……？”"
+    }
+  ]
+}
