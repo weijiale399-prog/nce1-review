@@ -1,0 +1,215 @@
+{
+  "lesson": 2,
+  "title": "Is this your ...?",
+  "subtitle": "物品归属 · this / your / my / his / her",
+  "contentNote": "本课按教材主题整理为原创复习对话与练习，不是教材逐字课文。",
+  "dialogue": [
+    {
+      "en": "Is this your pen?",
+      "zh": "这是你的钢笔吗？"
+    },
+    {
+      "en": "No, it isn't. My pen is here.",
+      "zh": "不，不是。我的钢笔在这里。"
+    },
+    {
+      "en": "Is that your book?",
+      "zh": "那是你的书吗？"
+    },
+    {
+      "en": "Yes, it is. Thank you.",
+      "zh": "是的，是我的。谢谢你。"
+    },
+    {
+      "en": "Is this her watch?",
+      "zh": "这是她的手表吗？"
+    },
+    {
+      "en": "No, it isn't. It's his watch.",
+      "zh": "不，不是。这是他的手表。"
+    }
+  ],
+  "fourTypes": {
+    "base": "This is your pen.",
+    "affirmative": {
+      "en": "This is your pen.",
+      "zh": "这是你的钢笔。"
+    },
+    "negative": {
+      "en": "This is not your pen.",
+      "zh": "这不是你的钢笔。"
+    },
+    "generalQuestion": {
+      "en": "Is this your pen?",
+      "zh": "这是你的钢笔吗？"
+    },
+    "specialQuestion": {
+      "en": "Whose pen is this?",
+      "zh": "这是谁的钢笔？"
+    }
+  },
+  "vocabulary": [
+    {
+      "word": "pen",
+      "phonetic": "/pen/",
+      "meaning": "n. 钢笔",
+      "examples": [
+        "This is my pen.",
+        "Is this your pen?"
+      ]
+    },
+    {
+      "word": "pencil",
+      "phonetic": "/ˈpensəl/",
+      "meaning": "n. 铅笔",
+      "examples": [
+        "This is my pencil.",
+        "Is this your pencil?"
+      ]
+    },
+    {
+      "word": "book",
+      "phonetic": "/bʊk/",
+      "meaning": "n. 书",
+      "examples": [
+        "This is my book.",
+        "Is this your book?"
+      ]
+    },
+    {
+      "word": "watch",
+      "phonetic": "/wɒtʃ/",
+      "meaning": "n. 手表",
+      "examples": [
+        "This is my watch.",
+        "Is this your watch?"
+      ]
+    },
+    {
+      "word": "coat",
+      "phonetic": "/kəʊt/",
+      "meaning": "n. 外套",
+      "examples": [
+        "This is my coat.",
+        "Is this your coat?"
+      ]
+    },
+    {
+      "word": "dress",
+      "phonetic": "/dres/",
+      "meaning": "n. 连衣裙",
+      "examples": [
+        "This is my dress.",
+        "Is this your dress?"
+      ]
+    },
+    {
+      "word": "skirt",
+      "phonetic": "/skɜːt/",
+      "meaning": "n. 裙子",
+      "examples": [
+        "This is my skirt.",
+        "Is this your skirt?"
+      ]
+    },
+    {
+      "word": "shirt",
+      "phonetic": "/ʃɜːt/",
+      "meaning": "n. 衬衫",
+      "examples": [
+        "This is my shirt.",
+        "Is this your shirt?"
+      ]
+    },
+    {
+      "word": "car",
+      "phonetic": "/kɑː/",
+      "meaning": "n. 汽车",
+      "examples": [
+        "This is my car.",
+        "Is this your car?"
+      ]
+    },
+    {
+      "word": "house",
+      "phonetic": "/haʊs/",
+      "meaning": "n. 房子",
+      "examples": [
+        "This is my house.",
+        "Is this your house?"
+      ]
+    },
+    {
+      "word": "your",
+      "phonetic": "/jɔː/",
+      "meaning": "det. 你的；你们的",
+      "examples": [
+        "This is my your.",
+        "Is this your your?"
+      ]
+    },
+    {
+      "word": "my",
+      "phonetic": "/maɪ/",
+      "meaning": "det. 我的",
+      "examples": [
+        "This is my my.",
+        "Is this your my?"
+      ]
+    },
+    {
+      "word": "his",
+      "phonetic": "/hɪz/",
+      "meaning": "det. 他的",
+      "examples": [
+        "This is my his.",
+        "Is this your his?"
+      ]
+    },
+    {
+      "word": "her",
+      "phonetic": "/hɜː/",
+      "meaning": "det. 她的",
+      "examples": [
+        "This is my her.",
+        "Is this your her?"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phrase": "Is this your ...?",
+      "meaning": "这是你的……吗？用来询问眼前物品是不是对方的。"
+    },
+    {
+      "phrase": "Yes, it is.",
+      "meaning": "是的。回答 Is this ...? 的肯定回答。"
+    },
+    {
+      "phrase": "No, it isn't.",
+      "meaning": "不，不是。回答 Is this ...? 的否定回答。"
+    },
+    {
+      "phrase": "Whose ... is this?",
+      "meaning": "这是谁的……？用 whose 询问物品属于谁。"
+    }
+  ],
+  "grammar": [
+    {
+      "title": "物主限定词",
+      "description": "my=我的，your=你的，his=他的，her=她的。它们放在名词前面，说明东西属于谁。语法句型：物主限定词 + 名词。"
+    },
+    {
+      "title": "一般疑问句",
+      "description": "把 is 放到 this 前面。语法句型：Is + this + your + 名词？"
+    },
+    {
+      "title": "简短回答",
+      "description": "肯定回答 Yes, it is.；否定回答 No, it isn't. 注意回答里用 it 指代前面的物品。"
+    },
+    {
+      "title": "whose 提问",
+      "description": "whose 表示“谁的”。语法句型：Whose + 名词 + is + this？"
+    }
+  ]
+}
