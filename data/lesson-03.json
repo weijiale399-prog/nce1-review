@@ -1,0 +1,179 @@
+{
+  "lesson": 3,
+  "title": "Sorry, sir.",
+  "subtitle": "衣帽间场景 · this / it / not",
+  "contentNote": "按教材主题整理的原创场景复习材料；保留本课核心词汇和句型，不复制教材完整课文。",
+  "dialogue": [
+    {
+      "en": "My coat and my umbrella, please.",
+      "zh": "请把我的外套和雨伞给我。"
+    },
+    {
+      "en": "Here is your ticket, sir.",
+      "zh": "先生，这是您的票。"
+    },
+    {
+      "en": "Thank you. Is this my umbrella?",
+      "zh": "谢谢。这是我的雨伞吗？"
+    },
+    {
+      "en": "No, it isn't. That is your umbrella.",
+      "zh": "不，不是。那把才是您的雨伞。"
+    },
+    {
+      "en": "Is this it?",
+      "zh": "是这把吗？"
+    },
+    {
+      "en": "Yes, it is. Thank you very much.",
+      "zh": "是的，就是它。非常感谢。"
+    }
+  ],
+  "fourTypes": {
+    "base": "This is my umbrella.",
+    "affirmative": {
+      "en": "This is my umbrella.",
+      "zh": "这是我的雨伞。"
+    },
+    "negative": {
+      "en": "This is not my umbrella.",
+      "zh": "这不是我的雨伞。"
+    },
+    "generalQuestion": {
+      "en": "Is this my umbrella?",
+      "zh": "这是我的雨伞吗？"
+    },
+    "specialQuestion": {
+      "en": "Which umbrella is mine?",
+      "zh": "哪把雨伞是我的？"
+    }
+  },
+  "vocabulary": [
+    {
+      "word": "umbrella",
+      "phonetic": "/ʌmˈbrelə/",
+      "meaning": "n. 雨伞",
+      "examples": [
+        "Here is my umbrella.",
+        "Is this your umbrella?"
+      ]
+    },
+    {
+      "word": "please",
+      "phonetic": "/pliːz/",
+      "meaning": "int. 请",
+      "examples": [
+        "Here is my please.",
+        "Is this your please?"
+      ]
+    },
+    {
+      "word": "here",
+      "phonetic": "/hɪə/",
+      "meaning": "adv. 这里",
+      "examples": [
+        "Here is my here.",
+        "Is this your here?"
+      ]
+    },
+    {
+      "word": "ticket",
+      "phonetic": "/ˈtɪkɪt/",
+      "meaning": "n. 票",
+      "examples": [
+        "Here is my ticket.",
+        "Is this your ticket?"
+      ]
+    },
+    {
+      "word": "number",
+      "phonetic": "/ˈnʌmbə/",
+      "meaning": "n. 号码；数字",
+      "examples": [
+        "Here is my number.",
+        "Is this your number?"
+      ]
+    },
+    {
+      "word": "five",
+      "phonetic": "/faɪv/",
+      "meaning": "num. 五",
+      "examples": [
+        "Here is my five.",
+        "Is this your five?"
+      ]
+    },
+    {
+      "word": "coat",
+      "phonetic": "/kəʊt/",
+      "meaning": "n. 外套",
+      "examples": [
+        "Here is my coat.",
+        "Is this your coat?"
+      ]
+    },
+    {
+      "word": "sir",
+      "phonetic": "/sɜː/",
+      "meaning": "n. 先生（礼貌称呼）",
+      "examples": [
+        "Here is my sir.",
+        "Is this your sir?"
+      ]
+    },
+    {
+      "word": "sorry",
+      "phonetic": "/ˈsɒri/",
+      "meaning": "adj./int. 对不起；抱歉",
+      "examples": [
+        "Here is my sorry.",
+        "Is this your sorry?"
+      ]
+    },
+    {
+      "word": "cloakroom",
+      "phonetic": "/ˈkləʊkruːm/",
+      "meaning": "n. 衣帽间；行李寄存处",
+      "examples": [
+        "Here is my cloakroom.",
+        "Is this your cloakroom?"
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phrase": "Here is ...",
+      "meaning": "给你……；这是……。用于把某物递给别人或指出某物。"
+    },
+    {
+      "phrase": "This is not ...",
+      "meaning": "这不是……。在 is 后面加 not 构成否定句。"
+    },
+    {
+      "phrase": "Is this it?",
+      "meaning": "是这个吗？这里 it 指前面正在寻找的东西。"
+    },
+    {
+      "phrase": "Thank you very much.",
+      "meaning": "非常感谢你。"
+    }
+  ],
+  "grammar": [
+    {
+      "title": "be 动词否定句",
+      "description": "在 is 后面加 not。语法句型：主语 + is + not + 其他。"
+    },
+    {
+      "title": "一般疑问句",
+      "description": "把 is 放到句首。语法句型：Is + this + 名词短语？"
+    },
+    {
+      "title": "it 的用法",
+      "description": "it 可以代替前面提到的单数物品，避免重复说 umbrella。"
+    },
+    {
+      "title": "Here is ...",
+      "description": "Here is your ticket. 表示“这是你的票”。语法句型：Here + is + 单数名词。"
+    }
+  ]
+}
