@@ -87,7 +87,7 @@
 
         <select id="accentSelect" class="bg-blue-900/70 border border-blue-700/60 text-white rounded-xl px-2.5 py-1.5 outline-none focus:border-amber-400 cursor-pointer" title="选择朗读口音">
           <option value="en-GB">🇬🇧 英音 (en-GB)</option>
-          <option value="en-US">🇺🇸 美音 (en-US)</option>
+          <option value="en-US" selected>🇺🇸 美音 (en-US)</option>
         </select>
 
         <select id="rateSelect" class="bg-blue-900/70 border border-blue-700/60 text-white rounded-xl px-2 py-1.5 outline-none focus:border-amber-400 cursor-pointer" title="调节朗读语速">
@@ -11229,7 +11229,7 @@
 
       const targetText = cleaned || text.trim();
       const utterance = new SpeechSynthesisUtterance(targetText);
-      const accent = document.getElementById("accentSelect").value || "en-GB";
+      const accent = document.getElementById("accentSelect").value || "en-US";
       const rate = overrideRate !== null
         ? overrideRate
         : (parseFloat(document.getElementById("rateSelect").value) || 1.0);
