@@ -11261,7 +11261,7 @@
       }
       stopAllSpeech();
 
-      const accent = document.getElementById("accentSelect").value || "en-GB";
+      const accent = document.getElementById("accentSelect").value || "en-US";
       const rate = parseFloat(document.getElementById("rateSelect").value) || 1.0;
       const voices = window.speechSynthesis.getVoices();
       const matchedVoice = voices && voices.length > 0
