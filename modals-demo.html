@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>情态动词全解析 · 复刻演示版</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Apple HIG / Cupertino Design System Tokens */
+    :root {
+      --bg-canvas: #F5F5F7;
+      --bg-card: #FFFFFF;
+      --text-primary: #1D1D1F;
+      --text-secondary: #6E6E73;
+      --accent-blue: #0071E3;
+      --accent-blue-hover: #0077ED;
+      --border-subtle: rgba(0, 0, 0, 0.06);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Inter", sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.011em;
+    }
+
+    .apple-glass {
+      background: rgba(251, 251, 253, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .apple-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+      transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    .apple-card:hover {
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.055), 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Hide scrollbar for horizontal pill bar */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Custom Range Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #FF3B30 0%, #FF9500 50%, #34C759 100%);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -8px;
+      background-color: #FFFFFF;
+      border: 3px solid #0071E3;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.12);
+    }
+  </style>
+</head>
+<body class="selection:bg-[#0071E3]/15 selection:text-[#0071E3]">
+
+  <!-- Sticky Frosted Glass Top Bar -->
+  <header class="sticky top-0 z-40 apple-glass border-b border-black/[0.07]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14">
+        <div class="flex items-center gap-3">
+          <div id="headerLogoBadge" class="w-8 h-8 rounded-xl bg-[#0071E3] flex items-center justify-center text-white font-semibold text-sm shadow-sm transition-colors">
+            M
+          </div>
+          <div>
+            <span id="headerMainTitle" class="font-semibold text-[15px] tracking-tight text-[#1D1D1F]">情态动词全解析</span>
+            <span id="headerSubTitle" class="hidden sm:inline-block text-xs text-[#6E6E73] ml-2">12 节系统语法图谱</span>
+          </div>
+        </div>
+
+        <!-- Global Controls -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button id="toggleAutoSpeakBtn" onclick="toggleAutoSpeak()"
+            class="text-xs sm:text-[13px] font-medium px-3 py-1.5 rounded-full bg-[#34C759]/15 text-[#248A3D] border border-[#34C759]/30 transition active:scale-95"
+            title="开启后，用鼠标或手指选中页面任意英文单词或句子即可自动朗读">
+            🔊 划词发音: 开
+          </button>
+          <button id="toggleAllTranslationsBtn" onclick="toggleAllTranslations()"
+            class="text-xs sm:text-[13px] font-medium px-3 py-1.5 rounded-full bg-black/[0.05] hover:bg-black/[0.09] text-[#1D1D1F] transition active:scale-95">
+            显示全部译文
+          </button>
+          <a id="headerQuizLink" href="#quiz-section"
+            class="text-xs sm:text-[13px] font-medium px-3.5 py-1.5 rounded-full bg-[#0071E3] hover:bg-[#0077ED] text-white transition shadow-sm active:scale-95">
+            随堂自测
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Module Switcher Bar (Visible below lg) -->
+      <div class="flex lg:hidden items-center gap-2 py-2 border-t border-black/[0.04]">
+        <div class="grid grid-cols-5 p-1 rounded-xl bg-black/[0.05] w-full gap-0.5">
+          <button onclick="switchAppModule('modals')" id="mob-mod-modals"
+            class="py-1.5 px-1 rounded-lg text-[11px] font-semibold transition bg-white text-[#1D1D1F] shadow-sm truncate">
+            情态动词
+          </button>
+          <button onclick="switchAppModule('structures')" id="mob-mod-structures"
+            class="py-1.5 px-1 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] truncate">
+            句型转换
+          </button>
+          <button onclick="switchAppModule('patterns')" id="mob-mod-patterns"
+            class="py-1.5 px-1 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] truncate">
+            常用句型
+          </button>
+          <button onclick="switchAppModule('phrases')" id="mob-mod-phrases"
+            class="py-1.5 px-1 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] truncate">
+            高频短语
+          </button>
+          <button onclick="switchAppModule('calendar')" id="mob-mod-calendar"
+            class="py-1.5 px-1 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] truncate">
+            数字日期
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs (Module 1: Modals) -->
+      <nav id="modalsFilterNav" aria-label="章节分类" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-2.5 border-t border-black/[0.04]">
+        <button data-filter="all" class="filter-pill active px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition bg-[#1D1D1F] text-white">
+          全部 12 讲
+        </button>
+        <button data-filter="intro" class="filter-pill px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">
+          01 核心基础
+        </button>
+        <button data-filter="ability" class="filter-pill px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">
+          02–04 能力与许可
+        </button>
+        <button data-filter="obligation" class="filter-pill px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">
+          05–08 义务与建议
+        </button>
+        <button data-filter="habit" class="filter-pill px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">
+          09 习惯与意愿
+        </button>
+        <button data-filter="deduction" class="filter-pill px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap transition text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">
+          10–12 三大时间推测
+        </button>
+      </nav>
+
+      <!-- Chapter Jump Tabs (Module 2: Structures - Mobile/Tablet quick access) -->
+      <nav id="structuresQuickNav" aria-label="句型转换章节" class="hidden items-center gap-1.5 overflow-x-auto no-scrollbar py-2.5 border-t border-black/[0.04]">
+        <a href="#struct-chap-1" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap bg-[#1D1D1F] text-white">01 进行时+介词(21组)</a>
+        <a href="#struct-chap-2" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">02 将来时 will / going to</a>
+        <a href="#struct-chap-3" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">03 Whose / 颜色 / Give</a>
+        <a href="#struct-chap-4" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">04 There be 存现句</a>
+        <a href="#struct-chap-5" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">05 介词搭配字典</a>
+        <a href="#struct-chap-6" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">06 转换器 & 15题自测</a>
+      </nav>
+
+      <!-- Chapter Jump Tabs (Module 3: High-Frequency Patterns) -->
+      <nav id="patternsQuickNav" aria-label="常用句型章节" class="hidden items-center gap-1.5 overflow-x-auto no-scrollbar py-2.5 border-t border-black/[0.04]">
+        <a href="#pat-chap-1" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap bg-[#1D1D1F] text-white">01 原图精讲 (039–058)</a>
+        <a href="#pat-chap-2" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">02 花费与提建议 (扩充)</a>
+        <a href="#pat-chap-3" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">03 感官与使役动词 (扩充)</a>
+        <a href="#pat-chap-4" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">04 形容词与高频搭配 (扩充)</a>
+        <a href="#pat-chap-5" class="px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F] hover:bg-black/[0.04]">05 四大花费对比 & 15题自测</a>
+      </nav>
+
+      <!-- Chapter Jump Tabs (Module 4: Phrasal Verbs & Collocations) -->
+      <nav id="phrasesQuickNav" aria-label="高频短语章节" class="hidden items-center gap-1.5 overflow-x-auto no-scrollbar py-2.5 border-t border-black/[0.04]">
+        <a href="#phr-chap-1" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-[#1D1D1F] text-white">01 off短语</a>
+        <a href="#phr-chap-2" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">02 for短语</a>
+        <a href="#phr-chap-3" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">03 out短语</a>
+        <a href="#phr-chap-4" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">04 look短语</a>
+        <a href="#phr-chap-5" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">05 get短语</a>
+        <a href="#phr-chap-6" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">06 about短语</a>
+        <a href="#phr-chap-7" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">07 keep短语</a>
+        <a href="#phr-chap-8" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">08 常考短语</a>
+        <a href="#phr-chap-9" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">09 固定搭配</a>
+        <a href="#phr-chap-10" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">10 进阶扩充 & 自测</a>
+      </nav>
+
+      <!-- Chapter Jump Tabs (Module 5: Numbers, Dates, Seasons & Daily Life) -->
+      <nav id="calendarQuickNav" aria-label="数字与日期章节" class="hidden items-center gap-1.5 overflow-x-auto no-scrollbar py-2.5 border-t border-black/[0.04]">
+        <a href="#cal-chap-1" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap bg-[#1D1D1F] text-white">01 基数词与序数词</a>
+        <a href="#cal-chap-2" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">02 小数/分数/电话/金钱</a>
+        <a href="#cal-chap-3" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">03 星期与十二个月份</a>
+        <a href="#cal-chap-4" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">04 年份与具体日期读法</a>
+        <a href="#cal-chap-5" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">05 时刻表达 (past/to)</a>
+        <a href="#cal-chap-6" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">06 四季、天气与节假日</a>
+        <a href="#cal-chap-7" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">07 介词 in/on/at & 频率</a>
+        <a href="#cal-chap-8" class="px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap text-[#6E6E73] hover:text-[#1D1D1F]">08 转换器 & 15题自测</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Floating Pronunciation Toast (Appears when selecting English text or clicking speaker) -->
+  <div id="speechToast" class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-4 py-3 rounded-2xl apple-glass border border-[#0071E3]/25 shadow-xl max-w-sm transition-all">
+    <div class="w-8 h-8 rounded-full bg-[#0071E3] text-white flex items-center justify-center text-sm shrink-0 animate-pulse">
+      🔊
+    </div>
+    <div class="min-w-0 flex-1">
+      <div class="text-[11px] font-semibold text-[#0071E3]">正在朗读英文 · 点击可重播</div>
+      <div id="speechToastText" class="text-xs font-mono font-semibold text-[#1D1D1F] truncate mt-0.5"></div>
+    </div>
+    <button onclick="replayLastSpeech()" class="px-2.5 py-1 rounded-lg bg-[#0071E3]/10 text-[#0071E3] text-xs font-semibold hover:bg-[#0071E3]/20 transition shrink-0">
+      重播
+    </button>
+    <button onclick="stopSpeech()" class="px-2 py-1 rounded-lg bg-black/[0.05] text-[#6E6E73] text-xs hover:text-[#1D1D1F] transition shrink-0">
+      ✕
+    </button>
+  </div>
+
+  <!-- Hero Section (Module 1: Modal Verbs) -->
+  <div id="modalsHeroAndCheatSheet">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#0071E3] mb-2">English Grammar Mastery · Module 01 · 12 Episodes</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1D1D1F] leading-[1.15]">
+          用大白话彻底搞懂英语情态动词
+        </h1>
+        <p class="mt-3.5 text-base sm:text-[17px] text-[#6E6E73] leading-relaxed">
+          完整拆解视频选集 1 至 12 讲核心脉络。告别死记硬背，从“说话人的语气与态度”出发，配合对比表格、实时推测模拟器与随堂测试，构建清晰的英语语法直觉。
+        </p>
+      </div>
+
+      <!-- Quick Stats / Overview Pills -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-7">
+        <div class="apple-card p-4">
+          <div class="text-xs text-[#6E6E73] font-medium">黄金铁律</div>
+          <div class="text-lg sm:text-xl font-bold text-[#1D1D1F] mt-1">情态 + 动词原形</div>
+          <div class="text-xs text-[#6E6E73] mt-1">无三单变化，直接加 not 变否定</div>
+        </div>
+        <div class="apple-card p-4">
+          <div class="text-xs text-[#6E6E73] font-medium">核心功能 I</div>
+          <div class="text-lg sm:text-xl font-bold text-[#1D1D1F] mt-1">能力 · 许可 · 义务</div>
+          <div class="text-xs text-[#6E6E73] mt-1">第 2–9 讲：表达客观条件与主观态度</div>
+        </div>
+        <div class="apple-card p-4">
+          <div class="text-xs text-[#6E6E73] font-medium">核心功能 II</div>
+          <div class="text-lg sm:text-xl font-bold text-[#1D1D1F] mt-1">过去 · 现在 · 将来推测</div>
+          <div class="text-xs text-[#6E6E73] mt-1">第 10–12 讲：依据把握程度选词</div>
+        </div>
+        <div class="apple-card p-4">
+          <div class="text-xs text-[#6E6E73] font-medium">情态动词进度</div>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="masteredCount" class="text-lg sm:text-xl font-bold text-[#0071E3]">0</span>
+            <span class="text-xs text-[#6E6E73]">/ 12 讲已掌握</span>
+          </div>
+          <div class="w-full bg-black/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div id="masteredBar" class="bg-[#0071E3] h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Quick Study Cheat Sheet Banner -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
+      <div class="apple-card p-5 sm:p-6 bg-white/95">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-4 border-b border-black/[0.06]">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-[#0071E3]">Quick Reference Map</span>
+            <h2 class="text-lg sm:text-xl font-bold text-[#1D1D1F] mt-0.5">12 讲全课程核心速查脑图</h2>
+          </div>
+          <p class="text-xs text-[#6E6E73]">建议按「语法规则 → 语气对比 → 例句拆解 → 推测 lab / 测验」顺序研读</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mt-4 text-xs">
+          <div class="p-3.5 rounded-2xl bg-[#F5F5F7]">
+            <div class="font-bold text-[#1D1D1F]">01–04 讲｜能力、许可与可能性</div>
+            <p class="text-[#6E6E73] mt-1 leading-relaxed">can/could /kæn/ /kʊd/ 讲能力与客气请求；be able to 补时态与“费力做成”；may/might /meɪ/ /maɪt/ 表正式许可与较小猜测。</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-[#F5F5F7]">
+            <div class="font-bold text-[#1D1D1F]">05–09 讲｜义务、建议与习惯</div>
+            <p class="text-[#6E6E73] mt-1 leading-relaxed">must /mʌst/ vs have to /hæv tuː/ 区分主观与客观；had better 警告；shall/should /ʃæl/ /ʃʊd/ 与 ought to /ˈɔːt tuː/ 表建议与责任；will/would/used to 表意愿与过去习惯。</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-[#F5F5F7]">
+            <div class="font-bold text-[#1D1D1F]">10–12 讲｜三大时间维度推测</div>
+            <p class="text-[#6E6E73] mt-1 leading-relaxed">现在用 do/be doing，过去用 have done，将来用 will/should/may/might。牢记：否定推测“一定不”用 can't，不用 mustn't。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Hero Section (Module 2: Sentence Structures & Transformations) -->
+  <div id="structuresHero" class="hidden">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#0071E3] mb-2">New Concept & Core Foundations · Module 02 · 6 Chapters</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1D1D1F] leading-[1.15]">
+          英语关键语法结构与四句型转换精讲
+        </h1>
+        <p class="mt-3.5 text-base sm:text-[17px] text-[#6E6E73] leading-relaxed">
+          系统整合“现在进行时＋介词（21组全覆盖）”、“一般将来时 will 与 be going to”、“新概念前期高频句型（Whose / What colour / There be / Give / Which one）”与介词速查字典，采用四色句型编码直击转换规律。
+        </p>
+      </div>
+
+      <!-- Color Legend & Progress Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 mt-7">
+        <div class="md:col-span-8 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-[#6E6E73] mb-2.5">四色句型视觉编码规范（一眼看穿句型转换结构）</div>
+          <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3] border border-[#0071E3]/20">
+              <span class="w-2 h-2 rounded-full bg-[#0071E3]"></span>蓝色 ＝ 肯定句 (Affirmative)
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#FF3B30]/10 text-[#D70015] border border-[#FF3B30]/20">
+              <span class="w-2 h-2 rounded-full bg-[#FF3B30]"></span>红色 ＝ 否定句 (Negative)
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#34C759]/12 text-[#248A3D] border border-[#34C759]/25">
+              <span class="w-2 h-2 rounded-full bg-[#34C759]"></span>绿色 ＝ 一般疑问句 (Yes/No Question)
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#AF52DE]/12 text-[#8944AB] border border-[#AF52DE]/25">
+              <span class="w-2 h-2 rounded-full bg-[#AF52DE]"></span>紫色 ＝ 特殊疑问句 (Wh- Question)
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#FF9500]/12 text-[#C93400] border border-[#FF9500]/25">
+              <span class="w-2 h-2 rounded-full bg-[#FF9500]"></span>橙色 ＝ 语法与搭配提醒 (Grammar Tip)
+            </span>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs text-[#6E6E73] font-medium">句型转换模块进度</div>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="structMasteredCount" class="text-xl sm:text-2xl font-bold text-[#0071E3]">0</span>
+            <span class="text-xs text-[#6E6E73]">/ 6 章已掌握</span>
+          </div>
+          <div class="w-full bg-black/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div id="structMasteredBar" class="bg-[#0071E3] h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="text-[11px] text-[#6E6E73] mt-2">含 21 组进行时 + 10 组将来时 + 15 题自测</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Hero Section (Module 3: High-Frequency Sentence Patterns) -->
+  <div id="patternsHero" class="hidden">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#0071E3] mb-2">Core Collocations & Sentence Patterns · Module 03 · 50 Patterns</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1D1D1F] leading-[1.15]">
+          英语高频核心句型与固定搭配全集
+        </h1>
+        <p class="mt-3.5 text-base sm:text-[17px] text-[#6E6E73] leading-relaxed">
+          完整收录原图编号 039–058 全部 20 组核心句型，并系统扩充 30 组中考、高考及日常口语最高频句型（四大“花费”辨析、提建议六大句型、感官/使役动词、经典 It 句型），支持一键检索与隐藏译文背诵。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 mt-7">
+        <div class="md:col-span-8 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-[#6E6E73] mb-2">实时检索 50 组高频句型（支持英文关键词、编号如 050 或中文搜索）</div>
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <input id="patternGlobalSearch" type="text" oninput="renderAllPatternChapters()" placeholder="输入关键词搜索：如 pay, cost, spend, take, prefer, 052, 建议..."
+              class="flex-1 px-4 py-2.5 rounded-xl bg-[#F5F5F7] border border-black/[0.08] text-xs sm:text-sm text-[#1D1D1F] placeholder-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:bg-white transition" />
+            <button onclick="document.getElementById('patternGlobalSearch').value=''; renderAllPatternChapters();"
+              class="px-4 py-2.5 rounded-xl bg-black/[0.05] hover:bg-black/[0.09] text-xs font-semibold text-[#1D1D1F] transition shrink-0">
+              清空筛选
+            </button>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs text-[#6E6E73] font-medium">常用句型掌握进度</div>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="patMasteredCount" class="text-xl sm:text-2xl font-bold text-[#0071E3]">0</span>
+            <span class="text-xs text-[#6E6E73]">/ 5 章已掌握</span>
+          </div>
+          <div class="w-full bg-black/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div id="patMasteredBar" class="bg-[#0071E3] h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="text-[11px] text-[#6E6E73] mt-2">含原图 039–058 + 30 组核心拓展 + 15 题自测</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Hero Section (Module 4: High-Frequency Phrasal Verbs & Collocations) -->
+  <div id="phrasesHero" class="hidden">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#0071E3] mb-2">Phrasal Verbs & Fixed Collocations · Module 04 · 190+ Phrases</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1D1D1F] leading-[1.15]">
+          英语高频动词短语与固定搭配大全（每组 3–5 句地道例句）
+        </h1>
+        <p class="mt-3.5 text-base sm:text-[17px] text-[#6E6E73] leading-relaxed">
+          完整收录文档九大核心专题（off / for / out / look / get / about / keep / 常考短语 / 固定搭配），并额外扩充第 10 章高频多义短语（take / put / turn / give / come 系列）。<strong>鼠标或手指选中页面任意英文单词或句子，即可触发原生美式发音！</strong>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 mt-7">
+        <div class="md:col-span-8 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-[#6E6E73] mb-2">实时检索全部短语与搭配（支持英文短语、介词或中文释义）</div>
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <input id="phraseGlobalSearch" type="text" oninput="renderAllPhraseChapters()" placeholder="输入短语或中文：如 take off, get over, look forward to, 推迟, 忍受..."
+              class="flex-1 px-4 py-2.5 rounded-xl bg-[#F5F5F7] border border-black/[0.08] text-xs sm:text-sm text-[#1D1D1F] placeholder-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:bg-white transition" />
+            <button onclick="document.getElementById('phraseGlobalSearch').value=''; renderAllPhraseChapters();"
+              class="px-4 py-2.5 rounded-xl bg-black/[0.05] hover:bg-black/[0.09] text-xs font-semibold text-[#1D1D1F] transition shrink-0">
+              清空筛选
+            </button>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs text-[#6E6E73] font-medium">高频短语学习进度</div>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="phrMasteredCount" class="text-xl sm:text-2xl font-bold text-[#0071E3]">0</span>
+            <span class="text-xs text-[#6E6E73]">/ 10 章已掌握</span>
+          </div>
+          <div class="w-full bg-black/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div id="phrMasteredBar" class="bg-[#0071E3] h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="text-[11px] text-[#6E6E73] mt-2">每组短语均配 3–5 句场景例句 + 点读/划词发音</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Hero Section (Module 5: Numbers, Dates, Seasons & Daily Life) -->
+  <div id="calendarHero" class="hidden">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-wider text-[#0071E3] mb-2">Essential Daily English · Module 05 · 8 Chapters</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-bold tracking-tight text-[#1D1D1F] leading-[1.15]">
+          日常生活高频：数字、年月日、时刻、季节与节日全集
+        </h1>
+        <p class="mt-3.5 text-base sm:text-[17px] text-[#6E6E73] leading-relaxed">
+          彻底梳理日常口语与听力最常用的数字（基数词、序数词、小数、分数、价格、电话号码）、年份与日期英美读法、点钟（past / to）、星期、月份、四季天气、中外节日及时间介词 <code class="font-mono font-bold text-[#1D1D1F]">in / on / at</code> 黄金法则，<strong>所有英文均可点击小喇叭或划词直接朗读！</strong>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-3 sm:gap-4 mt-7">
+        <div class="md:col-span-8 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs font-semibold text-[#6E6E73] mb-2">高频生活表达快捷口诀</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+            <div class="p-2.5 rounded-xl bg-[#F5F5F7]">
+              <div class="font-bold text-[#0071E3]">时间介词口诀</div>
+              <p class="text-[#6E6E73] mt-0.5"><strong>in</strong> 年 <strong>in</strong> 月 <strong>in</strong> 四季；<strong>on</strong> 日 <strong>on</strong> 周 <strong>on</strong> 某天；<strong>at</strong> 接具体几点钟。</p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#F5F5F7]">
+              <div class="font-bold text-[#248A3D]">日期读写铁律</div>
+              <p class="text-[#6E6E73] mt-0.5">日期“几号”<strong>写</strong>基数词或序数词均可（May 5 / May 5th），但<strong>读</strong>必须读作序数词（May the fifth）。</p>
+            </div>
+            <div class="p-2.5 rounded-xl bg-[#F5F5F7]">
+              <div class="font-bold text-[#C93400]">时刻顺逆法则</div>
+              <p class="text-[#6E6E73] mt-0.5">≤30分钟用 <strong>past</strong>（过）；＞30分钟用 <strong>to</strong>（差几分到下一小时）。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-4 apple-card p-4 sm:p-5 flex flex-col justify-between">
+          <div class="text-xs text-[#6E6E73] font-medium">数字与生活时间掌握进度</div>
+          <div class="flex items-baseline gap-1.5 mt-1">
+            <span id="calMasteredCount" class="text-xl sm:text-2xl font-bold text-[#0071E3]">0</span>
+            <span class="text-xs text-[#6E6E73]">/ 8 章已掌握</span>
+          </div>
+          <div class="w-full bg-black/[0.06] h-1.5 rounded-full mt-2 overflow-hidden">
+            <div id="calMasteredBar" class="bg-[#0071E3] h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+          </div>
+          <div class="text-[11px] text-[#6E6E73] mt-2">含互动数字/日期/时刻读法模拟器 + 15 题自测</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Main Workspace: Sidebar TOC + Detailed Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="flex flex-col lg:flex-row gap-8 items-start">
+
+      <!-- Left Sticky Curriculum Sidebar (Desktop - 5-Module Switcher) -->
+      <aside class="hidden lg:block w-72 shrink-0 sticky top-32">
+        <div class="apple-card p-4">
+          <!-- Top-Level 5-Tab Module Switcher inside Sidebar -->
+          <div class="mb-3.5 pb-3 border-b border-black/[0.06]">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-[#6E6E73] px-1 mb-2">学习模块切换 (5大模块)</div>
+            <div class="grid grid-cols-2 p-1 rounded-xl bg-[#F5F5F7] border border-black/[0.04] gap-1">
+              <button onclick="switchAppModule('modals')" id="side-mod-modals"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-semibold transition bg-white text-[#1D1D1F] shadow-sm truncate">
+                情态动词 (12讲)
+              </button>
+              <button onclick="switchAppModule('structures')" id="side-mod-structures"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] hover:text-[#1D1D1F] truncate">
+                句型转换 (6章)
+              </button>
+              <button onclick="switchAppModule('patterns')" id="side-mod-patterns"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] hover:text-[#1D1D1F] truncate">
+                常用句型 (50组)
+              </button>
+              <button onclick="switchAppModule('phrases')" id="side-mod-phrases"
+                class="py-1.5 px-2 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] hover:text-[#1D1D1F] truncate">
+                高频短语 (10章)
+              </button>
+              <button onclick="switchAppModule('calendar')" id="side-mod-calendar"
+                class="col-span-2 py-1.5 px-2 rounded-lg text-[11px] font-semibold transition text-[#6E6E73] hover:text-[#1D1D1F] truncate">
+                数字 · 年月日 · 时刻 · 季节 (8章)
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between px-2 pb-2.5 mb-2 border-b border-black/[0.06]">
+            <span id="sidebarTocHeading" class="text-xs font-semibold text-[#6E6E73] tracking-wide">视频选集目录 (12讲)</span>
+            <span class="text-[11px] text-[#0071E3] font-medium">点击跳转</span>
+          </div>
+          <ul id="sidebarToc" class="space-y-1 max-h-[calc(100vh-310px)] overflow-y-auto pr-1">
+            <!-- Populated dynamically via JS -->
+          </ul>
+        </div>
+      </aside>
+
+      <!-- =================================================================== -->
+      <!-- RIGHT CONTENT COLUMN: MODULE 1 (MODAL VERBS 12 LESSONS)             -->
+      <!-- =================================================================== -->
+      <div id="module1Workspace" class="flex-1 min-w-0 space-y-6 w-full">
+
+        <!-- Interactive Deduction Simulator (Highlight Tool for Lessons 10-12) -->
+        <section id="deduction-lab" class="apple-card p-6 sm:p-8 border-[#0071E3]/20 bg-gradient-to-br from-white via-white to-[#F0F7FF]">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-black/[0.06]">
+            <div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3]">
+                互动实验室 · 对应第 10–12 讲
+              </span>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-2">语气推测全维度实验室（时间 × 肯定/否定 × 把握度）</h2>
+              <p class="text-sm text-[#6E6E73] mt-1">切换时间维度与肯定/否定极性，拖动把握度滑块，实时查看情态动词公式、音标与地道双语例句。</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 self-start">
+              <!-- Time Selector Segmented Control -->
+              <div class="inline-flex p-1 rounded-xl bg-black/[0.05]">
+                <button onclick="setSimTime('past')" id="sim-time-past" class="sim-time-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#6E6E73]">
+                  过去 (have done)
+                </button>
+                <button onclick="setSimTime('present')" id="sim-time-present" class="sim-time-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-white text-[#1D1D1F] shadow-sm">
+                  现在 (do / doing)
+                </button>
+                <button onclick="setSimTime('future')" id="sim-time-future" class="sim-time-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#6E6E73]">
+                  将来 (do)
+                </button>
+              </div>
+              <!-- Polarity Selector Segmented Control -->
+              <div class="inline-flex p-1 rounded-xl bg-black/[0.05]">
+                <button onclick="setSimPolarity('affirmative')" id="sim-pol-affirmative" class="sim-pol-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition bg-white text-[#0071E3] shadow-sm">
+                  肯定推测
+                </button>
+                <button onclick="setSimPolarity('negative')" id="sim-pol-negative" class="sim-pol-btn px-3 py-1.5 rounded-lg text-xs font-semibold transition text-[#6E6E73]">
+                  否定推测
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <div class="flex justify-between text-xs font-medium text-[#6E6E73] mb-2">
+              <span>10% 极弱猜测（说不定）</span>
+              <span>50% 一半一半（也许）</span>
+              <span>95%+ 高度笃定（一定 / 绝不）</span>
+            </div>
+            <input id="certaintySlider" type="range" min="10" max="100" value="95" oninput="updateDeductionSim()" class="w-full" />
+
+            <!-- Live Result Display -->
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center bg-[#F5F5F7] rounded-2xl p-5">
+              <div class="md:col-span-5">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs text-[#6E6E73]">当前推测把握度</span>
+                  <span id="simIpa" class="text-xs font-mono px-2 py-0.5 rounded bg-white text-[#0071E3] border border-black/[0.05]">/mʌst/</span>
+                </div>
+                <div id="simCertaintyLabel" class="text-xl sm:text-2xl font-bold text-[#34C759] mt-0.5">95%+ 高度肯定</div>
+                <div id="simFormula" class="inline-block mt-2 px-3 py-1 rounded-lg bg-white text-sm font-mono font-semibold text-[#1D1D1F] shadow-sm">
+                  must + do / be doing
+                </div>
+              </div>
+              <div class="md:col-span-7 md:border-l md:border-black/[0.08] md:pl-5">
+                <div id="simDesc" class="text-sm text-[#1D1D1F] font-medium leading-relaxed">
+                  有充分证据支撑的合理推断，语气非常笃定：“一定…… / 肯定正在……”。
+                </div>
+                <div class="mt-3 p-3 rounded-xl bg-white border border-black/[0.05]">
+                  <p id="simExampleEn" class="text-[15px] font-semibold text-[#1D1D1F]">The lights are on. He must be at home.</p>
+                  <p id="simExampleZh" class="text-xs text-[#6E6E73] mt-1">灯亮着，他现在一定在家。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 12 Lessons Container -->
+        <div id="lessonsContainer" class="space-y-6">
+          <!-- Rendered cleanly by JavaScript -->
+        </div>
+
+        <!-- Self-Test Quiz Section -->
+        <section id="quiz-section" class="apple-card p-6 sm:p-8">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-black/[0.06]">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#0071E3]">15-Question Diagnostic Quiz</span>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-1">全课程 15 道核心陷阱诊断自测</h2>
+              <p class="text-sm text-[#6E6E73] mt-1">覆盖全部 12 讲最易混淆的语法死角（mustn't vs don't have to、was able to、had better not、used to vs would、needn't have done 等），点击选项立即批改并给出深度解析。</p>
+            </div>
+            <div class="flex items-center gap-3 self-start sm:self-center">
+              <div class="px-3.5 py-1.5 rounded-full bg-[#0071E3]/10 text-[#0071E3] text-xs font-bold">
+                得分：<span id="quizScore">0</span> / 15
+              </div>
+              <button onclick="resetQuiz()" class="text-xs font-medium px-3.5 py-2 rounded-full bg-black/[0.05] hover:bg-black/[0.09] text-[#1D1D1F] transition">
+                重置测试
+              </button>
+            </div>
+          </div>
+          <div id="quizContainer" class="mt-6 space-y-5">
+            <!-- Quiz rendered via JS -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- RIGHT CONTENT COLUMN: MODULE 2 (KEY GRAMMAR & SENTENCE TRANSFORMS)  -->
+      <!-- =================================================================== -->
+      <div id="module2Workspace" class="hidden flex-1 min-w-0 space-y-6 w-full">
+
+        <!-- CHAPTER 01: PRESENT CONTINUOUS + PREPOSITIONS (21 SETS + SPELLING RULES) -->
+        <section id="struct-chap-1" class="apple-card p-6 sm:p-8 scroll-mt-32">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-black/[0.06]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3]">第 01 章</span>
+                <span class="text-xs text-[#6E6E73] font-mono">21 组高频搭配全覆盖</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-2">现在进行时 am / is / are + 动词-ing ＋ 介词</h2>
+              <p class="text-sm font-medium text-[#6E6E73] mt-1">正在发生的动作 + 方位/对象介词 · 动词-ing 拼写变形四大法则 · 四色句型转换</p>
+            </div>
+            <button onclick="toggleStructMastered(1)" id="struct-btn-1"
+              class="self-start inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition active:scale-95 bg-black/[0.04] hover:bg-black/[0.08] text-[#1D1D1F]">
+              ○ 标记为已掌握
+            </button>
+          </div>
+
+          <!-- Core Formula & Transformation Rules -->
+          <div class="mt-5 p-4 sm:p-5 rounded-2xl bg-[#F5F5F7] border border-black/[0.04]">
+            <div class="text-xs font-semibold text-[#0071E3] mb-2">💡 核心结构与句型转换铁律</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-[13px]">
+              <div class="p-3 rounded-xl bg-white border border-[#0071E3]/20">
+                <span class="font-bold text-[#0071E3]">肯定句：</span>主语 + am / is / are + 动词-ing + 介词短语
+              </div>
+              <div class="p-3 rounded-xl bg-white border border-[#FF3B30]/20">
+                <span class="font-bold text-[#D70015]">否定句：</span>主语 + am / is / are + <span class="underline font-bold">not</span> + 动词-ing
+              </div>
+              <div class="p-3 rounded-xl bg-white border border-[#34C759]/25">
+                <span class="font-bold text-[#248A3D]">一般疑问句：</span><span class="underline font-bold">Am / Is / Are</span> + 主语 + 动词-ing...?
+              </div>
+              <div class="p-3 rounded-xl bg-white border border-[#AF52DE]/25">
+                <span class="font-bold text-[#8944AB]">特殊疑问句：</span>疑问词 + am / is / are + 主语 + 动词-ing (+ 介词)?
+              </div>
+            </div>
+            <p class="text-xs text-[#6E6E73] mt-3 leading-relaxed">
+              <strong>转换口诀：</strong>① 特殊疑问词按提问对象选（Where 问地点，Who 问人，What 问事物）；② 对介词宾语提问时，<strong>句尾的介词（in / over / to / about / for / at / after / on / with）千万不能丢！</strong>（如：What is he waiting <strong>for</strong>?）；③ 若 Who / What 直接作主语提问，语序不倒装（如：Who is cooking in the kitchen?）。
+            </p>
+          </div>
+
+          <!-- Supplemented Rules: 4 Spelling Rules for -ing & Stative Verbs -->
+          <div class="mt-6">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[#6E6E73] mb-3">【重要补充】动词现在分词 (-ing) 变化四大规则 & 非进行时状态动词</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+              <div class="p-3.5 rounded-xl border border-black/[0.06] bg-white">
+                <span class="inline-block px-2 py-0.5 rounded text-[11px] font-semibold bg-[#0071E3]/10 text-[#0071E3]">规则 1：直接加 -ing</span>
+                <p class="text-xs text-[#1D1D1F] mt-1.5 leading-relaxed">绝大多数动词直接在词尾加 <code class="font-mono font-bold">-ing</code>。</p>
+                <p class="text-xs font-mono text-[#6E6E73] mt-1">wash → washing<br/>cook → cooking<br/>look → looking</p>
+              </div>
+              <div class="p-3.5 rounded-xl border border-black/[0.06] bg-white">
+                <span class="inline-block px-2 py-0.5 rounded text-[11px] font-semibold bg-[#34C759]/15 text-[#248A3D]">规则 2：去不发音 e 加 -ing</span>
+                <p class="text-xs text-[#1D1D1F] mt-1.5 leading-relaxed">以不发音字母 <code class="font-mono font-bold">-e</code> 结尾，先去掉 e 再加 <code class="font-mono font-bold">-ing</code>。</p>
+                <p class="text-xs font-mono text-[#6E6E73] mt-1">write → writing<br/>make → making<br/>take → taking</p>
+              </div>
+              <div class="p-3.5 rounded-xl border border-black/[0.06] bg-white">
+                <span class="inline-block px-2 py-0.5 rounded text-[11px] font-semibold bg-[#FF9500]/15 text-[#C93400]">规则 3：重读闭音节双写尾字母</span>
+                <p class="text-xs text-[#1D1D1F] mt-1.5 leading-relaxed">末尾为“辅+元+辅”重读闭音节，双写末尾辅音字母加 <code class="font-mono font-bold">-ing</code>。</p>
+                <p class="text-xs font-mono text-[#6E6E73] mt-1">sit → sitting / swim → swimming<br/>run → running / put → putting</p>
+              </div>
+              <div class="p-3.5 rounded-xl border border-black/[0.06] bg-white">
+                <span class="inline-block px-2 py-0.5 rounded text-[11px] font-semibold bg-[#AF52DE]/15 text-[#8944AB]">规则 4：ie 变 y 加 -ing</span>
+                <p class="text-xs text-[#1D1D1F] mt-1.5 leading-relaxed">少数以 <code class="font-mono font-bold">-ie</code> 结尾的动词，先把 ie 变成 y 再加 <code class="font-mono font-bold">-ing</code>。</p>
+                <p class="text-xs font-mono text-[#6E6E73] mt-1">lie → lying (躺/撒谎)<br/>tie → tying (系)<br/>die → dying (死)</p>
+              </div>
+            </div>
+            <div class="mt-3 p-3.5 rounded-xl bg-[#FF3B30]/[0.04] border border-[#FF3B30]/15 text-xs text-[#1D1D1F] leading-relaxed">
+              <strong class="text-[#D70015]">⚠️ 补充避坑（非进行时状态动词）：</strong>表示心理情感、认知或所属关系的动词（如 <code class="font-mono">like</code> 喜欢、<code class="font-mono">want</code> 想要、<code class="font-mono">know</code> 知道、<code class="font-mono">love</code> 爱、<code class="font-mono">have</code> 表示“拥有”时）通常<strong>不能用现在进行时</strong>（✅ I know him / ❌ I am knowing him；✅ She has a hammer / ❌ She is having a hammer）。
+            </div>
+          </div>
+
+          <!-- Search & Filter Bar for the 21 Present Continuous Sets -->
+          <div class="mt-7 pt-5 border-t border-black/[0.06]">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="text-base font-bold text-[#1D1D1F]">21 组“现在进行时 ＋ 介词”四句型全覆盖训练卡</h3>
+                <p class="text-xs text-[#6E6E73] mt-0.5">支持按动词、介词或中文关键词实时检索（例如输入 <code class="font-mono">wait</code>、<code class="font-mono">over</code>、<code class="font-mono">锤子</code>）</p>
+              </div>
+              <div class="relative w-full sm:w-64">
+                <input id="pcSearchInput" type="text" oninput="renderPresentContinuousCards()" placeholder="搜索 21 组动词/介词..."
+                  class="w-full px-3.5 py-2 rounded-xl bg-[#F5F5F7] border border-black/[0.08] text-xs text-[#1D1D1F] placeholder-[#6E6E73] focus:outline-none focus:border-[#0071E3] focus:bg-white transition" />
+              </div>
+            </div>
+
+            <div id="pcCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Populated by JS with all 21 items -->
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 02: FUTURE TENSE (WILL vs BE GOING TO) -->
+        <section id="struct-chap-2" class="apple-card p-6 sm:p-8 scroll-mt-32">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-black/[0.06]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3]">第 02 章</span>
+                <span class="text-xs text-[#6E6E73] font-mono">10 组 will 转换 + be going to 全对照</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-2">一般将来时：will 与 be going to 深度对照</h2>
+              <p class="text-sm font-medium text-[#6E6E73] mt-1">临时决定/预测 (will) vs 事先计划/迹象 (be going to) · 简短回答 · There will be</p>
+            </div>
+            <button onclick="toggleStructMastered(2)" id="struct-btn-2"
+              class="self-start inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition active:scale-95 bg-black/[0.04] hover:bg-black/[0.08] text-[#1D1D1F]">
+              ○ 标记为已掌握
+            </button>
+          </div>
+
+          <!-- Plain Summary + Comparison Table -->
+          <div class="mt-5 p-4 sm:p-5 rounded-2xl bg-[#F5F5F7] border border-black/[0.04]">
+            <div class="text-xs font-semibold text-[#0071E3] mb-1.5">💡 大白话核心区别</div>
+            <p class="text-sm text-[#1D1D1F] leading-relaxed">
+              一般将来时有两大支柱：<code class="font-mono font-bold">will + 动词原形</code>（不受主语人称影响，后面动词永远原形，否定缩写为 <code class="font-mono font-bold">won't</code>）和 <code class="font-mono font-bold">am/is/are + going to + 动词原形</code>（be 动词随主语变：I 配 am，单数 he/she/it 配 is，复数 you/we/they 配 are）。<strong>两者结构绝对不能混用</strong>（❌ He will going to come）。
+            </p>
+          </div>
+
+          <!-- will vs be going to Comparison Table -->
+          <div class="mt-6">
+            <h3 class="text-xs font-semibold uppercase tracking-wider text-[#6E6E73] mb-3">will 与 be going to 句型及语用对照表</h3>
+            <div class="overflow-x-auto rounded-2xl border border-black/[0.07]">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-[#F5F5F7] border-b border-black/[0.07]">
+                    <th class="py-3 px-4 font-semibold text-[#1D1D1F]">对比维度</th>
+                    <th class="py-3 px-4 font-semibold text-[#0071E3]">will + 动词原形</th>
+                    <th class="py-3 px-4 font-semibold text-[#248A3D]">am/is/are + going to + 动词原形</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-black/[0.05]">
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#1D1D1F]">核心语用侧重</td>
+                    <td class="py-3 px-4 text-[#424245]">说话时<strong>临时决定</strong>、主观预测或承诺</td>
+                    <td class="py-3 px-4 text-[#424245]">事先深思熟虑的<strong>计划打算</strong>，或眼前有明显迹象要发生</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#0071E3]">肯定句</td>
+                    <td class="py-3 px-4 font-mono text-xs">He will come tomorrow.</td>
+                    <td class="py-3 px-4 font-mono text-xs">He is going to come tomorrow.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#D70015]">否定句</td>
+                    <td class="py-3 px-4 font-mono text-xs">He won't (will not) come tomorrow.</td>
+                    <td class="py-3 px-4 font-mono text-xs">He isn't (is not) going to come tomorrow.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#248A3D]">一般疑问句</td>
+                    <td class="py-3 px-4 font-mono text-xs">Will he come tomorrow?</td>
+                    <td class="py-3 px-4 font-mono text-xs">Is he going to come tomorrow?</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#8944AB]">特殊疑问句</td>
+                    <td class="py-3 px-4 font-mono text-xs">When will he come?</td>
+                    <td class="py-3 px-4 font-mono text-xs">When is he going to come?</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#1D1D1F]">简短回答 (补充)</td>
+                    <td class="py-3 px-4 font-mono text-xs">Yes, he will. / No, he won't.</td>
+                    <td class="py-3 px-4 font-mono text-xs">Yes, he is. / No, he isn't.</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 font-medium text-[#1D1D1F]">将来“某处有” (补充)</td>
+                    <td class="py-3 px-4 font-mono text-xs">There will be a meeting tomorrow.</td>
+                    <td class="py-3 px-4 font-mono text-xs">There is going to be a meeting tomorrow.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Supplemented Rules Box: gonna, shall I/we, some->any -->
+          <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="p-3.5 rounded-xl bg-[#FF9500]/[0.06] border border-[#FF9500]/20 text-xs leading-relaxed">
+              <div class="font-bold text-[#C93400] mb-1">🟠 going to vs 口语 gonna</div>
+              <p class="text-[#1D1D1F]">口语中常把 <code class="font-mono">I'm going to go</code> 缩读成 <code class="font-mono">I'm gonna go</code>，但 <strong>gonna 是非正式口语</strong>！做新概念英语书面练习、试卷填空时，<strong>必须写完整 going to</strong>。</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#0071E3]/[0.05] border border-[#0071E3]/15 text-xs leading-relaxed">
+              <div class="font-bold text-[#0071E3] mb-1">🔵 第一人称征求意见用 Shall</div>
+              <p class="text-[#1D1D1F]">当主语是 <code class="font-mono">I</code> 或 <code class="font-mono">we</code> 且在一般疑问句中征求对方意见时，常用 <code class="font-mono font-bold">Shall</code> 代替 Will（如：<code class="font-mono">Shall we go to the park?</code> 我们去公园好吗？）。</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-[#FF3B30]/[0.05] border border-[#FF3B30]/15 text-xs leading-relaxed">
+              <div class="font-bold text-[#D70015] mb-1">🔴 句型转换易错点：some 变 any</div>
+              <p class="text-[#1D1D1F]">见第 10 组例句：肯定句 <code class="font-mono">Dad will buy <strong>some</strong> milk.</code> 变成否定句和一般疑问句时，<strong>some 必须改成 any</strong>（<code class="font-mono">won't buy <strong>any</strong> milk / Will Dad buy <strong>any</strong> milk?</code>）。</p>
+            </div>
+          </div>
+
+          <!-- 10 Will Transformation Sets + 2 Be Going To Sets -->
+          <div class="mt-7 pt-5 border-t border-black/[0.06]">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-base font-bold text-[#1D1D1F]">一般将来时 12 组完整四句型转换实战（10 组 will + 2 组 be going to）</h3>
+            </div>
+            <div id="futureCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 03: NEW CONCEPT CORE STRUCTURES (WHOSE / COLOUR / WHERE / GIVE / WHICH ONE) -->
+        <section id="struct-chap-3" class="apple-card p-6 sm:p-8 scroll-mt-32">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-black/[0.06]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3]">第 03 章</span>
+                <span class="text-xs text-[#6E6E73] font-mono">新概念第一册前期高频核心句型</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-2">所属、颜色、地点与请求选择句型精讲</h2>
+              <p class="text-sm font-medium text-[#6E6E73] mt-1">Whose...? · 物主代词全表 · What colour...? · Is this/Are these...? · Give me... & Which one(s)?</p>
+            </div>
+            <button onclick="toggleStructMastered(3)" id="struct-btn-3"
+              class="self-start inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition active:scale-95 bg-black/[0.04] hover:bg-black/[0.08] text-[#1D1D1F]">
+              ○ 标记为已掌握
+            </button>
+          </div>
+
+          <div class="mt-6 space-y-6">
+            <!-- 3.1 Whose + Full 6-Person Possessive Table -->
+            <div class="p-5 rounded-2xl bg-[#F5F5F7] border border-black/[0.05]">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="px-2 py-0.5 rounded text-xs font-bold bg-[#AF52DE]/15 text-[#8944AB]">1. Whose…? 询问所属</span>
+                <span class="text-xs text-[#6E6E73]">句型：Whose + 名词 + is this/that?（复数：Whose + 复数名词 + are these/those?）</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 my-3">
+                <div class="p-3 rounded-xl bg-white border border-black/[0.06] text-xs">
+                  <div class="font-bold text-[#8944AB]">问句：Whose hammer is this?</div>
+                  <div class="text-[#6E6E73] mt-0.5">这是谁的锤子？</div>
+                </div>
+                <div class="p-3 rounded-xl bg-white border border-black/[0.06] text-xs">
+                  <div class="font-bold text-[#0071E3]">回答：It is my hammer. / It is mine.</div>
+                  <div class="text-[#6E6E73] mt-0.5">这是我的锤子。（形容词性物主代词 + 名词 ＝ 名词性物主代词）</div>
+                </div>
+              </div>
+
+              <!-- Full 6-person possessive table (supplementing the doc's my/mine) -->
+              <div class="text-xs font-semibold text-[#1D1D1F] mb-2">【完整补充】六大人称物主代词对照表（有“名”用形代，无“名”用名代）</div>
+              <div class="overflow-x-auto rounded-xl border border-black/[0.07] bg-white">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="bg-[#FBFBFD] border-b border-black/[0.06]">
+                      <th class="py-2.5 px-3 font-semibold">人称</th>
+                      <th class="py-2.5 px-3 font-semibold text-[#0071E3]">形容词性（必须接名词）</th>
+                      <th class="py-2.5 px-3 font-semibold text-[#248A3D]">名词性（单独使用，不接名词）</th>
+                      <th class="py-2.5 px-3 font-semibold">等价替换例句</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-black/[0.05] font-mono">
+                    <tr><td class="py-2 px-3 font-sans">我的</td><td class="py-2 px-3 font-bold text-[#0071E3]">my + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">mine</td><td class="py-2 px-3 font-sans">my hammer = mine</td></tr>
+                    <tr><td class="py-2 px-3 font-sans">你的/你们的</td><td class="py-2 px-3 font-bold text-[#0071E3]">your + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">yours</td><td class="py-2 px-3 font-sans">your book = yours</td></tr>
+                    <tr><td class="py-2 px-3 font-sans">他的</td><td class="py-2 px-3 font-bold text-[#0071E3]">his + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">his</td><td class="py-2 px-3 font-sans">his pen = his (同形)</td></tr>
+                    <tr><td class="py-2 px-3 font-sans">她的</td><td class="py-2 px-3 font-bold text-[#0071E3]">her + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">hers</td><td class="py-2 px-3 font-sans">her coat = hers</td></tr>
+                    <tr><td class="py-2 px-3 font-sans">我们的</td><td class="py-2 px-3 font-bold text-[#0071E3]">our + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">ours</td><td class="py-2 px-3 font-sans">our classroom = ours</td></tr>
+                    <tr><td class="py-2 px-3 font-sans">他们的</td><td class="py-2 px-3 font-bold text-[#0071E3]">their + 名词</td><td class="py-2 px-3 font-bold text-[#248A3D]">theirs</td><td class="py-2 px-3 font-sans">their house = theirs</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 3.2 What colour, Is this / Are these, Where -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 rounded-2xl border border-black/[0.06] bg-white">
+                <span class="px-2 py-0.5 rounded text-xs font-bold bg-[#AF52DE]/15 text-[#8944AB]">2. What colour…? 问颜色</span>
+                <p class="text-xs text-[#6E6E73] mt-2">公式：<code class="font-mono text-[#1D1D1F]">What colour + is/are + 主语?</code></p>
+                <div class="mt-2.5 space-y-1.5 text-xs">
+                  <p><strong>单数：</strong>What colour <strong>is</strong> your hammer? <br/><span class="text-[#0071E3]">→ It is blue.</span></p>
+                  <p><strong>复数补充：</strong>What colour <strong>are</strong> your shoes? <br/><span class="text-[#0071E3]">→ They are brown.</span></p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl border border-black/[0.06] bg-white">
+                <span class="px-2 py-0.5 rounded text-xs font-bold bg-[#34C759]/15 text-[#248A3D]">3. Is this…? / Are these…?</span>
+                <p class="text-xs text-[#6E6E73] mt-2">回答时必须把 this/that 换成 <strong>it</strong>，these/those 换成 <strong>they</strong>！</p>
+                <div class="mt-2.5 space-y-1.5 text-xs">
+                  <p><strong>单数：</strong>Is this your hammer? <br/><span class="text-[#248A3D]">→ Yes, it is. / No, it isn't.</span></p>
+                  <p><strong>复数补充：</strong>Are these your pens? <br/><span class="text-[#248A3D]">→ Yes, they are. / No, they aren't.</span></p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl border border-black/[0.06] bg-white">
+                <span class="px-2 py-0.5 rounded text-xs font-bold bg-[#AF52DE]/15 text-[#8944AB]">4. Where…? 问地点与还原</span>
+                <p class="text-xs text-[#6E6E73] mt-2">转换技巧：先还原成陈述句，再变否定和一般疑问句。</p>
+                <div class="mt-2.5 space-y-1 text-xs">
+                  <p class="text-[#8944AB]"><strong>特疑：</strong>Where is the village?</p>
+                  <p class="text-[#0071E3]"><strong>肯定：</strong>The village is near the river.</p>
+                  <p class="text-[#D70015]"><strong>否定：</strong>The village isn't near the river.</p>
+                  <p class="text-[#248A3D]"><strong>一疑：</strong>Is the village near the river?</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3.3 Give me... / Which one? / That pink one, please. -->
+            <div class="p-5 rounded-2xl bg-[#F0F7FF] border border-[#0071E3]/20">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-[#0071E3] text-white">5. 高频情景对话：Give me… / Which one(s)? / That pink one, please.</span>
+                  <h4 class="text-base font-bold text-[#1D1D1F] mt-1.5">祈使请求、选择疑问与代词 one / ones 替代规则</h4>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                <div class="p-3.5 rounded-xl bg-white border border-black/[0.06]">
+                  <div class="font-bold text-[#0071E3]">① 礼貌请求（双宾语结构）</div>
+                  <p class="font-mono font-semibold text-[#1D1D1F] mt-1">Give me a hammer, please.</p>
+                  <p class="text-[#6E6E73] mt-0.5">请给我一把锤子。</p>
+                  <p class="mt-2 text-[#1D1D1F]"><strong>同义转换：</strong><code class="font-mono text-[#0071E3]">Give a hammer to me, please.</code></p>
+                  <p class="text-[#6E6E73] mt-1">公式：give + 人 + 物 ＝ give + 物 + to + 人（动词原形开头表祈使请求，加 please 更礼貌）。</p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-white border border-black/[0.06]">
+                  <div class="font-bold text-[#8944AB]">② 追问选择（Which one / ones?）</div>
+                  <p class="font-mono font-semibold text-[#1D1D1F] mt-1">Which one? (哪一把？)</p>
+                  <p class="text-[#6E6E73] mt-0.5">单数可数名词用 <code class="font-mono font-bold">one</code> 代替（避免重复说 hammer）。</p>
+                  <p class="mt-2 text-[#1D1D1F]"><strong>复数补充：</strong>若前面是复数名词（如 shoes / books），追问用 <code class="font-mono font-bold text-[#8944AB]">Which ones?</code>（哪几双/哪几本？）。</p>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-white border border-black/[0.06]">
+                  <div class="font-bold text-[#248A3D]">③ 指定颜色/特征（this/that + 形容词 + one）</div>
+                  <p class="font-mono font-semibold text-[#1D1D1F] mt-1">That pink one, please.</p>
+                  <p class="text-[#6E6E73] mt-0.5">请给我那把粉色的。</p>
+                  <p class="mt-2 text-[#1D1D1F]"><strong>举一反三：</strong><br/>• 近处：<code class="font-mono">This red one, please.</code><br/>• 远处：<code class="font-mono">That blue one, please.</code><br/>• 复数：<code class="font-mono">Those black ones, please.</code></p>
+                </div>
+              </div>
+
+              <!-- Interactive Self-Check Practice from the Doc -->
+              <div class="mt-4 p-4 rounded-xl bg-white border border-black/[0.06]">
+                <div class="flex items-center justify-between mb-2.5">
+                  <span class="text-xs font-bold text-[#1D1D1F]">✍️ 随堂翻译转换练习（点击右侧按钮核对答案）</span>
+                  <button onclick="toggleChap3Answers()" id="chap3ToggleBtn" class="text-xs font-semibold text-[#0071E3] hover:underline">显示全部答案</button>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs">
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">1. 请给我一支钢笔。</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#0071E3] mt-1">Give me a pen, please.</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">2. 哪一支？</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#8944AB] mt-1">Which one?</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">3. 请给我那支蓝色的。</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#248A3D] mt-1">That blue one, please.</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">4. 请给我那个红色的。</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#248A3D] mt-1">That red one, please.</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">5. 把一把锤子给我。</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#0071E3] mt-1">Give a hammer to me.</div>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-[#F5F5F7]">
+                    <div class="text-[#6E6E73]">6. 哪几双？（指 shoes）</div>
+                    <div class="chap3-ans hidden font-mono font-bold text-[#8944AB] mt-1">Which ones?</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CHAPTER 04: THERE BE EXISTENTIAL SENTENCES -->
+        <section id="struct-chap-4" class="apple-card p-6 sm:p-8 scroll-mt-32">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 pb-5 border-b border-black/[0.06]">
+            <div>
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#0071E3]/10 text-[#0071E3]">第 04 章</span>
+                <span class="text-xs text-[#6E6E73] font-mono">存现句型 · 就近原则 · some/any 转换</span>
+              </div>
+              <h2 class="text-xl sm:text-2xl font-bold text-[#1D1D1F] mt-2">There is / There are 存现句型深度精讲</h2>
+              <p class="text-sm font-medium text-[#6E6E73] mt-1">某处存在某人/某物 · 单数/不可数 vs 复数 · 就近原则 · There be 与 have 的核心区别</p>
+            </div>
