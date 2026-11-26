@@ -2555,7 +2555,7 @@
         `;
       }).join("");
 
-      document.getElementById("progressBadge").textContent = `${currentLessonId} / ${NCE1_LESSONS.length}`;
+      document.getElementById("progressBadge").textContent = `${NCE1_LESSONS.findIndex(l => l.id === currentLessonId) + 1} / ${NCE1_LESSONS.length}`;
     }
 
     function renderCurrentLesson(lesson) {
@@ -2565,7 +2565,7 @@
       document.getElementById("lessonEnglishTitle").textContent = lesson.title;
       document.getElementById("lessonChineseTitle").textContent = lesson.chineseTitle;
       document.getElementById("drillCountBadge").textContent = `本课共 ${lesson.transformations.length} 组句型转换`;
-      document.getElementById("bottomPageIndicator").textContent = `第 ${lesson.id} 课 / 共 ${NCE1_LESSONS.length} 课`;
+      document.getElementById("bottomPageIndicator").textContent = `本页第 ${NCE1_LESSONS.findIndex(l => l.id === lesson.id) + 1} / ${NCE1_LESSONS.length} 课（教材第 ${lesson.id} 课）`;
 
       document.getElementById("prevLessonBtn").disabled = lesson.id <= 20;
       document.getElementById("nextLessonBtn").disabled = lesson.id >= 30;
