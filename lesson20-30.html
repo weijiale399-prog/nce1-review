@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新概念英语第一册 · 四句型与多维度提问精练 L20–L30</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #FBF9F5;
+      color: #1E293B;
+    }
+    .font-serif-title {
+      font-family: 'Noto Serif SC', Georgia, serif;
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94A3B8;
+    }
+    ::selection {
+      background-color: #DBEAFE;
+      color: #1E3A8A;
+    }
+    .speaking-active {
+      background-color: #EFF6FF !important;
+      border-color: #2563EB !important;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.18);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+
+  <!-- 1. 顶部导航栏 -->
+  <header class="sticky top-0 z-40 bg-[#1B365D] text-white shadow-md border-b border-blue-950/60">
+    <div class="max-w-[1640px] mx-auto px-3 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+
+      <!-- 左侧：应用标题与当前课程指示 -->
+      <div class="flex items-center gap-2.5">
+        <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-xl bg-blue-900/70 hover:bg-blue-800 transition cursor-pointer" title="切换课程目录">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <div class="w-9 h-9 rounded-xl bg-amber-400/20 border border-amber-300/40 flex items-center justify-center text-amber-300 font-bold text-sm shadow-inner shrink-0">
+          NCE1
+        </div>
+        <div>
+          <h1 class="font-serif-title text-sm sm:text-lg font-bold tracking-wide text-white leading-tight">
+            新概念英语第一册 · 四句型与多维度提问精练 L20–L30
+          </h1>
+          <p id="headerCurrentLesson" class="text-xs text-blue-200 truncate max-w-[240px] sm:max-w-lg">
+            正在学习：Lesson 20 Look at them!
+          </p>
+        </div>
+      </div>
+
+      <!-- 中间：上次学习记录徽章（精确到秒 YYYY-MM-DD HH:mm:ss） -->
+      <div id="historyBadgeContainer" class="flex items-center gap-2 bg-[#122642] border border-blue-700/60 rounded-xl px-3 py-1.5 text-xs shadow-inner">
+        <span class="inline-flex w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-1.5">
+          <span class="text-blue-200 font-medium">上次学到：</span>
+          <span id="lastHistoryText" class="text-amber-300 font-semibold font-mono">加载中...</span>
+        </div>
+        <button id="jumpLastBtn" class="hidden ml-1 px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold transition cursor-pointer shrink-0">
+          定位该课
+        </button>
+      </div>
+
+      <!-- 右侧：划词即读开关、口音切换、语速调节 -->
+      <div class="flex items-center gap-2 sm:gap-2.5 text-xs">
+        <label class="flex items-center gap-1.5 bg-blue-900/60 hover:bg-blue-900/90 border border-blue-700/60 px-2.5 py-1.5 rounded-xl cursor-pointer select-none transition" title="用鼠标划选或选中英文单词/句子后自动朗读">
+          <input type="checkbox" id="autoSelectSpeakToggle" checked class="accent-amber-400 w-3.5 h-3.5 rounded cursor-pointer" />
+          <span class="text-blue-100 font-medium">划词即读</span>
+        </label>
+
+        <select id="accentSelect" class="bg-blue-900/70 border border-blue-700/60 text-white rounded-xl px-2.5 py-1.5 outline-none focus:border-amber-400 cursor-pointer" title="选择朗读口音">
+          <option value="en-GB">🇬🇧 英音 (en-GB)</option>
+          <option value="en-US" selected>🇺🇸 美音 (en-US)</option>
+        </select>
+
+        <select id="rateSelect" class="bg-blue-900/70 border border-blue-700/60 text-white rounded-xl px-2 py-1.5 outline-none focus:border-amber-400 cursor-pointer" title="调节朗读语速">
+          <option value="0.8">0.8x 慢速</option>
+          <option value="1.0" selected>1.0x 标准</option>
+          <option value="1.2">1.2x 快速</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- 上次学习进度欢迎横幅 -->
+  <div id="welcomeHistoryBanner" class="hidden bg-amber-50 border-b border-amber-200 px-4 py-2.5 transition-all">
+    <div class="max-w-[1640px] mx-auto flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-amber-950">
+      <div class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-amber-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span id="welcomeBannerMsg">欢迎回来！</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="bannerJumpBtn" class="px-3 py-1 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs transition cursor-pointer">
+          跳转到该课
+        </button>
+        <button id="closeBannerBtn" class="px-2 py-1 text-amber-700 hover:text-amber-950 rounded-lg cursor-pointer" title="关闭提示">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 三栏主界面 -->
+  <div class="flex-1 max-w-[1640px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 p-3 sm:p-5">
+
+    <!-- 2A. 左侧边栏：课程目录（L20–L30） + 历史学习足迹 -->
+    <aside id="leftSidebar" class="hidden lg:flex lg:col-span-3 xl:col-span-2 flex-col bg-white rounded-2xl border border-stone-200/90 shadow-sm overflow-hidden h-fit lg:sticky lg:top-20">
+      <div class="p-3.5 bg-stone-50 border-b border-stone-200/80 flex items-center justify-between">
+        <div>
+          <h2 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+            <span>📚</span> 课程目录 (L20–L30)
+          </h2>
+          <p class="text-[11px] text-slate-500 mt-0.5">点击切换并自动记录时间</p>
+        </div>
+        <span id="progressBadge" class="text-xs font-bold px-2 py-0.5 rounded-full bg-blue-50 text-[#1B365D] border border-blue-200">
+          20 / 11
+        </span>
+      </div>
+
+      <nav id="lessonListNav" class="p-2 space-y-1 max-h-[54vh] overflow-y-auto">
+        <!-- JS 渲染 Lesson 1 - Lesson 20 -->
+      </nav>
+
+      <!-- 历史学习记录面板 -->
+      <div class="p-3 bg-[#F8FAFC] border-t border-stone-200/90 text-xs space-y-2">
+        <div class="flex items-center justify-between text-slate-700 font-semibold">
+          <span>🕒 历史学习记录</span>
+          <button id="clearHistoryBtn" class="text-[11px] text-slate-400 hover:text-rose-600 underline cursor-pointer">
+            清空记录
+          </button>
+        </div>
+        <div id="sidebarHistoryList" class="space-y-1.5 text-[11px] text-slate-600 max-h-40 overflow-y-auto">
+          <!-- JS 渲染精确到秒的历史记录 -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- 2B. 中间主内容区：课文精读 + 逐句多维度句型转换训练 -->
+    <main class="lg:col-span-6 xl:col-span-7 flex flex-col gap-5 min-w-0">
+
+      <!-- 课文精读卡片 -->
+      <section class="bg-white rounded-2xl border border-stone-200/90 shadow-sm p-5 sm:p-6">
+        <div class="flex flex-wrap items-start justify-between gap-3 pb-4 border-b border-stone-100">
+          <div>
+            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+              <span id="lessonBadge" class="px-2.5 py-0.5 rounded-lg bg-[#1B365D] text-white text-xs font-bold tracking-wider">
+                LESSON 20
+              </span>
+              <span id="lessonGrammarTag" class="px-2.5 py-0.5 rounded-lg bg-amber-50 text-amber-900 border border-amber-200 text-xs font-medium">
+                核心语法
+              </span>
+            </div>
+            <h2 id="lessonEnglishTitle" class="font-serif-title text-2xl sm:text-3xl font-bold text-slate-900">
+              Excuse me!
+            </h2>
+            <p id="lessonChineseTitle" class="text-sm text-slate-500 mt-1">
+              对不起！
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="playFullTextBtn" class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#1B365D] hover:bg-blue-900 text-white text-xs font-semibold shadow-sm transition cursor-pointer">
+              <span>▶</span>
+              <span>整篇连读</span>
+            </button>
+            <button id="stopSpeechBtn" class="px-3 py-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-semibold transition cursor-pointer" title="停止当前朗读">
+              ⏹ 停止
+            </button>
+            <button id="toggleChineseBtn" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-slate-700 text-xs font-medium transition cursor-pointer">
+              中英对照切换
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <div class="flex items-center justify-between mb-2.5">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">
+              Text & Dialogue · 课文精读（支持划词/选句自动朗读）
+            </h3>
+            <span id="drillCountBadge" class="text-xs font-semibold text-[#1B365D] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
+              本课句型转换按可转换原句完整整理
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-400 mb-2">说明：本页对话与例句为原创教学练习，围绕对应课次的词汇和语法点编写，并非教材逐字全文。</p>
+          <div id="originalTextContainer" class="space-y-2 bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-stone-200/70">
+            <!-- JS 渲染课文句子 -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 逐句多维度句型转换训练区 -->
+      <section class="bg-white rounded-2xl border border-stone-200/90 shadow-sm p-5 sm:p-6">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-stone-100">
+          <div>
+            <h3 class="font-serif-title text-lg sm:text-xl font-bold text-[#1B365D] flex items-center gap-2">
+              <span>🔄</span> 课文逐句 · 四句型与多维度提问精练
+            </h3>
+            <p class="text-xs text-slate-500 mt-1">
+              覆盖 <span class="font-semibold text-emerald-700">肯定句</span>、
+              <span class="font-semibold text-rose-700">否定句</span>、
+              <span class="font-semibold text-blue-700">一般疑问句及简答</span>，以及句子中所有可提问的
+              <span class="font-semibold text-purple-700">What / What colour / What make / What nationality / What job / Who / Whose / How</span> 特殊疑问句。
+            </p>
+          </div>
+          <button id="playAllDrillsBtn" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#1B365D] border border-blue-200 text-xs font-semibold transition cursor-pointer">
+            ▶ 连读本课全部转换句
+          </button>
+        </div>
+
+        <div id="fourSentencesContainer" class="mt-5 space-y-6">
+          <!-- JS 渲染每句话的多维度句型转换卡片 -->
+        </div>
+
+        <!-- 底部上下课切换 -->
+        <div class="mt-8 pt-4 border-t border-stone-200/80 flex items-center justify-between gap-3">
+          <button id="prevLessonBtn" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 disabled:opacity-40 disabled:cursor-not-allowed text-slate-700 text-xs sm:text-sm font-semibold transition cursor-pointer">
+            ← 上一课
+          </button>
+          <span id="bottomPageIndicator" class="text-xs text-slate-400 font-medium">
+            第 20 课 / 共 11 课
+          </span>
+          <button id="nextLessonBtn" class="flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#1B365D] hover:bg-blue-900 disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-semibold shadow-sm transition cursor-pointer">
+            下一课 →
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- 2C. 右侧边栏：核心单词、重点短语、习惯用法与语法点睛 -->
+    <aside class="lg:col-span-3 xl:col-span-3 flex flex-col gap-4 h-fit lg:sticky lg:top-20">
+
+      <!-- 核心单词 -->
+      <div class="bg-white rounded-2xl border border-stone-200/90 shadow-sm overflow-hidden">
+        <div class="px-4 py-3 bg-stone-50 border-b border-stone-200/80 flex items-center justify-between">
+          <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+            <span>🔤</span> 核心单词 (Vocabulary)
+          </h3>
+          <span class="text-[11px] text-slate-400">点击发音</span>
+        </div>
+        <div id="vocabContainer" class="p-3 space-y-2 max-h-[34vh] overflow-y-auto">
+          <!-- JS 渲染 -->
+        </div>
+      </div>
+
+      <!-- 重点短语与固定搭配 -->
+      <div class="bg-white rounded-2xl border border-stone-200/90 shadow-sm overflow-hidden">
+        <div class="px-4 py-3 bg-stone-50 border-b border-stone-200/80">
+          <h3 class="font-bold text-slate-800 text-sm flex items-center gap-1.5">
+            <span>🔗</span> 重点短语与固定搭配
+          </h3>
+        </div>
+        <div id="phrasesContainer" class="p-3 space-y-2 max-h-[26vh] overflow-y-auto">
+          <!-- JS 渲染 -->
+        </div>
+      </div>
+
+      <!-- 习惯用法与语法点睛 -->
+      <div class="bg-white rounded-2xl border border-stone-200/90 shadow-sm overflow-hidden">
+        <div class="px-4 py-3 bg-amber-50/80 border-b border-amber-200/70">
+          <h3 class="font-bold text-amber-950 text-sm flex items-center gap-1.5">
+            <span>💡</span> 习惯用法与语法点睛
+          </h3>
+        </div>
+        <div id="idiomsContainer" class="p-3.5 space-y-3 text-xs leading-relaxed text-slate-700 max-h-[34vh] overflow-y-auto">
+          <!-- JS 渲染 -->
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- 划词/选句悬浮读音条 -->
+  <div id="selectionPopup" class="hidden fixed z-50 bg-[#1B365D] text-white rounded-xl shadow-xl border border-blue-400/40 px-3 py-1.5 flex items-center gap-2 text-xs">
+    <button id="popupSpeakBtn" class="flex items-center gap-1.5 hover:text-amber-300 font-semibold cursor-pointer">
+      <span>🔊</span>
+      <span id="popupTextPreview" class="max-w-[165px] truncate">朗读选中内容</span>
+    </button>
+    <span class="text-blue-400">|</span>
+    <button id="popupSlowSpeakBtn" class="hover:text-amber-300 text-[11px] cursor-pointer" title="0.7x 慢速精听">
+      慢速
+    </button>
+    <span class="text-blue-400">|</span>
+    <button id="popupCloseBtn" class="hover:text-rose-300 text-[11px] cursor-pointer" title="关闭">
+      ✕
+    </button>
+  </div>
+
+  <!-- 底部状态提示 Toast -->
+  <div id="toastBox" class="hidden fixed bottom-5 right-5 z-50 bg-slate-900/95 text-white text-xs px-4 py-2.5 rounded-xl shadow-lg border border-slate-700">
+    <span id="toastMsg">提示信息</span>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. 《新概念英语第一册》Lesson 1 - Lesson 20 完整课程与多维度句型转换数据
+    // =========================================================================
+    const NCE1_LESSONS = [
+    {
+        "id": 20,
+        "number": "Lesson 20",
+        "title": "Look at them!",
+        "chineseTitle": "看看他们 / 它们！",
+        "grammarTag": "宾格代词 · this / that / these / those",
+        "dialogue": [
+            {
+                "speaker": "Teacher",
+                "en": "Look at the pictures, please.",
+                "zh": "请看这些图片。"
+            },
+            {
+                "speaker": "Tom",
+                "en": "I can see two dogs.",
+                "zh": "我能看见两只狗。"
+            },
+            {
+                "speaker": "Teacher",
+                "en": "Look at them. They are funny.",
+                "zh": "看看它们。它们很有趣。"
+            },
+            {
+                "speaker": "Tom",
+                "en": "I like this dog, but I don't like that one.",
+                "zh": "我喜欢这只狗，但不喜欢那只。"
+            },
+            {
+                "speaker": "Teacher",
+                "en": "And these cats?",
+                "zh": "那么这些猫呢？"
+            },
+            {
+                "speaker": "Tom",
+                "en": "I like them, too.",
+                "zh": "我也喜欢它们。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "I like this dog.",
+                "sourceZh": "我喜欢这只狗。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "I like this dog.",
+                        "zh": "我喜欢这只狗。",
+                        "rule": "一般现在时；实义动词 like 的否定和疑问借助 do。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "I do not (don't) like this dog.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "一般现在时；实义动词 like 的否定和疑问借助 do。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Do you like this dog? — Yes, I do. / No, I don't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "一般现在时；实义动词 like 的否定和疑问借助 do。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which dog do you like? — I like this dog.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "一般现在时；实义动词 like 的否定和疑问借助 do。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "I like this dog, don't I?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "一般现在时；实义动词 like 的否定和疑问借助 do。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "These cats are funny.",
+                "sourceZh": "这些猫很有趣。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "These cats are funny.",
+                        "zh": "这些猫很有趣。",
+                        "rule": "一般现在时；复数主语 these cats 搭配 are。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "These cats are not (aren't) funny.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "一般现在时；复数主语 these cats 搭配 are。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are these cats funny? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "一般现在时；复数主语 these cats 搭配 are。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which cats are funny? — These cats are.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "一般现在时；复数主语 these cats 搭配 are。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "These cats are funny, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "一般现在时；复数主语 these cats 搭配 are。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "look",
+                "phonetic": "/lʊk/",
+                "pos": "v.",
+                "meaning": "看"
+            },
+            {
+                "word": "picture",
+                "phonetic": "/ˈpɪktʃə(r)/",
+                "pos": "n.",
+                "meaning": "图片；照片"
+            },
+            {
+                "word": "funny",
+                "phonetic": "/ˈfʌni/",
+                "pos": "adj.",
+                "meaning": "有趣的；滑稽的"
+            },
+            {
+                "word": "dog",
+                "phonetic": "/dɒɡ/",
+                "pos": "n.",
+                "meaning": "狗"
+            },
+            {
+                "word": "cat",
+                "phonetic": "/kæt/",
+                "pos": "n.",
+                "meaning": "猫"
+            },
+            {
+                "word": "them",
+                "phonetic": "/ðem/",
+                "pos": "pron.",
+                "meaning": "他们；她们；它们（宾格）"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "look at",
+                "zh": "看……；注视……"
+            },
+            {
+                "en": "this one / that one",
+                "zh": "这个 / 那个"
+            },
+            {
+                "en": "these ones / those ones",
+                "zh": "这些 / 那些（口语中常直接用 these / those）"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "人称代词的宾格",
+                "desc": "动词或介词后面常用 me、him、her、it、us、them。例：I like them.（我喜欢它们。）"
+            },
+            {
+                "title": "指示代词",
+                "desc": "this/that 指单数；these/those 指复数。this/these 通常指较近的人或物，that/those 通常指较远的人或物。"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "number": "Lesson 21",
+        "title": "Which book?",
+        "chineseTitle": "哪一本书？",
+        "grammarTag": "Which + 名词 · one 代替前文名词 · give 的用法",
+        "dialogue": [
+            {
+                "speaker": "Jane",
+                "en": "I have three books.",
+                "zh": "我有三本书。"
+            },
+            {
+                "speaker": "Ben",
+                "en": "Which book is yours?",
+                "zh": "哪一本书是你的？"
+            },
+            {
+                "speaker": "Jane",
+                "en": "The blue one is mine.",
+                "zh": "蓝色那本是我的。"
+            },
+            {
+                "speaker": "Ben",
+                "en": "Is this one yours?",
+                "zh": "这一本是你的吗？"
+            },
+            {
+                "speaker": "Jane",
+                "en": "No, it isn't. The blue one is mine.",
+                "zh": "不，不是。蓝色那本是我的。"
+            },
+            {
+                "speaker": "Ben",
+                "en": "Here you are.",
+                "zh": "给你。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "The blue book is mine.",
+                "sourceZh": "这本蓝色的书是我的。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The blue book is mine.",
+                        "zh": "这本蓝色的书是我的。",
+                        "rule": "be 动词句型；mine 独立使用，不再接 book。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The blue book is not mine.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "be 动词句型；mine 独立使用，不再接 book。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is the blue book yours? — Yes, it is. / No, it isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "be 动词句型；mine 独立使用，不再接 book。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which book is yours? — The blue one is.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "be 动词句型；mine 独立使用，不再接 book。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The blue book is mine, isn't it?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "be 动词句型；mine 独立使用，不再接 book。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "Give me a book, please.",
+                "sourceZh": "请给我一本书。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Give me a book, please.",
+                        "zh": "请给我一本书。",
+                        "rule": "give + 人 + 物；me 是宾格，表示给谁。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Don't give me a book now.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "give + 人 + 物；me 是宾格，表示给谁。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you give me a book, please? — Yes, of course.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "give + 人 + 物；me 是宾格，表示给谁。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which book can you give me? — The blue one.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "give + 人 + 物；me 是宾格，表示给谁。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Give me a book, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "give + 人 + 物；me 是宾格，表示给谁。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "which",
+                "phonetic": "/wɪtʃ/",
+                "pos": "det./pron.",
+                "meaning": "哪一个；哪一些"
+            },
+            {
+                "word": "book",
+                "phonetic": "/bʊk/",
+                "pos": "n.",
+                "meaning": "书"
+            },
+            {
+                "word": "one",
+                "phonetic": "/wʌn/",
+                "pos": "pron.",
+                "meaning": "一个；用于代替前文提到的单数名词"
+            },
+            {
+                "word": "blue",
+                "phonetic": "/bluː/",
+                "pos": "adj.",
+                "meaning": "蓝色的"
+            },
+            {
+                "word": "mine",
+                "phonetic": "/maɪn/",
+                "pos": "pron.",
+                "meaning": "我的（东西）"
+            },
+            {
+                "word": "yours",
+                "phonetic": "/jɔːz/",
+                "pos": "pron.",
+                "meaning": "你的；你们的"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "Which book?",
+                "zh": "哪一本书？"
+            },
+            {
+                "en": "the blue one",
+                "zh": "蓝色的那一本"
+            },
+            {
+                "en": "Here you are.",
+                "zh": "给你。"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "Which + 名词",
+                "desc": "Which book? = 哪一本书？Which 后面可以直接接名词，用来询问具体是哪一个。"
+            },
+            {
+                "title": "one 的替代作用",
+                "desc": "one 可以代替前面出现过的单数可数名词，避免重复。The red one = the red book。"
+            },
+            {
+                "title": "名词性物主代词",
+                "desc": "mine、yours 可独立使用，后面不再接名词。"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "number": "Lesson 22",
+        "title": "Give me / Which one?",
+        "chineseTitle": "给我 / 哪一个？",
+        "grammarTag": "give + 人 + 物 · 人称代词宾格 · one",
+        "dialogue": [
+            {
+                "speaker": "Mum",
+                "en": "Please give me a pencil.",
+                "zh": "请给我一支铅笔。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Which one? The short one?",
+                "zh": "哪一支？短的那支吗？"
+            },
+            {
+                "speaker": "Mum",
+                "en": "No, the long one, please.",
+                "zh": "不，请给我长的那支。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Here you are.",
+                "zh": "给你。"
+            },
+            {
+                "speaker": "Mum",
+                "en": "Thank you.",
+                "zh": "谢谢你。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "Please give me the long pencil.",
+                "sourceZh": "请把那支长铅笔给我。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Please give me the long pencil.",
+                        "zh": "请把那支长铅笔给我。",
+                        "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Please don't give me the long pencil.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you give me the long pencil, please? — Yes, of course.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which pencil should you give me? — The long one.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Please give me the long pencil, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "The short one is for her.",
+                "sourceZh": "短的那支是给她的。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The short one is for her.",
+                        "zh": "短的那支是给她的。",
+                        "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The short one is not for her.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is the short one for her? — Yes, it is. / No, it isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which one is for her? — The short one.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The short one is for her, isn't it?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "give",
+                "phonetic": "/ɡɪv/",
+                "pos": "v.",
+                "meaning": "给；给予"
+            },
+            {
+                "word": "pencil",
+                "phonetic": "/ˈpensl/",
+                "pos": "n.",
+                "meaning": "铅笔"
+            },
+            {
+                "word": "long",
+                "phonetic": "/lɒŋ/",
+                "pos": "adj.",
+                "meaning": "长的"
+            },
+            {
+                "word": "short",
+                "phonetic": "/ʃɔːt/",
+                "pos": "adj.",
+                "meaning": "短的"
+            },
+            {
+                "word": "please",
+                "phonetic": "/pliːz/",
+                "pos": "adv.",
+                "meaning": "请"
+            },
+            {
+                "word": "here",
+                "phonetic": "/hɪə(r)/",
+                "pos": "adv.",
+                "meaning": "这里"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "give me",
+                "zh": "给我"
+            },
+            {
+                "en": "give him / her",
+                "zh": "给他 / 她"
+            },
+            {
+                "en": "Which one?",
+                "zh": "哪一个？"
+            },
+            {
+                "en": "Here you are.",
+                "zh": "给你。"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "give + 宾格 + 物品",
+                "desc": "give me a pencil（给我一支铅笔）。me/him/her/us/them 都是宾格。"
+            },
+            {
+                "title": "one 避免重复",
+                "desc": "Which one? 中 one 代替前面提到的 pencil。"
+            },
+            {
+                "title": "礼貌请求",
+                "desc": "Please 可以放在句首或句末：Please give me a pencil. / Give me a pencil, please."
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "number": "Lesson 23",
+        "title": "Which glasses?",
+        "chineseTitle": "哪几副眼镜？",
+        "grammarTag": "these / those · which + 复数名词 · ones",
+        "dialogue": [
+            {
+                "speaker": "Dad",
+                "en": "Please bring me the glasses.",
+                "zh": "请把眼镜拿给我。"
+            },
+            {
+                "speaker": "Lucy",
+                "en": "Which glasses? These ones?",
+                "zh": "哪几副眼镜？这些吗？"
+            },
+            {
+                "speaker": "Dad",
+                "en": "No, the black ones on the desk.",
+                "zh": "不，桌子上那副黑色的。"
+            },
+            {
+                "speaker": "Lucy",
+                "en": "Are these the black ones?",
+                "zh": "这些是黑色那副吗？"
+            },
+            {
+                "speaker": "Dad",
+                "en": "Yes, thank you.",
+                "zh": "是的，谢谢。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "These glasses are black.",
+                "sourceZh": "这些眼镜是黑色的。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "These glasses are black.",
+                        "zh": "这些眼镜是黑色的。",
+                        "rule": "glasses 形式为复数，谓语用 are。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "These glasses are not black.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "glasses 形式为复数，谓语用 are。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are these glasses black? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "glasses 形式为复数，谓语用 are。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which glasses are black? — These glasses are.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "glasses 形式为复数，谓语用 are。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "These glasses are black, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "glasses 形式为复数，谓语用 are。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "The black ones are on the desk.",
+                "sourceZh": "黑色的那些在书桌上。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The black ones are on the desk.",
+                        "zh": "黑色的那些在书桌上。",
+                        "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The black ones are not on the desk.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are the black ones on the desk? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where are the black ones? — They are on the desk.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The black ones are on the desk, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "glasses",
+                "phonetic": "/ˈɡlɑːsɪz/",
+                "pos": "n.",
+                "meaning": "眼镜（通常用复数）"
+            },
+            {
+                "word": "bring",
+                "phonetic": "/brɪŋ/",
+                "pos": "v.",
+                "meaning": "带来；拿来"
+            },
+            {
+                "word": "black",
+                "phonetic": "/blæk/",
+                "pos": "adj.",
+                "meaning": "黑色的"
+            },
+            {
+                "word": "desk",
+                "phonetic": "/desk/",
+                "pos": "n.",
+                "meaning": "书桌；办公桌"
+            },
+            {
+                "word": "those",
+                "phonetic": "/ðəʊz/",
+                "pos": "pron./det.",
+                "meaning": "那些"
+            },
+            {
+                "word": "these",
+                "phonetic": "/ðiːz/",
+                "pos": "pron./det.",
+                "meaning": "这些"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "a pair of glasses",
+                "zh": "一副眼镜"
+            },
+            {
+                "en": "on the desk",
+                "zh": "在书桌上"
+            },
+            {
+                "en": "the black ones",
+                "zh": "黑色的那些"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "these / those",
+                "desc": "these 是 this 的复数，those 是 that 的复数。分别表示近处的这些、远处的那些。"
+            },
+            {
+                "title": "ones 的替代作用",
+                "desc": "ones 代替前面提到的复数可数名词。the black ones = the black glasses。"
+            },
+            {
+                "title": "glasses 通常用复数",
+                "desc": "表示眼镜时常说 These glasses are...；表示一副眼镜可说 a pair of glasses。"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "number": "Lesson 24",
+        "title": "Give me some... / Which ones?",
+        "chineseTitle": "给我一些…… / 哪些？",
+        "grammarTag": "some · 复数宾格代词 · ones",
+        "dialogue": [
+            {
+                "speaker": "Sam",
+                "en": "Please give us some clean cups.",
+                "zh": "请给我们一些干净的杯子。"
+            },
+            {
+                "speaker": "Nina",
+                "en": "Which ones? The white ones?",
+                "zh": "哪些？白色的那些吗？"
+            },
+            {
+                "speaker": "Sam",
+                "en": "Yes, please. Put them on the table.",
+                "zh": "是的，请把它们放在桌子上。"
+            },
+            {
+                "speaker": "Nina",
+                "en": "Here they are.",
+                "zh": "它们在这里。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "Give us some clean cups, please.",
+                "sourceZh": "请给我们一些干净的杯子。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Give us some clean cups, please.",
+                        "zh": "请给我们一些干净的杯子。",
+                        "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Don't give us any dirty cups, please.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you give us some clean cups? — Yes, of course.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Which cups can you give us? — The clean ones.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Give us some clean cups, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "Put them on the table.",
+                "sourceZh": "把它们放在桌子上。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Put them on the table.",
+                        "zh": "把它们放在桌子上。",
+                        "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Don't put them on the table.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you put them on the table? — Yes, I can.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where should you put them? — On the table.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Put them on the table, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "some",
+                "phonetic": "/sʌm/",
+                "pos": "det.",
+                "meaning": "一些"
+            },
+            {
+                "word": "clean",
+                "phonetic": "/kliːn/",
+                "pos": "adj.",
+                "meaning": "干净的"
+            },
+            {
+                "word": "cup",
+                "phonetic": "/kʌp/",
+                "pos": "n.",
+                "meaning": "杯子"
+            },
+            {
+                "word": "put",
+                "phonetic": "/pʊt/",
+                "pos": "v.",
+                "meaning": "放；摆"
+            },
+            {
+                "word": "us",
+                "phonetic": "/ʌs/",
+                "pos": "pron.",
+                "meaning": "我们（宾格）"
+            },
+            {
+                "word": "them",
+                "phonetic": "/ðem/",
+                "pos": "pron.",
+                "meaning": "他们；她们；它们（宾格）"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "some cups",
+                "zh": "一些杯子"
+            },
+            {
+                "en": "put them on the table",
+                "zh": "把它们放在桌子上"
+            },
+            {
+                "en": "Which ones?",
+                "zh": "哪些？"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "some 的基本用法",
+                "desc": "some 常用于肯定句，后面可接复数可数名词或不可数名词。some cups = 一些杯子。"
+            },
+            {
+                "title": "人称代词宾格",
+                "desc": "give us 中 us 是宾格；put them 中 them 是宾格。"
+            },
+            {
+                "title": "ones 指代复数名词",
+                "desc": "Which ones? 用 ones 代替前文提到的复数名词 cups。"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "number": "Lesson 25",
+        "title": "Mrs. Smith's kitchen",
+        "chineseTitle": "史密斯太太的厨房",
+        "grammarTag": "There is · 单数可数名词 · 方位介词",
+        "dialogue": [
+            {
+                "speaker": "Narrator",
+                "en": "The kitchen is small and bright.",
+                "zh": "厨房又小又明亮。"
+            },
+            {
+                "speaker": "Anna",
+                "en": "There is a fridge in the kitchen.",
+                "zh": "厨房里有一台冰箱。"
+            },
+            {
+                "speaker": "Ben",
+                "en": "It is white and it is on the right.",
+                "zh": "它是白色的，在右边。"
+            },
+            {
+                "speaker": "Anna",
+                "en": "There is a table in the middle of the room.",
+                "zh": "房间中间有一张桌子。"
+            },
+            {
+                "speaker": "Ben",
+                "en": "There is a bottle on the table.",
+                "zh": "桌子上有一个瓶子。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "There is a fridge in the kitchen.",
+                "sourceZh": "厨房里有一台冰箱。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "There is a fridge in the kitchen.",
+                        "zh": "厨房里有一台冰箱。",
+                        "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "There is not (isn't) a fridge in the kitchen.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is there a fridge in the kitchen? — Yes, there is. / No, there isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "What is there in the kitchen? — There is a fridge.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "There is a fridge in the kitchen, isn't there?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "The bottle is on the table.",
+                "sourceZh": "瓶子在桌子上。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The bottle is on the table.",
+                        "zh": "瓶子在桌子上。",
+                        "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The bottle is not on the table.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is the bottle on the table? — Yes, it is. / No, it isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where is the bottle? — It is on the table.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The bottle is on the table, isn't it?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "kitchen",
+                "phonetic": "/ˈkɪtʃɪn/",
+                "pos": "n.",
+                "meaning": "厨房"
+            },
+            {
+                "word": "refrigerator",
+                "phonetic": "/rɪˈfrɪdʒəreɪtə(r)/",
+                "pos": "n.",
+                "meaning": "冰箱"
+            },
+            {
+                "word": "fridge",
+                "phonetic": "/frɪdʒ/",
+                "pos": "n.",
+                "meaning": "冰箱（口语）"
+            },
+            {
+                "word": "right",
+                "phonetic": "/raɪt/",
+                "pos": "n./adj.",
+                "meaning": "右边；右边的"
+            },
+            {
+                "word": "left",
+                "phonetic": "/left/",
+                "pos": "n./adj.",
+                "meaning": "左边；左边的"
+            },
+            {
+                "word": "bottle",
+                "phonetic": "/ˈbɒtl/",
+                "pos": "n.",
+                "meaning": "瓶子"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "in the kitchen",
+                "zh": "在厨房里"
+            },
+            {
+                "en": "on the right / left",
+                "zh": "在右边 / 左边"
+            },
+            {
+                "en": "in the middle of",
+                "zh": "在……中间"
+            },
+            {
+                "en": "on the table",
+                "zh": "在桌子上"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "There is + 单数名词",
+                "desc": "表示某处有一个人或物。There is a fridge in the kitchen.（厨房里有一台冰箱。）"
+            },
+            {
+                "title": "There is 与 It is 不同",
+                "desc": "There is 引出某处存在的东西；It is 用来继续描述已经提到的东西。"
+            },
+            {
+                "title": "地点表达",
+                "desc": "in the kitchen（在厨房里）；on the table（在桌面上）；in the middle of the room（在房间中间）。"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "number": "Lesson 26",
+        "title": "Where is it?",
+        "chineseTitle": "它在哪里？",
+        "grammarTag": "Where 引导的特殊疑问句 · 方位介词",
+        "dialogue": [
+            {
+                "speaker": "Mia",
+                "en": "Where is the cup?",
+                "zh": "杯子在哪里？"
+            },
+            {
+                "speaker": "Leo",
+                "en": "It is in the cupboard.",
+                "zh": "它在碗柜里。"
+            },
+            {
+                "speaker": "Mia",
+                "en": "And where is the bottle?",
+                "zh": "那么瓶子在哪里？"
+            },
+            {
+                "speaker": "Leo",
+                "en": "It is behind the door.",
+                "zh": "它在门后面。"
+            },
+            {
+                "speaker": "Mia",
+                "en": "Is the plate on the table?",
+                "zh": "盘子在桌子上吗？"
+            },
+            {
+                "speaker": "Leo",
+                "en": "Yes, it is.",
+                "zh": "是的。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "The cup is in the cupboard.",
+                "sourceZh": "杯子在碗柜里。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The cup is in the cupboard.",
+                        "zh": "杯子在碗柜里。",
+                        "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The cup is not in the cupboard.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is the cup in the cupboard? — Yes, it is. / No, it isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where is the cup? — It is in the cupboard.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The cup is in the cupboard, isn't it?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "The bottle is behind the door.",
+                "sourceZh": "瓶子在门后面。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The bottle is behind the door.",
+                        "zh": "瓶子在门后面。",
+                        "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The bottle is not behind the door.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Is the bottle behind the door? — Yes, it is. / No, it isn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where is the bottle? — It is behind the door.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The bottle is behind the door, isn't it?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "where",
+                "phonetic": "/weə(r)/",
+                "pos": "adv.",
+                "meaning": "在哪里"
+            },
+            {
+                "word": "cupboard",
+                "phonetic": "/ˈkʌbəd/",
+                "pos": "n.",
+                "meaning": "碗柜；橱柜"
+            },
+            {
+                "word": "behind",
+                "phonetic": "/bɪˈhaɪnd/",
+                "pos": "prep.",
+                "meaning": "在……后面"
+            },
+            {
+                "word": "under",
+                "phonetic": "/ˈʌndə(r)/",
+                "pos": "prep.",
+                "meaning": "在……下面"
+            },
+            {
+                "word": "plate",
+                "phonetic": "/pleɪt/",
+                "pos": "n.",
+                "meaning": "盘子"
+            },
+            {
+                "word": "door",
+                "phonetic": "/dɔː(r)/",
+                "pos": "n.",
+                "meaning": "门"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "in the cupboard",
+                "zh": "在碗柜里"
+            },
+            {
+                "en": "behind the door",
+                "zh": "在门后面"
+            },
+            {
+                "en": "under the table",
+                "zh": "在桌子下面"
+            },
+            {
+                "en": "on the plate",
+                "zh": "在盘子上"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "Where is + 单数名词?",
+                "desc": "询问一个人或物在哪里。回答常用 It is...。"
+            },
+            {
+                "title": "方位介词",
+                "desc": "in 在里面；on 在表面；under 在下面；behind 在后面；near 在附近。"
+            },
+            {
+                "title": "问句语序",
+                "desc": "Where + is + 主语？不能说 Where the cup is? 来直接提问。"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "number": "Lesson 27",
+        "title": "Mrs. Smith's living room",
+        "chineseTitle": "史密斯太太的客厅",
+        "grammarTag": "There is / There are · 复数名词 · some",
+        "dialogue": [
+            {
+                "speaker": "Narrator",
+                "en": "The living room is large.",
+                "zh": "客厅很大。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "There is a television near the window.",
+                "zh": "窗户旁边有一台电视。"
+            },
+            {
+                "speaker": "Jack",
+                "en": "There are some magazines on the table.",
+                "zh": "桌子上有一些杂志。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "There are two armchairs near the sofa.",
+                "zh": "沙发旁边有两把扶手椅。"
+            },
+            {
+                "speaker": "Jack",
+                "en": "There are some pictures on the wall.",
+                "zh": "墙上有一些画。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "There are some magazines on the table.",
+                "sourceZh": "桌子上有一些杂志。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "There are some magazines on the table.",
+                        "zh": "桌子上有一些杂志。",
+                        "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "There are not (aren't) any magazines on the table.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are there any magazines on the table? — Yes, there are. / No, there aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "What is there on the table? — There are some magazines.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "There are some magazines on the table, aren't there?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "The armchairs are near the sofa.",
+                "sourceZh": "扶手椅在沙发旁边。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The armchairs are near the sofa.",
+                        "zh": "扶手椅在沙发旁边。",
+                        "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The armchairs are not near the sofa.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are the armchairs near the sofa? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where are the armchairs? — They are near the sofa.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The armchairs are near the sofa, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "living room",
+                "phonetic": "/ˈlɪvɪŋ ruːm/",
+                "pos": "n.",
+                "meaning": "客厅"
+            },
+            {
+                "word": "television",
+                "phonetic": "/ˈtelɪvɪʒn/",
+                "pos": "n.",
+                "meaning": "电视机"
+            },
+            {
+                "word": "magazine",
+                "phonetic": "/ˌmæɡəˈziːn/",
+                "pos": "n.",
+                "meaning": "杂志"
+            },
+            {
+                "word": "armchair",
+                "phonetic": "/ˈɑːmtʃeə(r)/",
+                "pos": "n.",
+                "meaning": "扶手椅"
+            },
+            {
+                "word": "sofa",
+                "phonetic": "/ˈsəʊfə/",
+                "pos": "n.",
+                "meaning": "沙发"
+            },
+            {
+                "word": "wall",
+                "phonetic": "/wɔːl/",
+                "pos": "n.",
+                "meaning": "墙"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "in the living room",
+                "zh": "在客厅里"
+            },
+            {
+                "en": "near the window",
+                "zh": "在窗户旁边"
+            },
+            {
+                "en": "on the wall",
+                "zh": "在墙上"
+            },
+            {
+                "en": "some magazines",
+                "zh": "一些杂志"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "There are + 复数名词",
+                "desc": "表示某处有多个东西。There are some magazines on the table.（桌上有一些杂志。）"
+            },
+            {
+                "title": "There is / There are",
+                "desc": "后面是单数名词用 There is；后面是复数名词用 There are。"
+            },
+            {
+                "title": "some + 复数名词",
+                "desc": "some magazines、some pictures；some 在肯定句中表示一些。"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "number": "Lesson 28",
+        "title": "Where are they?",
+        "chineseTitle": "它们在哪里？",
+        "grammarTag": "Where are...? · 复数代词 they / them · 方位介词",
+        "dialogue": [
+            {
+                "speaker": "Mum",
+                "en": "Where are the books?",
+                "zh": "书在哪里？"
+            },
+            {
+                "speaker": "Ella",
+                "en": "They are on the shelf.",
+                "zh": "它们在架子上。"
+            },
+            {
+                "speaker": "Mum",
+                "en": "Where are the shoes?",
+                "zh": "鞋子在哪里？"
+            },
+            {
+                "speaker": "Ella",
+                "en": "They are under the bed.",
+                "zh": "它们在床下面。"
+            },
+            {
+                "speaker": "Mum",
+                "en": "And where are the keys?",
+                "zh": "钥匙在哪里？"
+            },
+            {
+                "speaker": "Ella",
+                "en": "They are near the door.",
+                "zh": "它们在门旁边。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "The books are on the shelf.",
+                "sourceZh": "书在架子上。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "The books are on the shelf.",
+                        "zh": "书在架子上。",
+                        "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "The books are not on the shelf.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are the books on the shelf? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where are the books? — They are on the shelf.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "The books are on the shelf, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "They are under the bed.",
+                "sourceZh": "它们在床下面。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "They are under the bed.",
+                        "zh": "它们在床下面。",
+                        "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "They are not under the bed.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Are they under the bed? — Yes, they are. / No, they aren't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where are they? — They are under the bed.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "They are under the bed, aren't they?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "shelf",
+                "phonetic": "/ʃelf/",
+                "pos": "n.",
+                "meaning": "架子；搁板"
+            },
+            {
+                "word": "shoe",
+                "phonetic": "/ʃuː/",
+                "pos": "n.",
+                "meaning": "鞋"
+            },
+            {
+                "word": "key",
+                "phonetic": "/kiː/",
+                "pos": "n.",
+                "meaning": "钥匙"
+            },
+            {
+                "word": "bed",
+                "phonetic": "/bed/",
+                "pos": "n.",
+                "meaning": "床"
+            },
+            {
+                "word": "they",
+                "phonetic": "/ðeɪ/",
+                "pos": "pron.",
+                "meaning": "他们；她们；它们（主格）"
+            },
+            {
+                "word": "them",
+                "phonetic": "/ðem/",
+                "pos": "pron.",
+                "meaning": "他们；她们；它们（宾格）"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "on the shelf",
+                "zh": "在架子上"
+            },
+            {
+                "en": "under the bed",
+                "zh": "在床下面"
+            },
+            {
+                "en": "near the door",
+                "zh": "在门旁边"
+            },
+            {
+                "en": "Where are they?",
+                "zh": "它们在哪里？"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "Where are + 复数主语?",
+                "desc": "询问多个东西的位置。回答用 They are...。"
+            },
+            {
+                "title": "they 和 them",
+                "desc": "they 作主语；them 作宾语。They are here.（它们在这里。）I can see them.（我能看见它们。）"
+            },
+            {
+                "title": "名词复数",
+                "desc": "book → books；shoe → shoes；key → keys。"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "number": "Lesson 29",
+        "title": "Come in, Amy.",
+        "chineseTitle": "进来，艾米。",
+        "grammarTag": "祈使句 · 动词原形开头 · 否定祈使句",
+        "dialogue": [
+            {
+                "speaker": "Mrs. Lee",
+                "en": "Come in, Amy.",
+                "zh": "进来，艾米。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Good morning, Mrs. Lee.",
+                "zh": "早上好，李太太。"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "Please open the window.",
+                "zh": "请打开窗户。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "All right.",
+                "zh": "好的。"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "Then put the books on the shelf.",
+                "zh": "然后把书放到架子上。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Shall I close the door?",
+                "zh": "我需要关门吗？"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "No, don't close it, please.",
+                "zh": "不，请不要关它。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "Open the window, please.",
+                "sourceZh": "请打开窗户。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Open the window, please.",
+                        "zh": "请打开窗户。",
+                        "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Don't open the window, please.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you open the window, please? — Yes, of course.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "What should you open? — The window.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Open the window, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "Put the books on the shelf.",
+                "sourceZh": "把书放到架子上。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "Put the books on the shelf.",
+                        "zh": "把书放到架子上。",
+                        "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "Don't put the books on the shelf.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Can you put the books on the shelf? — Yes, I can.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "Where should you put the books? — On the shelf.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "Put the books on the shelf, will you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "come",
+                "phonetic": "/kʌm/",
+                "pos": "v.",
+                "meaning": "来"
+            },
+            {
+                "word": "shut",
+                "phonetic": "/ʃʌt/",
+                "pos": "v.",
+                "meaning": "关闭"
+            },
+            {
+                "word": "open",
+                "phonetic": "/ˈəʊpən/",
+                "pos": "v.",
+                "meaning": "打开"
+            },
+            {
+                "word": "untidy",
+                "phonetic": "/ʌnˈtaɪdi/",
+                "pos": "adj.",
+                "meaning": "不整洁的"
+            },
+            {
+                "word": "window",
+                "phonetic": "/ˈwɪndəʊ/",
+                "pos": "n.",
+                "meaning": "窗户"
+            },
+            {
+                "word": "wardrobe",
+                "phonetic": "/ˈwɔːdrəʊb/",
+                "pos": "n.",
+                "meaning": "衣柜"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "come in",
+                "zh": "进来"
+            },
+            {
+                "en": "open / shut the window",
+                "zh": "打开 / 关上窗户"
+            },
+            {
+                "en": "put ... in ...",
+                "zh": "把……放进……"
+            },
+            {
+                "en": "make the bed",
+                "zh": "整理床铺"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "祈使句",
+                "desc": "表示命令、请求或建议，通常用动词原形开头。Open the window.（打开窗户。）"
+            },
+            {
+                "title": "否定祈使句",
+                "desc": "Don't + 动词原形。Don't close the door.（不要关门。）"
+            },
+            {
+                "title": "please 的位置",
+                "desc": "Please 可放在句首，也可放在句末，让语气更礼貌。"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "number": "Lesson 30",
+        "title": "What must I do?",
+        "chineseTitle": "我应该做什么？",
+        "grammarTag": "情态动词 must · mustn't · must + 动词原形",
+        "dialogue": [
+            {
+                "speaker": "Amy",
+                "en": "What must I do first?",
+                "zh": "我首先必须做什么？"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "You must air the room.",
+                "zh": "你必须给房间通风。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Must I make the bed now?",
+                "zh": "我现在必须整理床铺吗？"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "Yes, you must. Then dust the table.",
+                "zh": "是的，必须。然后擦桌子。"
+            },
+            {
+                "speaker": "Amy",
+                "en": "Must I sweep the floor, too?",
+                "zh": "我也必须扫地吗？"
+            },
+            {
+                "speaker": "Mrs. Lee",
+                "en": "No, you needn't. I can do it.",
+                "zh": "不，你不必。我可以做。"
+            }
+        ],
+        "transformations": [
+            {
+                "sourceSentence": "You must make the bed.",
+                "sourceZh": "你必须整理床铺。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "You must make the bed.",
+                        "zh": "你必须整理床铺。",
+                        "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "You must not (mustn't) make the bed now.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Must you make the bed now? — Yes, I must. / No, I needn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "What must you do? — I must make the bed.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "You must make the bed, mustn't you?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                    }
+                ]
+            },
+            {
+                "sourceSentence": "I must sweep the floor.",
+                "sourceZh": "我必须扫地。",
+                "dimensions": [
+                    {
+                        "label": "肯定句",
+                        "en": "I must sweep the floor.",
+                        "zh": "我必须扫地。",
+                        "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                    },
+                    {
+                        "label": "否定句",
+                        "en": "I must not (mustn't) sweep the floor now.",
+                        "zh": "注意否定结构和助动词 / be 动词的位置。",
+                        "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                    },
+                    {
+                        "label": "一般疑问及简答",
+                        "en": "Must I sweep the floor? — Yes, you must. / No, you needn't.",
+                        "zh": "根据句子结构调整语序，并使用对应的简短回答。",
+                        "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                    },
+                    {
+                        "label": "特殊疑问句",
+                        "en": "What must I do? — You must sweep the floor.",
+                        "zh": "根据句中需要询问的信息选择合适的疑问词。",
+                        "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                    },
+                    {
+                        "label": "反意疑问句 / 补充练习",
+                        "en": "I must sweep the floor, mustn't I?",
+                        "zh": "注意前后肯定与否定形式的对应。",
+                        "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                    }
+                ]
+            }
+        ],
+        "vocabulary": [
+            {
+                "word": "must",
+                "phonetic": "/mʌst/",
+                "pos": "modal v.",
+                "meaning": "必须；应该"
+            },
+            {
+                "word": "air",
+                "phonetic": "/eə(r)/",
+                "pos": "v.",
+                "meaning": "使通风"
+            },
+            {
+                "word": "room",
+                "phonetic": "/ruːm/",
+                "pos": "n.",
+                "meaning": "房间"
+            },
+            {
+                "word": "make",
+                "phonetic": "/meɪk/",
+                "pos": "v.",
+                "meaning": "制作；整理"
+            },
+            {
+                "word": "dust",
+                "phonetic": "/dʌst/",
+                "pos": "v.",
+                "meaning": "掸掉灰尘"
+            },
+            {
+                "word": "sweep",
+                "phonetic": "/swiːp/",
+                "pos": "v.",
+                "meaning": "扫；打扫"
+            },
+            {
+                "word": "floor",
+                "phonetic": "/flɔː(r)/",
+                "pos": "n.",
+                "meaning": "地板"
+            }
+        ],
+        "phrases": [
+            {
+                "en": "air the room",
+                "zh": "给房间通风"
+            },
+            {
+                "en": "make the bed",
+                "zh": "整理床铺"
+            },
+            {
+                "en": "dust the table",
+                "zh": "擦桌子；掸桌上的灰尘"
+            },
+            {
+                "en": "sweep the floor",
+                "zh": "扫地"
+            }
+        ],
+        "idioms": [
+            {
+                "title": "must + 动词原形",
+                "desc": "must 是情态动词，后面必须接动词原形。You must clean the room.（你必须打扫房间。）"
+            },
+            {
+                "title": "mustn't 表示禁止",
+                "desc": "mustn't = must not，表示不可以、禁止做某事，不是“不必”。"
+            },
+            {
+                "title": "Must I...?",
+                "desc": "Must I clean it?（我必须打扫它吗？）肯定回答 Yes, you must.；否定回答可用 No, you needn't. 表示不必。"
+            }
+        ]
+    }
+];;
+
+    // =========================================================================
+    // 2. 学习历史记录管理（localStorage 精确到秒 YYYY-MM-DD HH:mm:ss）
+    // =========================================================================
+    const STORAGE_HISTORY_KEY = "nce1_l20_l30_history_v1";
+    let currentLessonId = 20;
+    let showChinese = true;
+    let selectedTextCache = "";
+
+    function formatTimestamp(date = new Date()) {
+      const p = (n) => String(n).padStart(2, "0");
+      return `${date.getFullYear()}-${p(date.getMonth() + 1)}-${p(date.getDate())} ${p(date.getHours())}:${p(date.getMinutes())}:${p(date.getSeconds())}`;
+    }
+
+    function readHistory() {
+      try {
+        const raw = localStorage.getItem(STORAGE_HISTORY_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch (err) {
+        console.warn("读取历史记录失败:", err);
+        return [];
+      }
+    }
+
+    function saveHistory(list) {
+      try {
+        localStorage.setItem(STORAGE_HISTORY_KEY, JSON.stringify(list));
+      } catch (err) {
+        console.warn("保存历史记录失败:", err);
+      }
+    }
+
+    // 记录某课的学习时间点并刷新顶部与侧边栏显示
+    function recordStudyTimestamp(lesson) {
+      const ts = formatTimestamp(new Date());
+      let list = readHistory();
+
+      if (list.length > 0 && list[0].lessonId === lesson.id) {
+        list[0].timestamp = ts;
+        list[0].title = lesson.title;
+        list[0].number = lesson.number;
+      } else {
+        list.unshift({
+          lessonId: lesson.id,
+          number: lesson.number,
+          title: lesson.title,
+          timestamp: ts
+        });
+      }
+
+      list = list.slice(0, 20);
+      saveHistory(list);
+      renderHistoryPanels(list);
+    }
+
+    function renderHistoryPanels(list) {
+      const topBadgeText = document.getElementById("lastHistoryText");
+      const sidebarList = document.getElementById("sidebarHistoryList");
+
+      if (!list || list.length === 0) {
+        topBadgeText.textContent = "暂无记录 · 正在记录";
+        sidebarList.innerHTML = `<p class="text-slate-400 italic">暂无历史学习记录</p>`;
+        return;
+      }
+
+      const latest = list[0];
+      topBadgeText.textContent = `第 ${latest.lessonId} 课 · ${latest.timestamp}`;
+
+      sidebarList.innerHTML = list.map((item, index) => `
+        <div onclick="goToLesson(${item.lessonId})" class="p-2 rounded-lg border ${
+          index === 0
+            ? "bg-blue-50/80 border-blue-200 text-blue-950"
+            : "bg-white border-slate-200/70 hover:bg-slate-50 text-slate-700"
+        } cursor-pointer transition">
+          <div class="flex items-center justify-between font-semibold">
+            <span class="truncate">${item.number} · ${item.title}</span>
+            ${index === 0 ? '<span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 shrink-0">最新</span>' : ''}
+          </div>
+          <div class="text-[10px] text-slate-400 font-mono mt-0.5">${item.timestamp}</div>
+        </div>
+      `).join("");
+    }
+
+    // =========================================================================
+    // 3. 语音合成 (speechSynthesis) 与划词/选句自动朗读
+    // =========================================================================
+    function stopAllSpeech() {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      document.querySelectorAll(".speaking-active").forEach(el => el.classList.remove("speaking-active"));
+    }
+
+    function speakEnglish(text, overrideRate = null) {
+      if (!text || !text.trim()) return;
+      if (!("speechSynthesis" in window)) {
+        showToast("当前浏览器不支持语音合成 speechSynthesis");
+        return;
+      }
+
+      stopAllSpeech();
+
+      // 提取英文部分（若选区中含中英文混合或括号说明，优先保留英文并清理多余符号）
+      const cleaned = text
+        .replace(/—/g, ". ")
+        .replace(/[\u4e00-\u9fa5（），。？！：；“”‘’]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const targetText = cleaned || text.trim();
+      const utterance = new SpeechSynthesisUtterance(targetText);
+      const accent = document.getElementById("accentSelect").value || "en-US";
+      const rate = overrideRate !== null
+        ? overrideRate
+        : (parseFloat(document.getElementById("rateSelect").value) || 1.0);
+
+      utterance.lang = accent;
+      utterance.rate = rate;
+      utterance.pitch = 1.0;
+
+      const voices = window.speechSynthesis.getVoices();
+      if (voices && voices.length > 0) {
+        const matched = voices.find(v => v.lang === accent)
+          || voices.find(v => v.lang.toLowerCase().startsWith(accent.slice(0, 2).toLowerCase()));
+        if (matched) {
+          utterance.voice = matched;
+        }
+      }
+
+      utterance.onerror = () => {
+        showToast("语音播放遇到兼容问题，请检查系统语音包");
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function speakSentenceQueue(sentences, elementIds = []) {
+      if (!("speechSynthesis" in window)) {
+        showToast("当前浏览器不支持语音合成");
+        return;
+      }
+      stopAllSpeech();
+
+      const accent = document.getElementById("accentSelect").value || "en-US";
+      const rate = parseFloat(document.getElementById("rateSelect").value) || 1.0;
+      const voices = window.speechSynthesis.getVoices();
+      const matchedVoice = voices && voices.length > 0
+        ? (voices.find(v => v.lang === accent) || voices.find(v => v.lang.toLowerCase().startsWith("en")))
+        : null;
+
+      sentences.forEach((rawLine, idx) => {
+        const line = rawLine.replace(/—/g, ". ").trim();
+        if (!line) return;
+
+        const utter = new SpeechSynthesisUtterance(line);
+        utter.lang = accent;
+        utter.rate = rate;
+        if (matchedVoice) utter.voice = matchedVoice;
+
+        utter.onstart = () => {
+          document.querySelectorAll(".speaking-active").forEach(el => el.classList.remove("speaking-active"));
+          if (elementIds[idx]) {
+            const node = document.getElementById(elementIds[idx]);
+            if (node) {
+              node.classList.add("speaking-active");
+              node.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+          }
+        };
+
+        utter.onend = () => {
+          if (idx === sentences.length - 1) {
+            document.querySelectorAll(".speaking-active").forEach(el => el.classList.remove("speaking-active"));
+          }
+        };
+
+        window.speechSynthesis.speak(utter);
+      });
+    }
+
+    // 监听鼠标划词或选句释放事件
+    document.addEventListener("mouseup", (e) => {
+      const popup = document.getElementById("selectionPopup");
+      if (popup.contains(e.target)) return;
+
+      setTimeout(() => {
+        const sel = window.getSelection();
+        const text = sel ? sel.toString().trim() : "";
+
+        if (text && /[a-zA-Z]/.test(text) && text.length <= 400) {
+          selectedTextCache = text;
+          const range = sel.getRangeAt(0);
+          const rect = range.getBoundingClientRect();
+
+          document.getElementById("popupTextPreview").textContent =
+            text.length > 24 ? text.slice(0, 24) + "..." : text;
+
+          const left = Math.min(window.innerWidth - 250, Math.max(12, rect.left + rect.width / 2 - 100));
+          const top = Math.max(66, rect.top - 44);
+          popup.style.left = `${left}px`;
+          popup.style.top = `${top}px`;
+          popup.classList.remove("hidden");
+
+          if (document.getElementById("autoSelectSpeakToggle").checked) {
+            speakEnglish(text);
+          }
+        } else if (!text) {
+          popup.classList.add("hidden");
+        }
+      }, 15);
+    });
+
+    document.getElementById("popupSpeakBtn").addEventListener("click", () => {
+      if (selectedTextCache) speakEnglish(selectedTextCache);
+    });
+    document.getElementById("popupSlowSpeakBtn").addEventListener("click", () => {
+      if (selectedTextCache) speakEnglish(selectedTextCache, 0.7);
+    });
+    document.getElementById("popupCloseBtn").addEventListener("click", () => {
+      document.getElementById("selectionPopup").classList.add("hidden");
+    });
+
+    // =========================================================================
+    // 4. 页面渲染（L20–L30 课程目录 + 课文精读 + 逐句多维度转换 + 右侧词汇习惯用法）
+    // =========================================================================
+    function escapeForAttr(str) {
+      return String(str).replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, "&quot;");
+    }
+
+    function getDimensionBadgeStyle(label) {
+      if (label.includes("肯定句")) return "bg-emerald-100 text-emerald-800 border-emerald-200";
+      if (label.includes("否定句")) return "bg-rose-100 text-rose-800 border-rose-200";
+      if (label.includes("一般疑问")) return "bg-blue-100 text-blue-800 border-blue-200";
+      return "bg-purple-100 text-purple-800 border-purple-200";
+    }
+
+    function renderLessonCatalog() {
+      const nav = document.getElementById("lessonListNav");
+      const visited = new Set(readHistory().map(h => h.lessonId));
+
+      nav.innerHTML = NCE1_LESSONS.map(lesson => {
+        const active = lesson.id === currentLessonId;
+        const done = visited.has(lesson.id);
+        return `
+          <button
+            onclick="goToLesson(${lesson.id})"
+            class="w-full text-left px-3 py-2 rounded-xl border transition flex items-center justify-between gap-2 cursor-pointer ${
+              active
+                ? "bg-[#1B365D] text-white border-[#1B365D] shadow-sm"
+                : "bg-white hover:bg-stone-50 text-slate-700 border-stone-200/70"
+            }"
+          >
+            <div class="min-w-0">
+              <div class="flex items-center gap-1.5">
+                <span class="text-xs font-bold ${active ? "text-amber-300" : "text-[#1B365D]"}">${lesson.number}</span>
+                ${done && !active ? '<span class="w-1.5 h-1.5 rounded-full bg-emerald-500" title="已学过"></span>' : ''}
+              </div>
+              <div class="text-xs font-medium truncate ${active ? "text-white" : "text-slate-800"}">${lesson.title}</div>
+              <div class="text-[11px] truncate ${active ? "text-blue-200" : "text-slate-400"}">${lesson.chineseTitle}</div>
+            </div>
+            <span class="text-xs ${active ? "text-amber-300" : "text-slate-300"}">›</span>
+          </button>
+        `;
+      }).join("");
+
+      document.getElementById("progressBadge").textContent = `${currentLessonId} / ${NCE1_LESSONS.length}`;
+    }
+
+    function renderCurrentLesson(lesson) {
+      document.getElementById("headerCurrentLesson").textContent = `正在学习：${lesson.number} ${lesson.title}`;
+      document.getElementById("lessonBadge").textContent = lesson.number.toUpperCase();
+      document.getElementById("lessonGrammarTag").textContent = lesson.grammarTag;
+      document.getElementById("lessonEnglishTitle").textContent = lesson.title;
+      document.getElementById("lessonChineseTitle").textContent = lesson.chineseTitle;
+      document.getElementById("drillCountBadge").textContent = `本课共 ${lesson.transformations.length} 组句型转换`;
+      document.getElementById("bottomPageIndicator").textContent = `第 ${lesson.id} 课 / 共 ${NCE1_LESSONS.length} 课`;
+
+      document.getElementById("prevLessonBtn").disabled = lesson.id <= 20;
+      document.getElementById("nextLessonBtn").disabled = lesson.id >= 30;
+
+      // 课文与情景练习
+      const textBox = document.getElementById("originalTextContainer");
+      textBox.innerHTML = lesson.dialogue.map((line, idx) => `
+        <div id="orig-line-${idx}" class="flex items-start justify-between gap-3 p-2.5 rounded-xl bg-white border border-stone-200/70 hover:border-blue-300 transition">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-stone-100 text-slate-600 shrink-0">${line.speaker}</span>
+              <p class="text-sm sm:text-[15px] font-medium text-slate-900 leading-relaxed">${line.en}</p>
+            </div>
+            <p class="zh-line text-xs text-slate-500 mt-1 pl-1 ${showChinese ? "" : "hidden"}">${line.zh}</p>
+          </div>
+          <button
+            onclick="speakEnglish('${escapeForAttr(line.en)}')"
+            class="shrink-0 p-2 rounded-lg bg-stone-50 hover:bg-blue-50 text-slate-600 hover:text-[#1B365D] border border-stone-200/80 transition cursor-pointer"
+            title="朗读此句"
+          >
+            🔊
+          </button>
+        </div>
+      `).join("");
+
+      // 逐句多维度句型转换
+      const drillBox = document.getElementById("fourSentencesContainer");
+      drillBox.innerHTML = lesson.transformations.map((group, gIdx) => `
+        <div class="rounded-2xl bg-[#FAF8F5] border border-stone-200/90 p-4 sm:p-5">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-200/70">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-full bg-[#1B365D] text-white text-xs flex items-center justify-center font-bold shrink-0">${gIdx + 1}</span>
+                <span class="text-sm font-bold text-slate-900">原句：${group.sourceSentence}</span>
+              </div>
+              <p class="zh-line text-xs text-slate-500 mt-1 pl-8 ${showChinese ? "" : "hidden"}">译文：${group.sourceZh} · 共 ${group.dimensions.length} 种句型转换</p>
+            </div>
+            <button
+              onclick="playGroupDimensions(${gIdx})"
+              class="text-xs px-3 py-1.5 rounded-xl bg-white hover:bg-blue-50 text-[#1B365D] border border-stone-200 font-semibold transition cursor-pointer"
+            >
+              🔊 连读本组全部 (${group.dimensions.length}句)
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            ${group.dimensions.map((dim, dIdx) => `
+              <div id="dim-card-${gIdx}-${dIdx}" class="bg-white rounded-xl border border-stone-200/80 hover:border-blue-300 p-3.5 shadow-2xs transition flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span class="text-[11px] font-bold px-2 py-0.5 rounded-md border ${getDimensionBadgeStyle(dim.label)}">
+                      ${dim.label}
+                    </span>
+                    <button
+                      onclick="speakEnglish('${escapeForAttr(dim.en)}')"
+                      class="w-7 h-7 rounded-lg bg-stone-50 hover:bg-blue-50 text-slate-600 hover:text-[#1B365D] flex items-center justify-center border border-stone-200/80 transition cursor-pointer shrink-0"
+                      title="朗读此句型"
+                    >
+                      🔊
+                    </button>
+                  </div>
+                  <p class="text-sm font-semibold text-slate-900 leading-snug">${dim.en}</p>
+                  <p class="zh-line text-xs text-slate-500 mt-1 ${showChinese ? "" : "hidden"}">${dim.zh}</p>
+                </div>
+                <div class="mt-2.5 pt-2 border-t border-stone-100 text-[11px] text-slate-600 flex items-start gap-1">
+                  <span class="text-amber-700 font-bold shrink-0">要点：</span>
+                  <span>${dim.rule}</span>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+
+      // 右侧核心单词
+      document.getElementById("vocabContainer").innerHTML = lesson.vocabulary.map(v => `
+        <div
+          onclick="speakEnglish('${escapeForAttr(v.word)}')"
+          class="group p-2.5 rounded-xl bg-stone-50/70 hover:bg-blue-50/80 border border-stone-200/70 hover:border-blue-300 transition cursor-pointer flex items-center justify-between gap-2"
+        >
+          <div class="min-w-0">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-bold text-sm text-slate-900 group-hover:text-[#1B365D]">${v.word}</span>
+              <span class="text-[11px] text-slate-400 font-mono">${v.phonetic}</span>
+            </div>
+            <div class="text-xs text-slate-600 mt-0.5">
+              <span class="italic text-amber-700 font-medium mr-1">${v.pos}</span>${v.meaning}
+            </div>
+          </div>
+          <span class="text-xs opacity-60 group-hover:opacity-100 shrink-0">🔊</span>
+        </div>
+      `).join("");
+
+      // 右侧重点短语
+      document.getElementById("phrasesContainer").innerHTML = lesson.phrases.map(p => `
+        <div
+          onclick="speakEnglish('${escapeForAttr(p.en)}')"
+          class="p-2.5 rounded-xl bg-stone-50/60 hover:bg-blue-50/70 border border-stone-200/60 hover:border-blue-300 transition cursor-pointer flex items-center justify-between gap-2"
+        >
+          <div class="min-w-0">
+            <div class="text-xs font-semibold text-[#1B365D]">${p.en}</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">${p.zh}</div>
+          </div>
+          <span class="text-xs text-slate-400 shrink-0">🔊</span>
+        </div>
+      `).join("");
+
+      // 右侧习惯用法与语法点睛
+      document.getElementById("idiomsContainer").innerHTML = lesson.idioms.map(item => `
+        <div class="p-3 rounded-xl bg-amber-50/45 border border-amber-200/70">
+          <div class="font-bold text-amber-950 mb-1">✦ ${item.title}</div>
+          <p class="text-slate-700 text-xs leading-relaxed">${item.desc}</p>
+        </div>
+      `).join("");
+    }
+
+    function goToLesson(lessonId, shouldRecord = true) {
+      const target = NCE1_LESSONS.find(l => l.id === lessonId) || NCE1_LESSONS[0];
+      currentLessonId = target.id;
+      stopAllSpeech();
+
+      if (shouldRecord) {
+        recordStudyTimestamp(target);
+      }
+
+      renderLessonCatalog();
+      renderCurrentLesson(target);
+
+      if (window.innerWidth < 1024) {
+        document.getElementById("leftSidebar").classList.add("hidden");
+      }
+    }
+
+    function playGroupDimensions(groupIdx) {
+      const lesson = NCE1_LESSONS.find(l => l.id === currentLessonId);
+      if (!lesson || !lesson.transformations[groupIdx]) return;
+      const dims = lesson.transformations[groupIdx].dimensions;
+      const sentences = dims.map(d => d.en);
+      const ids = dims.map((_, dIdx) => `dim-card-${groupIdx}-${dIdx}`);
+      speakSentenceQueue(sentences, ids);
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById("toastBox");
+      document.getElementById("toastMsg").textContent = msg;
+      box.classList.remove("hidden");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => box.classList.add("hidden"), 2800);
+    }
+
+    // =========================================================================
+    // 5. 事件绑定与启动初始化
+    // =========================================================================
+    document.getElementById("playFullTextBtn").addEventListener("click", () => {
+      const lesson = NCE1_LESSONS.find(l => l.id === currentLessonId);
+      if (!lesson) return;
+      speakSentenceQueue(
+        lesson.dialogue.map(d => d.en),
+        lesson.dialogue.map((_, i) => `orig-line-${i}`)
+      );
+    });
+
+    document.getElementById("stopSpeechBtn").addEventListener("click", () => {
+      stopAllSpeech();
+      showToast("已停止朗读");
+    });
+
+    document.getElementById("playAllDrillsBtn").addEventListener("click", () => {
+      const lesson = NCE1_LESSONS.find(l => l.id === currentLessonId);
+      if (!lesson) return;
+      const sentences = [];
+      const ids = [];
+      lesson.transformations.forEach((group, gIdx) => {
+        group.dimensions.forEach((dim, dIdx) => {
+          sentences.push(dim.en);
+          ids.push(`dim-card-${gIdx}-${dIdx}`);
+        });
+      });
+      speakSentenceQueue(sentences, ids);
+    });
+
+    document.getElementById("toggleChineseBtn").addEventListener("click", () => {
+      showChinese = !showChinese;
+      document.querySelectorAll(".zh-line").forEach(el => {
+        el.classList.toggle("hidden", !showChinese);
+      });
+    });
+
+    document.getElementById("prevLessonBtn").addEventListener("click", () => {
+      if (currentLessonId > 1) goToLesson(currentLessonId - 1);
+    });
+
+    document.getElementById("nextLessonBtn").addEventListener("click", () => {
+      if (currentLessonId < NCE1_LESSONS.length) goToLesson(currentLessonId + 1);
+    });
+
+    document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+      document.getElementById("leftSidebar").classList.toggle("hidden");
+    });
+
+    document.getElementById("clearHistoryBtn").addEventListener("click", () => {
+      try {
+        localStorage.removeItem(STORAGE_HISTORY_KEY);
+      } catch (e) {
+        console.warn(e);
+      }
+      renderHistoryPanels([]);
+      renderLessonCatalog();
+      showToast("已清空历史学习记录");
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.getVoices();
+        window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+      }
+
+      const historyBefore = readHistory();
+      if (historyBefore.length > 0) {
+        const last = historyBefore[0];
+        const banner = document.getElementById("welcomeHistoryBanner");
+        document.getElementById("welcomeBannerMsg").innerHTML =
+          `上次学到 <strong class="underline">第 ${last.lessonId} 课（${last.number} · ${last.title}）</strong>，时间点：<span class="font-mono font-semibold">${last.timestamp}</span>`;
+        banner.classList.remove("hidden");
+
+        const jumpBtn = document.getElementById("jumpLastBtn");
+        jumpBtn.classList.remove("hidden");
+        jumpBtn.onclick = () => goToLesson(last.lessonId);
+
+        document.getElementById("bannerJumpBtn").onclick = () => {
+          goToLesson(last.lessonId);
+          banner.classList.add("hidden");
+        };
+        document.getElementById("closeBannerBtn").onclick = () => {
+          banner.classList.add("hidden");
+        };
+
+        // 自动进入上次学习的课程，并刷新本次访问的详细时间点
+        goToLesson(last.lessonId, true);
+      } else {
+        goToLesson(20, true);
+      }
+    });
+  </script>
+</body>
+</html>
