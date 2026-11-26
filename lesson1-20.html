@@ -194,13 +194,13 @@
         <div class="mt-4">
           <div class="flex items-center justify-between mb-2.5">
             <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Text & Dialogue · 课文精读（支持划词/选句自动朗读）
+              Text & Practice · 教材内容梳理与句型操练（支持划词/选句自动朗读）
             </h3>
             <span id="drillCountBadge" class="text-xs font-semibold text-[#1B365D] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200">
               本课句型转换按可转换原句完整整理
             </span>
           </div>
-          <p class="text-[11px] text-slate-400 mb-2">说明：第17—20课新增对话与练习采用教学改写方式，围绕教材对应课次的词汇和句型编写，并非教材逐字全文。</p>
+          <p class="text-[11px] text-slate-400 mb-2">说明：教材课文内容梳理与原创拓展练习会明确区分；练习课（偶数课）按教材操练目标整理，不虚构成新的课文对话。</p>
           <div id="originalTextContainer" class="space-y-2 bg-[#FAF8F5] p-3.5 sm:p-4 rounded-xl border border-stone-200/70">
             <!-- JS 渲染课文句子 -->
           </div>
@@ -10304,643 +10304,112 @@
             "number": "Lesson 20",
             "title": "Look at them!",
             "chineseTitle": "看看他们/它们！",
-            "grammarTag": "宾格 them · 形容词反义词 · 选择疑问句 Are...? or...?",
+            "grammarTag": "复数主语 are · they / them · 形容词反义词 · 选择疑问句",
             "dialogue": [
                   {
-                        "speaker": "A",
+                        "speaker": "练习句",
                         "en": "Look at those shoes. Are they dirty?",
-                        "zh": "看看那些鞋子。它们脏吗？"
+                        "zh": "看那些鞋子。它们脏吗？"
                   },
                   {
-                        "speaker": "B",
+                        "speaker": "练习句",
                         "en": "No, they aren't. They are clean.",
-                        "zh": "不，它们不脏。它们很干净。"
+                        "zh": "不脏。它们很干净。"
                   },
                   {
-                        "speaker": "A",
-                        "en": "Look at those postmen. Are they cold?",
-                        "zh": "看看那些邮递员。他们冷吗？"
-                  },
-                  {
-                        "speaker": "B",
-                        "en": "No, they aren't. They are hot.",
-                        "zh": "不，他们不冷。他们很热。"
-                  },
-                  {
-                        "speaker": "A",
+                        "speaker": "练习句",
                         "en": "Are those boxes small or big?",
                         "zh": "那些箱子是小还是大？"
                   },
                   {
-                        "speaker": "B",
+                        "speaker": "练习句",
                         "en": "They aren't small. They are big.",
                         "zh": "它们不小。它们很大。"
                   },
                   {
-                        "speaker": "A",
+                        "speaker": "练习句",
                         "en": "Are the shops shut or open?",
                         "zh": "那些商店是关着还是开着？"
                   },
                   {
-                        "speaker": "B",
+                        "speaker": "练习句",
                         "en": "They aren't shut. They are open.",
                         "zh": "它们没有关门。它们开着。"
                   },
                   {
-                        "speaker": "A",
+                        "speaker": "练习句",
                         "en": "Are the cases heavy or light?",
-                        "zh": "这些箱子是重还是轻？"
+                        "zh": "那些箱子是重还是轻？"
                   },
                   {
-                        "speaker": "B",
+                        "speaker": "练习句",
                         "en": "They aren't heavy. They are light.",
                         "zh": "它们不重。它们很轻。"
                   },
                   {
-                        "speaker": "A",
-                        "en": "Look at the children!",
-                        "zh": "看看那些孩子！"
-                  },
-                  {
-                        "speaker": "B",
-                        "en": "They are young and happy.",
-                        "zh": "他们年轻又快乐。"
+                        "speaker": "练习句",
+                        "en": "Look at the children! They are young and happy.",
+                        "zh": "看看那些孩子！他们年轻又快乐。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "Look at them.",
-                        "sourceZh": "看看他们/它们。",
-                        "dimensions": [
-                              {
-                                    "label": "肯定句",
-                                    "en": "Look at them.",
-                                    "zh": "看看他们/它们。",
-                                    "rule": "Look 是动词原形，at 是介词；them 是 they 的宾格，放在介词 at 后面。"
-                              },
-                              {
-                                    "label": "否定祈使句",
-                                    "en": "Don't look at them.",
-                                    "zh": "不要看他们/它们。",
-                                    "rule": "祈使句变否定，在动词原形前加 Don't。"
-                              },
-                              {
-                                    "label": "主格与宾格替换",
-                                    "en": "They are over there. Look at them.",
-                                    "zh": "他们/它们在那边。看看他们/它们。",
-                                    "rule": "they 作主语；them 作动词或介词后的宾语。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are they clean? — Yes, they are. / No, they aren't.",
-                                    "zh": "它们干净吗？—— 是的，它们干净。/ 不，它们不干净。",
-                                    "rule": "Are 提前；问句主语 they 在简答中仍用 they。"
-                              }
-                        ]
-                  },
-                  {
                         "sourceSentence": "The shoes are dirty.",
-                        "sourceZh": "这些鞋子是脏的。",
+                        "sourceZh": "鞋子是脏的。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
                                     "en": "The shoes are dirty.",
-                                    "zh": "这些鞋子是脏的。",
-                                    "rule": "shoes 是复数名词，搭配 are；dirty 是形容词。"
+                                    "zh": "鞋子是脏的。",
+                                    "rule": "复数主语 shoes 搭配 are。"
                               },
                               {
                                     "label": "否定句",
                                     "en": "The shoes aren't dirty.",
-                                    "zh": "这些鞋子不脏。",
-                                    "rule": "are 后加 not。"
+                                    "zh": "鞋子不脏。",
+                                    "rule": "be 动词后加 not；are not 可缩写为 aren't。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are the shoes dirty? — No, they aren't.",
-                                    "zh": "这些鞋子脏吗？—— 不，它们不脏。",
-                                    "rule": "Are 放句首；简答用 they 代替 the shoes。"
+                                    "label": "一般疑问句",
+                                    "en": "Are the shoes dirty?",
+                                    "zh": "鞋子脏吗？",
+                                    "rule": "把 are 提到主语前面。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Are the shoes dirty or clean? — They aren't dirty. They're clean.",
-                                    "zh": "这些鞋子是脏还是干净？—— 它们不脏，很干净。",
-                                    "rule": "选择疑问句用 or 连接两个选项；回答时说出真实情况。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "The cases are heavy.",
-                        "sourceZh": "这些箱子很重。",
-                        "dimensions": [
-                              {
-                                    "label": "肯定句",
-                                    "en": "The cases are heavy.",
-                                    "zh": "这些箱子很重。",
-                                    "rule": "cases 是复数名词，使用 are；heavy 表示重的。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "The cases aren't heavy.",
-                                    "zh": "这些箱子不重。",
-                                    "rule": "are 后加 not。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are the cases heavy? — No, they aren't.",
-                                    "zh": "这些箱子重吗？—— 不，它们不重。",
-                                    "rule": "Are 提前；简答用 they。"
+                                    "label": "肯定 / 否定简答",
+                                    "en": "Yes, they are. / No, they aren't.",
+                                    "zh": "是的，它们脏。/ 不，它们不脏。",
+                                    "rule": "用 they 代替复数名词 the shoes。"
                               },
                               {
                                     "label": "选择疑问句",
-                                    "en": "Are the cases heavy or light? — They aren't heavy. They're light.",
-                                    "zh": "这些箱子重还是轻？—— 它们不重，很轻。",
-                                    "rule": "heavy or light 表示“重还是轻”；or 前后连接可供选择的内容。"
+                                    "en": "Are the shoes dirty or clean?",
+                                    "zh": "鞋子是脏还是干净？",
+                                    "rule": "or 连接两个选择；回答选择其中一项。"
                               }
                         ]
                   },
                   {
                         "sourceSentence": "Look at those shoes.",
-                        "sourceZh": "（根据课文语境理解）",
+                        "sourceZh": "看看那些鞋子。",
                         "dimensions": [
                               {
-                                    "label": "原句 / 肯定句",
+                                    "label": "肯定祈使句",
                                     "en": "Look at those shoes.",
-                                    "zh": "（根据课文语境理解）",
-                                    "rule": "先保留课文中的原句，观察主语、动词和句子成分。"
+                                    "zh": "看看那些鞋子。",
+                                    "rule": "祈使句用动词原形开头；look at 是固定搭配。"
                               },
                               {
                                     "label": "否定祈使句",
                                     "en": "Don't look at those shoes.",
-                                    "zh": "不要（根据课文语境理解）",
-                                    "rule": "祈使句变否定句，在动词原形前加 Don’t。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Look at those postmen.",
-                        "sourceZh": "（根据课文语境理解）",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "Look at those postmen.",
-                                    "zh": "（根据课文语境理解）",
-                                    "rule": "先保留课文中的原句，观察主语、动词和句子成分。"
+                                    "zh": "不要看那些鞋子。",
+                                    "rule": "Don't + 动词原形。"
                               },
                               {
-                                    "label": "否定祈使句",
-                                    "en": "Don't look at those postmen.",
-                                    "zh": "不要（根据课文语境理解）",
-                                    "rule": "祈使句变否定句，在动词原形前加 Don’t。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Look at the children!",
-                        "sourceZh": "看看那些孩子！",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "Look at the children!",
-                                    "zh": "看看那些孩子！",
-                                    "rule": "先保留课文中的原句，观察主语、动词和句子成分。"
-                              },
-                              {
-                                    "label": "否定祈使句",
-                                    "en": "Don't look at the children.",
-                                    "zh": "不要看看那些孩子！",
-                                    "rule": "祈使句变否定句，在动词原形前加 Don’t。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Are they dirty?",
-                        "sourceZh": "一般疑问句：询问……吗？",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 一般疑问句",
-                                    "en": "Are they dirty?",
-                                    "zh": "一般疑问句：询问……吗？",
-                                    "rule": "原句是一般疑问句，注意 be 动词和主语的位置。"
-                              },
-                              {
-                                    "label": "肯定句",
-                                    "en": "They are dirty.",
-                                    "zh": "把问句还原为陈述句。",
-                                    "rule": "把 be 动词放回主语后面：主语 + am / is / are + 其他。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't dirty.",
-                                    "zh": "表达否定。",
-                                    "rule": "在 be 动词后加 not；注意单数 is、复数 are。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "根据问句中的人或物，选择正确的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答在 be 动词后加 not。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Are they cold?",
-                        "sourceZh": "一般疑问句：询问……吗？",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 一般疑问句",
-                                    "en": "Are they cold?",
-                                    "zh": "一般疑问句：询问……吗？",
-                                    "rule": "原句是一般疑问句，注意 be 动词和主语的位置。"
-                              },
-                              {
-                                    "label": "肯定句",
-                                    "en": "They are cold.",
-                                    "zh": "把问句还原为陈述句。",
-                                    "rule": "把 be 动词放回主语后面：主语 + am / is / are + 其他。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't cold.",
-                                    "zh": "表达否定。",
-                                    "rule": "在 be 动词后加 not；注意单数 is、复数 are。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "根据问句中的人或物，选择正确的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答在 be 动词后加 not。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are clean.",
-                        "sourceZh": "不，它们不脏。它们很干净。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are clean.",
-                                    "zh": "不，它们不脏。它们很干净。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't clean.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they clean?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are hot.",
-                        "sourceZh": "不，他们不冷。他们很热。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are hot.",
-                                    "zh": "不，他们不冷。他们很热。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't hot.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they hot?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are big.",
-                        "sourceZh": "它们不小。它们很大。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are big.",
-                                    "zh": "它们不小。它们很大。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't big.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they big?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are open.",
-                        "sourceZh": "它们没有关门。它们开着。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are open.",
-                                    "zh": "它们没有关门。它们开着。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't open.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they open?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are light.",
-                        "sourceZh": "它们不重。它们很轻。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are light.",
-                                    "zh": "它们不重。它们很轻。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't light.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they light?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "They are young and happy.",
-                        "sourceZh": "他们年轻又快乐。",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 肯定句",
-                                    "en": "They are young and happy.",
-                                    "zh": "他们年轻又快乐。",
-                                    "rule": "先看清原句是肯定表达还是否定表达。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They aren't young and happy.",
-                                    "zh": "表示“不/不是……”。",
-                                    "rule": "在 be 动词后加 not；is not 常缩写为 isn’t，are not 常缩写为 aren’t。"
-                              },
-                              {
-                                    "label": "一般疑问句",
-                                    "en": "Are they young and happy?",
-                                    "zh": "……吗？",
-                                    "rule": "把 am / is / are 提到主语前面，其他部分顺序不变。"
-                              },
-                              {
-                                    "label": "肯定简答",
-                                    "en": "Yes, they are.",
-                                    "zh": "是的。",
-                                    "rule": "简答要使用对应的人称代词和 be 动词。"
-                              },
-                              {
-                                    "label": "否定简答",
-                                    "en": "No, they aren't.",
-                                    "zh": "不。",
-                                    "rule": "否定简答使用人称代词 + be + not。"
-                              },
-                              {
-                                    "label": "特殊疑问句 · How（问状态）",
-                                    "en": "How are they?",
-                                    "zh": "……怎么样？",
-                                    "rule": "对状态提问常用 How + be + 主语？"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Are those boxes small or big?",
-                        "sourceZh": "选择疑问句：A 还是 B？",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 选择疑问句",
-                                    "en": "Are those boxes small or big?",
-                                    "zh": "这些/那些……是 A 还是 B？",
-                                    "rule": "选择疑问句用 or 连接两个选项，不用 Yes / No 直接回答。"
-                              },
-                              {
-                                    "label": "选项一：肯定陈述句",
-                                    "en": "Those boxes are small.",
-                                    "zh": "先把第一个选项说成陈述句。",
-                                    "rule": "主语 + are + 第一个形容词。"
-                              },
-                              {
-                                    "label": "选项一：否定陈述句",
-                                    "en": "Those boxes aren't small.",
-                                    "zh": "表示第一个选项不成立。",
-                                    "rule": "are 后加 not，构成否定句。"
-                              },
-                              {
-                                    "label": "选项二：肯定陈述句",
-                                    "en": "Those boxes are big.",
-                                    "zh": "表达第二个选项。",
-                                    "rule": "主语 + are + 第二个形容词。"
-                              },
-                              {
-                                    "label": "根据课文作答",
-                                    "en": "They aren't small. They are big.",
-                                    "zh": "根据课文说出真实情况。",
-                                    "rule": "回答选择疑问句时，直接说出实际选择，不用 Yes / No。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Are the shops shut or open?",
-                        "sourceZh": "选择疑问句：A 还是 B？",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 选择疑问句",
-                                    "en": "Are the shops shut or open?",
-                                    "zh": "这些/那些……是 A 还是 B？",
-                                    "rule": "选择疑问句用 or 连接两个选项，不用 Yes / No 直接回答。"
-                              },
-                              {
-                                    "label": "选项一：肯定陈述句",
-                                    "en": "The shops are shut.",
-                                    "zh": "先把第一个选项说成陈述句。",
-                                    "rule": "主语 + are + 第一个形容词。"
-                              },
-                              {
-                                    "label": "选项一：否定陈述句",
-                                    "en": "The shops aren't shut.",
-                                    "zh": "表示第一个选项不成立。",
-                                    "rule": "are 后加 not，构成否定句。"
-                              },
-                              {
-                                    "label": "选项二：肯定陈述句",
-                                    "en": "The shops are open.",
-                                    "zh": "表达第二个选项。",
-                                    "rule": "主语 + are + 第二个形容词。"
-                              },
-                              {
-                                    "label": "根据课文作答",
-                                    "en": "They aren't shut. They are open.",
-                                    "zh": "根据课文说出真实情况。",
-                                    "rule": "回答选择疑问句时，直接说出实际选择，不用 Yes / No。"
-                              }
-                        ]
-                  },
-                  {
-                        "sourceSentence": "Are the cases heavy or light?",
-                        "sourceZh": "选择疑问句：A 还是 B？",
-                        "dimensions": [
-                              {
-                                    "label": "原句 / 选择疑问句",
-                                    "en": "Are the cases heavy or light?",
-                                    "zh": "这些/那些……是 A 还是 B？",
-                                    "rule": "选择疑问句用 or 连接两个选项，不用 Yes / No 直接回答。"
-                              },
-                              {
-                                    "label": "选项一：肯定陈述句",
-                                    "en": "The cases are heavy.",
-                                    "zh": "先把第一个选项说成陈述句。",
-                                    "rule": "主语 + are + 第一个形容词。"
-                              },
-                              {
-                                    "label": "选项一：否定陈述句",
-                                    "en": "The cases aren't heavy.",
-                                    "zh": "表示第一个选项不成立。",
-                                    "rule": "are 后加 not，构成否定句。"
-                              },
-                              {
-                                    "label": "选项二：肯定陈述句",
-                                    "en": "The cases are light.",
-                                    "zh": "表达第二个选项。",
-                                    "rule": "主语 + are + 第二个形容词。"
-                              },
-                              {
-                                    "label": "根据课文作答",
-                                    "en": "They aren't heavy. They are light.",
-                                    "zh": "根据课文说出真实情况。",
-                                    "rule": "回答选择疑问句时，直接说出实际选择，不用 Yes / No。"
+                                    "label": "宾格代词替换",
+                                    "en": "Look at them.",
+                                    "zh": "看看它们。",
+                                    "rule": "介词 at 后面用宾格 them，不能用 they。"
                               }
                         ]
                   }
@@ -11114,14 +10583,15 @@
                         "title": "short 和 tall / short 和 long",
                         "desc": "描述人的身高时，short 常与 tall 对比；描述物品长度时，short 常与 long 对比。要根据说的对象理解。"
                   }
-            ]
+            ],
+            "contentNote": "本课属于配图句型操练：围绕复数名词和人物/物品，练习形容词反义词、be 动词问答，以及 they（主格）和 them（宾格）。下面是按教材练习目标整理的学习卡，不是另编故事。"
       },
       {
             "id": 21,
             "number": "Lesson 21",
             "title": "Which book?",
             "chineseTitle": "哪一本书？",
-            "grammarTag": "give + 人 + 物 · Which...? · one 代替名词 · this / that",
+            "grammarTag": "祈使句 · give + 人 + 物 · Which...? · one 代替名词 · this / that",
             "dialogue": [
                   {
                         "speaker": "对话者A",
@@ -11166,74 +10636,68 @@
             ],
             "transformations": [
                   {
-                        "sourceSentence": "Give me a book please, Jane.",
-                        "sourceZh": "请给我一本书，简。",
+                        "sourceSentence": "Give me a book, please, Jane.",
+                        "sourceZh": "简，请给我一本书。",
                         "dimensions": [
                               {
-                                    "label": "原句｜祈使句",
+                                    "label": "教材原句｜祈使句",
                                     "en": "Give me a book, please, Jane.",
-                                    "zh": "请给我一本书，简。",
-                                    "rule": "祈使句：动词原形 Give 放在句首；省略了主语 you。please 让语气更礼貌。"
+                                    "zh": "简，请给我一本书。",
+                                    "rule": "省略主语 you；give 后面先说给谁 me，再说给什么 a book。"
                               },
                               {
                                     "label": "否定祈使句",
                                     "en": "Don't give me a book, please, Jane.",
                                     "zh": "简，请不要给我书。",
-                                    "rule": "否定祈使句：Don't + 动词原形。give 仍然用原形。"
+                                    "rule": "Don't + 动词原形 give。"
                               },
                               {
-                                    "label": "一般疑问｜礼貌请求",
+                                    "label": "礼貌请求（拓展）",
                                     "en": "Can you give me a book, please, Jane?",
                                     "zh": "简，你能给我一本书吗？",
-                                    "rule": "把祈使请求改成 Can you...?；这里是在礼貌地请求，不是单纯询问能力。"
+                                    "rule": "这是把命令改成礼貌请求，不是教材原句。"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "What should you give me, Jane?",
-                                    "zh": "简，你应该给我什么？",
-                                    "rule": "What 询问“什么”；should 后面接动词原形 give。"
+                                    "label": "特殊疑问句（问物品）",
+                                    "en": "What can you give me?",
+                                    "zh": "你能给我什么？",
+                                    "rule": "what 对物品提问；can 放在主语前。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Can you give me a book or a magazine, Jane?",
-                                    "zh": "简，你能给我一本书还是一本杂志？",
-                                    "rule": "选择疑问句用 or 连接两个选项；Can 提到主语 you 前面。"
+                                    "label": "选择疑问句（拓展）",
+                                    "en": "Can you give me a book or a magazine?",
+                                    "zh": "你能给我一本书还是一本杂志？",
+                                    "rule": "or 连接两个可选物品；这是拓展练习。"
                               }
                         ]
                   },
                   {
                         "sourceSentence": "No, not that one. The red one.",
-                        "sourceZh": "不，不是那本。要红色的那本。",
+                        "sourceZh": "不，不是那一本。要红色的那一本。",
                         "dimensions": [
                               {
-                                    "label": "课文原句｜省略回答",
+                                    "label": "教材原句｜省略回答",
                                     "en": "No, not that one. The red one.",
-                                    "zh": "不，不是那本。要红色的那本。",
-                                    "rule": "这是对话中的省略表达。完整意思是：No, not that book. The red book, please. one 代替前面出现的 book，避免重复。"
+                                    "zh": "不，不是那一本。要红色的那一本。",
+                                    "rule": "口语省略句；完整意思可理解为 No, not that one. Give me the red one."
                               },
                               {
-                                    "label": "补全后的肯定句",
+                                    "label": "补全意思（拓展）",
                                     "en": "I want the red book.",
-                                    "zh": "我想要那本红色的书。",
-                                    "rule": "这是把课文中的省略回答补成完整句的练习句，不是教材原句。"
+                                    "zh": "我要那本红色的书。",
+                                    "rule": "one 代替前面提到的 book，避免重复。"
                               },
                               {
-                                    "label": "补全后的否定句",
-                                    "en": "I don't want that book.",
-                                    "zh": "我不想要那本书。",
-                                    "rule": "一般现在时否定句：I + don't + 动词原形 want。"
-                              },
-                              {
-                                    "label": "补全后的疑问句",
+                                    "label": "一般疑问句（拓展）",
                                     "en": "Do you want the red book?",
                                     "zh": "你想要那本红色的书吗？",
-                                    "rule": "一般现在时实义动词疑问句：Do + you + 动词原形 want...?"
+                                    "rule": "want 是实义动词，一般疑问句借助 do。"
                               },
                               {
-                                    "label": "补全后的特殊疑问句",
-                                    "en": "Which book do you want?",
-                                    "zh": "你想要哪一本书？",
-                                    "rule": "Which book 询问具体哪一本；do 帮助构成一般现在时疑问句。"
+                                    "label": "特殊疑问句（教材句型）",
+                                    "en": "Which book?",
+                                    "zh": "哪一本书？",
+                                    "rule": "which 在有限范围内询问“哪一个”；这里省略了后面的 do you want。"
                               }
                         ]
                   }
@@ -11335,111 +10799,100 @@
                         "title": "祈使句与 please",
                         "desc": "Give me a book, please. 是礼貌请求。祈使句通常用动词原形开头，主语 you 常省略；please 可以放在句首或句末。语法句型：动词原形 + 其他成分 + please。"
                   }
-            ]
+            ],
+            "contentNote": "本课是教材对话课。下面的课文内容以你提供的教材截图为准；句型转换区会把原句、补全句和拓展练习分开，避免把省略回答硬改成普通陈述句。"
       },
       {
             "id": 22,
             "number": "Lesson 22",
             "title": "Give me / Which one?",
             "chineseTitle": "给我 / 哪一个？",
-            "grammarTag": "give + 人 + 物 · 人称代词宾格 · one",
+            "grammarTag": "双宾语 give + 人称代词宾格 + a/an + 名词 · Which one? · one",
             "dialogue": [
                   {
-                        "speaker": "Mum",
-                        "en": "Please give me a pencil.",
-                        "zh": "请给我一支铅笔。"
+                        "speaker": "句型示例",
+                        "en": "Give him a clean knife, please.",
+                        "zh": "请给他一把干净的刀。"
                   },
                   {
-                        "speaker": "Amy",
+                        "speaker": "句型示例",
                         "en": "Which one? The short one?",
-                        "zh": "哪一支？短的那支吗？"
+                        "zh": "哪一个？短的那个吗？"
                   },
                   {
-                        "speaker": "Mum",
+                        "speaker": "句型示例",
                         "en": "No, the long one, please.",
-                        "zh": "不，请给我长的那支。"
+                        "zh": "不，请给长的那个。"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "Here you are.",
-                        "zh": "给你。"
+                        "speaker": "句型示例",
+                        "en": "Give us the blue one, please.",
+                        "zh": "请给我们蓝色的那个。"
                   },
                   {
-                        "speaker": "Mum",
-                        "en": "Thank you.",
-                        "zh": "谢谢你。"
+                        "speaker": "句型示例",
+                        "en": "Give her the new one, please.",
+                        "zh": "请给她新的那个。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "Please give me the long pencil.",
-                        "sourceZh": "请把那支长铅笔给我。",
+                        "sourceSentence": "Give me a cup, please.",
+                        "sourceZh": "请给我一个杯子。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "Please give me the long pencil.",
-                                    "zh": "请把那支长铅笔给我。",
-                                    "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                                    "label": "祈使句",
+                                    "en": "Give me a cup, please.",
+                                    "zh": "请给我一个杯子。",
+                                    "rule": "give + 间接宾语 me + 直接宾语 a cup。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "Please don't give me the long pencil.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                                    "label": "换人称宾格",
+                                    "en": "Give him a cup. / Give her a cup. / Give us a cup.",
+                                    "zh": "给他一个杯子。/ 给她一个杯子。/ 给我们一个杯子。",
+                                    "rule": "give 后面的人称代词用宾格：me、him、her、us、them。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Can you give me the long pencil, please? — Yes, of course.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                                    "label": "Which one?",
+                                    "en": "Which one? The clean one?",
+                                    "zh": "哪一个？干净的那个吗？",
+                                    "rule": "one 代替前面出现的单数可数名词。"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "Which pencil should you give me? — The long one.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't give me a dirty cup.",
+                                    "zh": "不要给我一个脏杯子。",
+                                    "rule": "Don't + 动词原形。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Do you want the long pencil or the short one?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "祈使句加 please 表示礼貌请求；me 是动词 give 后的宾格。"
+                                    "label": "礼貌请求（拓展）",
+                                    "en": "Can you give me a cup, please?",
+                                    "zh": "你能给我一个杯子吗？",
+                                    "rule": "Can you...? 是礼貌请求的常见表达。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "The short one is for her.",
-                        "sourceZh": "短的那支是给她的。",
+                        "sourceSentence": "The long one, please.",
+                        "sourceZh": "请给长的那个。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "The short one is for her.",
-                                    "zh": "短的那支是给她的。",
-                                    "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                                    "label": "形容词 + one",
+                                    "en": "The long one, please.",
+                                    "zh": "请给长的那个。",
+                                    "rule": "long 修饰 one；one 代替前文的 pencil 等单数名词。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "The short one is not for her.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                                    "label": "对比选择",
+                                    "en": "The short one or the long one?",
+                                    "zh": "短的那个还是长的那个？",
+                                    "rule": "or 连接两个选择。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Is the short one for her? — Yes, it is. / No, it isn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "one 代替前文的单数名词；for 后用宾格代词。"
-                              },
-                              {
-                                    "label": "特殊疑问句",
-                                    "en": "Which one is for her? — The short one.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "one 代替前文的单数名词；for 后用宾格代词。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Is the short one for her or for me?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "one 代替前文的单数名词；for 后用宾格代词。"
+                                    "label": "完整回答（拓展）",
+                                    "en": "Please give me the long pencil.",
+                                    "zh": "请把那支长铅笔给我。",
+                                    "rule": "把省略表达补全时，要根据上下文补出被 one 代替的名词。"
                               }
                         ]
                   }
@@ -11513,111 +10966,101 @@
                         "title": "礼貌请求",
                         "desc": "Please 可以放在句首或句末：Please give me a pencil. / Give me a pencil, please."
                   }
-            ]
+            ],
+            "contentNote": "本课是第21课句型的操练课，不是一段新的连续对话。重点练习：给不同的人一件物品、用 Which one? 询问、用形容词 + one 指明是哪一个。"
       },
       {
             "id": 23,
             "number": "Lesson 23",
             "title": "Which glasses?",
             "chineseTitle": "哪几副眼镜？",
-            "grammarTag": "these / those · which + 复数名词 · ones",
+            "grammarTag": "some + 复数可数名词 · Which + 复数名词 · these / those · ones · on the shelf",
             "dialogue": [
                   {
-                        "speaker": "Dad",
-                        "en": "Please bring me the glasses.",
-                        "zh": "请把眼镜拿给我。"
+                        "speaker": "课文内容梳理",
+                        "en": "A speaker asks Jane for some glasses.",
+                        "zh": "说话人请 Jane 拿几只玻璃杯。"
                   },
                   {
-                        "speaker": "Lucy",
-                        "en": "Which glasses? These ones?",
-                        "zh": "哪几副眼镜？这些吗？"
+                        "speaker": "课文内容梳理",
+                        "en": "Jane asks which glasses are wanted.",
+                        "zh": "Jane 追问要哪几只杯子。"
                   },
                   {
-                        "speaker": "Dad",
-                        "en": "No, the black ones on the desk.",
-                        "zh": "不，桌子上那副黑色的。"
+                        "speaker": "课文内容梳理",
+                        "en": "The first glasses are rejected; the requested ones are on the shelf.",
+                        "zh": "先前指的杯子不是要找的；真正要的是架子上的那些。"
                   },
                   {
-                        "speaker": "Lucy",
-                        "en": "Are these the black ones?",
-                        "zh": "这些是黑色那副吗？"
-                  },
-                  {
-                        "speaker": "Dad",
-                        "en": "Yes, thank you.",
-                        "zh": "是的，谢谢。"
+                        "speaker": "课文内容梳理",
+                        "en": "Jane confirms the choice, hands them over, and receives thanks.",
+                        "zh": "Jane 再次确认后把杯子递过去，对方表示感谢。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "These glasses are black.",
-                        "sourceZh": "这些眼镜是黑色的。",
+                        "sourceSentence": "Give me some glasses, please.",
+                        "sourceZh": "请给我几只玻璃杯。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "These glasses are black.",
-                                    "zh": "这些眼镜是黑色的。",
-                                    "rule": "glasses 形式为复数，谓语用 are。"
+                                    "label": "教材句型｜祈使句",
+                                    "en": "Give me some glasses, please.",
+                                    "zh": "请给我几只玻璃杯。",
+                                    "rule": "some + 复数可数名词 glasses；give 后面用宾格 me。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "These glasses are not black.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "glasses 形式为复数，谓语用 are。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't give me those glasses.",
+                                    "zh": "不要把那些杯子给我。",
+                                    "rule": "Don't + 动词原形；those 指较远的复数物品。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are these glasses black? — Yes, they are. / No, they aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "glasses 形式为复数，谓语用 are。"
+                                    "label": "一般疑问｜礼貌请求",
+                                    "en": "Can you give me some glasses, please?",
+                                    "zh": "你能给我几只玻璃杯吗？",
+                                    "rule": "这是礼貌请求拓展，不是原课文句子。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Which glasses are black? — These glasses are.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "glasses 形式为复数，谓语用 are。"
+                                    "en": "Which glasses?",
+                                    "zh": "哪几只杯子？",
+                                    "rule": "which 后面直接接复数名词 glasses。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Are these glasses black or brown?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "glasses 形式为复数，谓语用 are。"
+                                    "label": "选择疑问句（拓展）",
+                                    "en": "Do you want these glasses or those glasses?",
+                                    "zh": "你要这些杯子还是那些杯子？",
+                                    "rule": "these 指近处复数；those 指远处复数。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "The black ones are on the desk.",
-                        "sourceZh": "黑色的那些在书桌上。",
+                        "sourceSentence": "The ones on the shelf.",
+                        "sourceZh": "架子上的那些。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "The black ones are on the desk.",
-                                    "zh": "黑色的那些在书桌上。",
-                                    "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                                    "label": "指代复数名词",
+                                    "en": "The ones on the shelf.",
+                                    "zh": "架子上的那些。",
+                                    "rule": "ones 代替前面出现的复数名词 glasses。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "The black ones are not on the desk.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                                    "label": "介词短语作后置修饰",
+                                    "en": "the glasses on the shelf",
+                                    "zh": "架子上的杯子",
+                                    "rule": "on the shelf 说明是哪一些杯子。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are the black ones on the desk? — Yes, they are. / No, they aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                                    "label": "一般疑问句（拓展）",
+                                    "en": "Are these the glasses on the shelf?",
+                                    "zh": "这些是架子上的那些杯子吗？",
+                                    "rule": "these 作主语，be 动词用 are。"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "Where are the black ones? — They are on the desk.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Are the black ones on the desk or on the shelf?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "ones 代替复数名词 glasses；on 表示在物体表面。"
+                                    "label": "地点提问（拓展）",
+                                    "en": "Where are the glasses?",
+                                    "zh": "杯子在哪里？",
+                                    "rule": "Where + are + 复数主语。"
                               }
                         ]
                   }
@@ -11687,106 +11130,100 @@
                         "title": "glasses 通常用复数",
                         "desc": "表示眼镜时常说 These glasses are...；表示一副眼镜可说 a pair of glasses。"
                   }
-            ]
+            ],
+            "contentNote": "已按教材核对：本课是“Which glasses?”，情景是请 Jane 拿几只玻璃杯；先问是哪几只，再指向架子上的那些。之前写成 bring me / black ones on the desk 是错误的，已删除。以下中文为内容梳理，英文练习卡不冒充完整教材原文。"
       },
       {
             "id": 24,
             "number": "Lesson 24",
             "title": "Give me some... / Which ones?",
             "chineseTitle": "给我一些…… / 哪些？",
-            "grammarTag": "some · 复数宾格代词 · ones",
+            "grammarTag": "give + 宾格 + some + 复数名词 · Which ones? · these / those · them",
             "dialogue": [
                   {
-                        "speaker": "Sam",
-                        "en": "Please give us some clean cups.",
-                        "zh": "请给我们一些干净的杯子。"
+                        "speaker": "句型示例",
+                        "en": "Give me some pens, please.",
+                        "zh": "请给我一些钢笔。"
                   },
                   {
-                        "speaker": "Nina",
-                        "en": "Which ones? The white ones?",
-                        "zh": "哪些？白色的那些吗？"
+                        "speaker": "句型示例",
+                        "en": "Which ones? These?",
+                        "zh": "哪些？这些吗？"
                   },
                   {
-                        "speaker": "Sam",
-                        "en": "Yes, please. Put them on the table.",
-                        "zh": "是的，请把它们放在桌子上。"
+                        "speaker": "句型示例",
+                        "en": "No, not those. The ones on the desk.",
+                        "zh": "不，不是那些。要桌子上的那些。"
                   },
                   {
-                        "speaker": "Nina",
-                        "en": "Here they are.",
-                        "zh": "它们在这里。"
+                        "speaker": "句型示例",
+                        "en": "Give her some bottles, please.",
+                        "zh": "请给她一些瓶子。"
+                  },
+                  {
+                        "speaker": "句型示例",
+                        "en": "Give them some books, please.",
+                        "zh": "请给他们一些书。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "Give us some clean cups, please.",
-                        "sourceZh": "请给我们一些干净的杯子。",
+                        "sourceSentence": "Give me some pens, please.",
+                        "sourceZh": "请给我一些钢笔。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "Give us some clean cups, please.",
-                                    "zh": "请给我们一些干净的杯子。",
-                                    "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                                    "label": "祈使句",
+                                    "en": "Give me some pens, please.",
+                                    "zh": "请给我一些钢笔。",
+                                    "rule": "some + 复数可数名词；me 是 give 后面的宾格。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "Don't give us any dirty cups, please.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                                    "label": "换人称宾格",
+                                    "en": "Give him / her / us / them some pens.",
+                                    "zh": "给他 / 她 / 我们 / 他们一些钢笔。",
+                                    "rule": "人称代词作 give 的间接宾语时用宾格。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Can you give us some clean cups? — Yes, of course.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't give me any pens.",
+                                    "zh": "不要给我钢笔。",
+                                    "rule": "否定句中常把 some 换成 any。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Which cups can you give us? — The clean ones.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                                    "en": "Which pens? / Which ones?",
+                                    "zh": "哪些钢笔？/ 哪些？",
+                                    "rule": "ones 代替前面提到的复数名词。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Is there a fridge or a cooker in the kitchen?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "some + 复数可数名词；give 后的人称代词用宾格。"
+                                    "label": "地点限定",
+                                    "en": "The ones on the desk.",
+                                    "zh": "桌子上的那些。",
+                                    "rule": "on the desk 说明具体是哪一些。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "Put them on the table.",
-                        "sourceZh": "把它们放在桌子上。",
+                        "sourceSentence": "No, not those. The ones on the shelf.",
+                        "sourceZh": "不，不是那些。要架子上的那些。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
+                                    "label": "指示代词",
+                                    "en": "these = 这些；those = 那些",
+                                    "zh": "these = 这些；those = 那些",
+                                    "rule": "these / those 都可独立作代词，后面不一定要接名词。"
+                              },
+                              {
+                                    "label": "宾格代词",
                                     "en": "Put them on the table.",
                                     "zh": "把它们放在桌子上。",
-                                    "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                                    "rule": "them 是宾格，作 put 的宾语。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "Don't put them on the table.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Can you put them on the table? — Yes, I can.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
-                              },
-                              {
-                                    "label": "特殊疑问句",
-                                    "en": "Where should you put them? — On the table.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Is the bottle on the table or under it?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "祈使句用动词原形开头；them 是 put 的宾语。"
+                                    "label": "选择疑问句（拓展）",
+                                    "en": "Do you want these ones or those ones?",
+                                    "zh": "你要这些还是那些？",
+                                    "rule": "口语中常直接说 these or those；ones 可省略。"
                               }
                         ]
                   }
@@ -11856,111 +11293,112 @@
                         "title": "ones 指代复数名词",
                         "desc": "Which ones? 用 ones 代替前文提到的复数名词 cups。"
                   }
-            ]
+            ],
+            "contentNote": "本课是第23课的复数句型操练：give + 人 + some + 复数名词；Which ones?；these / those；用 on、in 等地点短语指出具体物品。"
       },
       {
             "id": 25,
             "number": "Lesson 25",
             "title": "Mrs. Smith's kitchen",
             "chineseTitle": "史密斯太太的厨房",
-            "grammarTag": "There is · 单数可数名词 · 方位介词",
+            "grammarTag": "There is + 单数名词 · a / the · it 指代前文名词 · 方位介词",
             "dialogue": [
                   {
-                        "speaker": "Narrator",
-                        "en": "The kitchen is small and bright.",
-                        "zh": "厨房又小又明亮。"
+                        "speaker": "内容梳理",
+                        "en": "Mrs. Smith's kitchen is small.",
+                        "zh": "史密斯太太的厨房很小。"
                   },
                   {
-                        "speaker": "Anna",
-                        "en": "There is a fridge in the kitchen.",
-                        "zh": "厨房里有一台冰箱。"
+                        "speaker": "内容梳理",
+                        "en": "A refrigerator is in the kitchen; it is white and on the right.",
+                        "zh": "厨房里有一台冰箱；它是白色的，在右边。"
                   },
                   {
-                        "speaker": "Ben",
-                        "en": "It is white and it is on the right.",
-                        "zh": "它是白色的，在右边。"
+                        "speaker": "内容梳理",
+                        "en": "A blue electric cooker is on the left.",
+                        "zh": "左边有一台蓝色的电炉。"
                   },
                   {
-                        "speaker": "Anna",
-                        "en": "There is a table in the middle of the room.",
-                        "zh": "房间中间有一张桌子。"
+                        "speaker": "内容梳理",
+                        "en": "A table stands in the middle of the room.",
+                        "zh": "房间中央有一张桌子。"
                   },
                   {
-                        "speaker": "Ben",
-                        "en": "There is a bottle on the table.",
-                        "zh": "桌子上有一个瓶子。"
+                        "speaker": "内容梳理",
+                        "en": "An empty bottle and a clean cup are on the table.",
+                        "zh": "桌上有一个空瓶子和一个干净的杯子。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "There is a fridge in the kitchen.",
+                        "sourceSentence": "There is a refrigerator in the kitchen.",
                         "sourceZh": "厨房里有一台冰箱。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "There is a fridge in the kitchen.",
+                                    "en": "There is a refrigerator in the kitchen.",
                                     "zh": "厨房里有一台冰箱。",
-                                    "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                                    "rule": "There is + 单数名词，表示某处存在某物。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "There is not (isn't) a fridge in the kitchen.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                                    "en": "There isn't a refrigerator in the kitchen.",
+                                    "zh": "厨房里没有冰箱。",
+                                    "rule": "is 后加 not。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Is there a fridge in the kitchen? — Yes, there is. / No, there isn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                                    "label": "一般疑问句",
+                                    "en": "Is there a refrigerator in the kitchen?",
+                                    "zh": "厨房里有冰箱吗？",
+                                    "rule": "把 is 提到 there 前面。"
+                              },
+                              {
+                                    "label": "简短回答",
+                                    "en": "Yes, there is. / No, there isn't.",
+                                    "zh": "是的，有。/ 不，没有。",
+                                    "rule": "回答时仍用 there is / there isn't。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "What is there in the kitchen? — There is a fridge.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Is the cup in the cupboard or on the table?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "There is + 单数名词；变一般疑问句把 is 提到句首。"
+                                    "en": "What is there in the kitchen?",
+                                    "zh": "厨房里有什么？",
+                                    "rule": "What + is + there...?"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "The bottle is on the table.",
-                        "sourceZh": "瓶子在桌子上。",
+                        "sourceSentence": "The refrigerator is white.",
+                        "sourceZh": "冰箱是白色的。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "The bottle is on the table.",
-                                    "zh": "瓶子在桌子上。",
-                                    "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                                    "en": "The refrigerator is white.",
+                                    "zh": "冰箱是白色的。",
+                                    "rule": "第二次提到前面出现过的 refrigerator，用 the。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "The bottle is not on the table.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                                    "en": "The refrigerator isn't white.",
+                                    "zh": "冰箱不是白色的。",
+                                    "rule": "be 动词后加 not。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Is the bottle on the table? — Yes, it is. / No, it isn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                                    "label": "一般疑问句",
+                                    "en": "Is the refrigerator white?",
+                                    "zh": "冰箱是白色的吗？",
+                                    "rule": "is 提到主语前。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Where is the bottle? — It is on the table.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                                    "en": "What colour is the refrigerator?",
+                                    "zh": "冰箱是什么颜色的？",
+                                    "rule": "What colour 对颜色提问。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Is the bottle behind the door or near it?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "be 动词句型；on 表示物体在桌面等表面上。"
+                                    "label": "代词替换",
+                                    "en": "It is white.",
+                                    "zh": "它是白色的。",
+                                    "rule": "it 代替前面提到的单数名词 refrigerator。"
                               }
                         ]
                   }
@@ -12034,116 +11472,112 @@
                         "title": "地点表达",
                         "desc": "in the kitchen（在厨房里）；on the table（在桌面上）；in the middle of the room（在房间中间）。"
                   }
-            ]
+            ],
+            "contentNote": "教材课文内容梳理：厨房很小；冰箱在右边且是白色；电炉在左边且是蓝色；房间中央有桌子；桌上有空瓶子和干净的杯子。以下是按原文信息整理的学习句，不是逐字全文。"
       },
       {
             "id": 26,
             "number": "Lesson 26",
             "title": "Where is it?",
             "chineseTitle": "它在哪里？",
-            "grammarTag": "Where 引导的特殊疑问句 · 方位介词",
+            "grammarTag": "a / the · There is · Where is...? · in / on / under",
             "dialogue": [
                   {
-                        "speaker": "Mia",
-                        "en": "Where is the cup?",
-                        "zh": "杯子在哪里？"
+                        "speaker": "练习句",
+                        "en": "There is a cup on the table. The cup is clean.",
+                        "zh": "桌上有一个杯子。这个杯子很干净。"
                   },
                   {
-                        "speaker": "Leo",
-                        "en": "It is in the cupboard.",
-                        "zh": "它在碗柜里。"
+                        "speaker": "练习句",
+                        "en": "There is a box on the floor. The box is large.",
+                        "zh": "地板上有一个箱子。这个箱子很大。"
                   },
                   {
-                        "speaker": "Mia",
-                        "en": "And where is the bottle?",
-                        "zh": "那么瓶子在哪里？"
+                        "speaker": "练习句",
+                        "en": "There is a glass in the cupboard. The glass is empty.",
+                        "zh": "碗柜里有一个玻璃杯。这个杯子是空的。"
                   },
                   {
-                        "speaker": "Leo",
-                        "en": "It is behind the door.",
-                        "zh": "它在门后面。"
+                        "speaker": "练习句",
+                        "en": "There is a knife on the plate. The knife is sharp.",
+                        "zh": "盘子上有一把刀。这把刀很锋利。"
                   },
                   {
-                        "speaker": "Mia",
-                        "en": "Is the plate on the table?",
-                        "zh": "盘子在桌子上吗？"
-                  },
-                  {
-                        "speaker": "Leo",
-                        "en": "Yes, it is.",
-                        "zh": "是的。"
+                        "speaker": "练习句",
+                        "en": "There is a bottle in the refrigerator. The bottle is full.",
+                        "zh": "冰箱里有一个瓶子。这个瓶子是满的。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "The cup is in the cupboard.",
-                        "sourceZh": "杯子在碗柜里。",
+                        "sourceSentence": "There is a cup on the table.",
+                        "sourceZh": "桌上有一个杯子。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "The cup is in the cupboard.",
-                                    "zh": "杯子在碗柜里。",
-                                    "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                                    "en": "There is a cup on the table.",
+                                    "zh": "桌上有一个杯子。",
+                                    "rule": "首次提到单数可数名词 cup，用 a。"
+                              },
+                              {
+                                    "label": "第二次提及",
+                                    "en": "The cup is clean.",
+                                    "zh": "这个杯子很干净。",
+                                    "rule": "再次提到同一个杯子，用 the。"
+                              },
+                              {
+                                    "label": "一般疑问句",
+                                    "en": "Is there a cup on the table?",
+                                    "zh": "桌上有杯子吗？",
+                                    "rule": "Is 提到句首。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "The cup is not in the cupboard.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Is the cup in the cupboard? — Yes, it is. / No, it isn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                                    "en": "There isn't a cup on the table.",
+                                    "zh": "桌上没有杯子。",
+                                    "rule": "There is 的否定形式是 There isn't。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Where is the cup? — It is in the cupboard.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Are there magazines or newspapers on the table?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "Where + is + 单数主语用于询问地点；in 表示在内部。"
+                                    "en": "Where is the cup?",
+                                    "zh": "杯子在哪里？",
+                                    "rule": "Where + is + 单数主语。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "The bottle is behind the door.",
-                        "sourceZh": "瓶子在门后面。",
+                        "sourceSentence": "The glass is empty.",
+                        "sourceZh": "这个玻璃杯是空的。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "The bottle is behind the door.",
-                                    "zh": "瓶子在门后面。",
-                                    "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                                    "en": "The glass is empty.",
+                                    "zh": "这个玻璃杯是空的。",
+                                    "rule": "主语 + be + 形容词。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "The bottle is not behind the door.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                                    "en": "The glass isn't empty.",
+                                    "zh": "这个玻璃杯不是空的。",
+                                    "rule": "be 动词后加 not。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Is the bottle behind the door? — Yes, it is. / No, it isn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                                    "label": "一般疑问句",
+                                    "en": "Is the glass empty?",
+                                    "zh": "这个玻璃杯是空的吗？",
+                                    "rule": "is 提到主语前。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Where is the bottle? — It is behind the door.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                                    "en": "What is the glass like?",
+                                    "zh": "这个玻璃杯是什么样的？",
+                                    "rule": "询问性质或状态可用 What is...like?"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Are the armchairs near the sofa or near the window?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "behind 是介词，后面接名词；be 动词后接地点状语。"
+                                    "label": "a / the 对比",
+                                    "en": "Give me a glass. The glass on the table.",
+                                    "zh": "给我一个玻璃杯。桌上的那个玻璃杯。",
+                                    "rule": "先泛指一个用 a；后面明确是哪一个用 the。"
                               }
                         ]
                   }
@@ -12217,111 +11651,117 @@
                         "title": "问句语序",
                         "desc": "Where + is + 主语？不能说 Where the cup is? 来直接提问。"
                   }
-            ]
+            ],
+            "contentNote": "本课是第25课的练习课：重点是 a / the 的选择、There is 结构、用形容词补充描述，以及 Where...? 地点提问。"
       },
       {
             "id": 27,
             "number": "Lesson 27",
             "title": "Mrs. Smith's living room",
             "chineseTitle": "史密斯太太的客厅",
-            "grammarTag": "There is / There are · 复数名词 · some",
+            "grammarTag": "There is / There are · some + 复数名词 · near / on · 位置表达",
             "dialogue": [
                   {
-                        "speaker": "Narrator",
-                        "en": "The living room is large.",
-                        "zh": "客厅很大。"
+                        "speaker": "内容梳理",
+                        "en": "Mrs. Smith's living room is large.",
+                        "zh": "史密斯太太的客厅很大。"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "There is a television near the window.",
-                        "zh": "窗户旁边有一台电视。"
+                        "speaker": "内容梳理",
+                        "en": "A television is near the window, with magazines on it.",
+                        "zh": "电视机在窗户旁边，电视机上放着一些杂志。"
                   },
                   {
-                        "speaker": "Jack",
-                        "en": "There are some magazines on the table.",
-                        "zh": "桌子上有一些杂志。"
+                        "speaker": "内容梳理",
+                        "en": "There is a table, and newspapers are on the table.",
+                        "zh": "房间里有一张桌子，桌上有一些报纸。"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "There are two armchairs near the sofa.",
-                        "zh": "沙发旁边有两把扶手椅。"
+                        "speaker": "内容梳理",
+                        "en": "There are armchairs near the table.",
+                        "zh": "桌子旁边有几把扶手椅。"
                   },
                   {
-                        "speaker": "Jack",
-                        "en": "There are some pictures on the wall.",
-                        "zh": "墙上有一些画。"
+                        "speaker": "内容梳理",
+                        "en": "A stereo is near the door, with books on it.",
+                        "zh": "立体声音响在门附近，音响上有一些书。"
+                  },
+                  {
+                        "speaker": "内容梳理",
+                        "en": "Pictures are on the wall.",
+                        "zh": "墙上挂着一些画。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "There are some magazines on the table.",
-                        "sourceZh": "桌子上有一些杂志。",
+                        "sourceSentence": "There is a television in the room.",
+                        "sourceZh": "房间里有一台电视机。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "There are some magazines on the table.",
-                                    "zh": "桌子上有一些杂志。",
-                                    "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                                    "en": "There is a television in the room.",
+                                    "zh": "房间里有一台电视机。",
+                                    "rule": "单数名词 television 搭配 There is。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "There are not (aren't) any magazines on the table.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                                    "en": "There isn't a television in the room.",
+                                    "zh": "房间里没有电视机。",
+                                    "rule": "is not = isn't。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are there any magazines on the table? — Yes, there are. / No, there aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                                    "label": "一般疑问句",
+                                    "en": "Is there a television in the room?",
+                                    "zh": "房间里有电视机吗？",
+                                    "rule": "is 提到句首。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "What is there on the table? — There are some magazines.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                                    "en": "What is there in the room?",
+                                    "zh": "房间里有什么？",
+                                    "rule": "What is there...?"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Are the books on the shelf or under the bed?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "There are + 复数名词；否定句和疑问句中常用 any。"
+                                    "label": "地点提问",
+                                    "en": "Where is the television?",
+                                    "zh": "电视机在哪里？",
+                                    "rule": "Where is + 单数名词。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "The armchairs are near the sofa.",
-                        "sourceZh": "扶手椅在沙发旁边。",
+                        "sourceSentence": "There are some magazines on the television.",
+                        "sourceZh": "电视机上有一些杂志。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "The armchairs are near the sofa.",
-                                    "zh": "扶手椅在沙发旁边。",
-                                    "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                                    "en": "There are some magazines on the television.",
+                                    "zh": "电视机上有一些杂志。",
+                                    "rule": "复数名词 magazines 搭配 There are。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "The armchairs are not near the sofa.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                                    "en": "There aren't any magazines on the television.",
+                                    "zh": "电视机上没有杂志。",
+                                    "rule": "否定句中常用 any。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are the armchairs near the sofa? — Yes, they are. / No, they aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                                    "label": "一般疑问句",
+                                    "en": "Are there any magazines on the television?",
+                                    "zh": "电视机上有杂志吗？",
+                                    "rule": "Are 提到句首；疑问句中常用 any。"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "Where are the armchairs? — They are near the sofa.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                                    "label": "简短回答",
+                                    "en": "Yes, there are. / No, there aren't.",
+                                    "zh": "是的，有。/ 不，没有。",
+                                    "rule": "用 there are / there aren't 回答。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Are they under the bed or near the door?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "复数主语 armchairs 搭配 are；Where are... 询问复数物品的位置。"
+                                    "label": "地点提问",
+                                    "en": "Where are the magazines?",
+                                    "zh": "杂志在哪里？",
+                                    "rule": "复数主语 magazines 搭配 are。"
                               }
                         ]
                   }
@@ -12395,116 +11835,112 @@
                         "title": "some + 复数名词",
                         "desc": "some magazines、some pictures；some 在肯定句中表示一些。"
                   }
-            ]
+            ],
+            "contentNote": "教材课文内容梳理：客厅很大；电视机靠近窗户，电视机上有杂志；房间里有桌子和报纸、扶手椅、立体声音响和书；墙上有画。下面按原文信息整理，不是逐字全文。"
       },
       {
             "id": 28,
             "number": "Lesson 28",
             "title": "Where are they?",
             "chineseTitle": "它们在哪里？",
-            "grammarTag": "Where are...? · 复数代词 they / them · 方位介词",
+            "grammarTag": "名词复数 · 复数发音 · a / an / some · There is / There are · any",
             "dialogue": [
                   {
-                        "speaker": "Mum",
-                        "en": "Where are the books?",
-                        "zh": "书在哪里？"
+                        "speaker": "练习句",
+                        "en": "There are some cigarettes on the dressing table.",
+                        "zh": "梳妆台上有一些香烟。"
                   },
                   {
-                        "speaker": "Ella",
-                        "en": "They are on the shelf.",
-                        "zh": "它们在架子上。"
+                        "speaker": "练习句",
+                        "en": "They are near the box.",
+                        "zh": "它们在盒子附近。"
                   },
                   {
-                        "speaker": "Mum",
-                        "en": "Where are the shoes?",
-                        "zh": "鞋子在哪里？"
+                        "speaker": "练习句",
+                        "en": "There are some plates on the cooker. They are clean.",
+                        "zh": "炉子上有一些盘子。它们很干净。"
                   },
                   {
-                        "speaker": "Ella",
-                        "en": "They are under the bed.",
-                        "zh": "它们在床下面。"
+                        "speaker": "练习句",
+                        "en": "There are some shoes on the floor. They are near the bed.",
+                        "zh": "地板上有一些鞋子。它们在床附近。"
                   },
                   {
-                        "speaker": "Mum",
-                        "en": "And where are the keys?",
-                        "zh": "钥匙在哪里？"
-                  },
-                  {
-                        "speaker": "Ella",
-                        "en": "They are near the door.",
-                        "zh": "它们在门旁边。"
+                        "speaker": "练习句",
+                        "en": "There are some knives on the table. They are in the box.",
+                        "zh": "桌上有一些刀。它们在盒子里。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "The books are on the shelf.",
-                        "sourceZh": "书在架子上。",
+                        "sourceSentence": "There are some shoes on the floor.",
+                        "sourceZh": "地板上有一些鞋子。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "The books are on the shelf.",
-                                    "zh": "书在架子上。",
-                                    "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                                    "en": "There are some shoes on the floor.",
+                                    "zh": "地板上有一些鞋子。",
+                                    "rule": "复数名词 shoes 搭配 There are。"
                               },
                               {
                                     "label": "否定句",
-                                    "en": "The books are not on the shelf.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                                    "en": "There aren't any shoes on the floor.",
+                                    "zh": "地板上没有鞋子。",
+                                    "rule": "否定句 some 通常变 any。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are the books on the shelf? — Yes, they are. / No, they aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                                    "label": "一般疑问句",
+                                    "en": "Are there any shoes on the floor?",
+                                    "zh": "地板上有鞋子吗？",
+                                    "rule": "Are there any...?"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "Where are the books? — They are on the shelf.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                                    "label": "肯定简答",
+                                    "en": "Yes, there are.",
+                                    "zh": "是的，有。",
+                                    "rule": "there are 对应复数名词。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Open the window or shut the door, please.",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "复数主语 books 搭配 are；on 表示在架子表面。"
+                                    "label": "否定简答",
+                                    "en": "No, there aren't.",
+                                    "zh": "不，没有。",
+                                    "rule": "there aren't any...。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "They are under the bed.",
-                        "sourceZh": "它们在床下面。",
+                        "sourceSentence": "There are some plates on the cooker.",
+                        "sourceZh": "炉子上有一些盘子。",
                         "dimensions": [
                               {
                                     "label": "肯定句",
-                                    "en": "They are under the bed.",
-                                    "zh": "它们在床下面。",
-                                    "rule": "they 作主语；under 是方位介词，表示在……下面。"
-                              },
-                              {
-                                    "label": "否定句",
-                                    "en": "They are not under the bed.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "they 作主语；under 是方位介词，表示在……下面。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Are they under the bed? — Yes, they are. / No, they aren't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                                    "en": "There are some plates on the cooker.",
+                                    "zh": "炉子上有一些盘子。",
+                                    "rule": "some + 复数可数名词。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Where are they? — They are under the bed.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                                    "en": "Where are the plates?",
+                                    "zh": "盘子在哪里？",
+                                    "rule": "Where + are + 复数主语。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Put the books on the shelf or in the cupboard.",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "they 作主语；under 是方位介词，表示在……下面。"
+                                    "label": "代词替换",
+                                    "en": "They are on the cooker.",
+                                    "zh": "它们在炉子上。",
+                                    "rule": "they 作主语，代替复数名词 plates。"
+                              },
+                              {
+                                    "label": "复数拼写",
+                                    "en": "knife → knives; shelf → shelves; child → children",
+                                    "zh": "刀子→刀子（复数）；架子→架子（复数）；孩子→孩子们",
+                                    "rule": "部分以 f/fe 结尾的名词变 ves；child 是不规则复数。"
+                              },
+                              {
+                                    "label": "复数发音",
+                                    "en": "books /s/ · shoes /z/ · boxes /ɪz/",
+                                    "zh": "复数词尾有 /s/、/z/、/ɪz/ 三种常见读音。",
+                                    "rule": "根据词尾清浊音和音节判断复数 -s 的读音。"
                               }
                         ]
                   }
@@ -12578,121 +12014,101 @@
                         "title": "名词复数",
                         "desc": "book → books；shoe → shoes；key → keys。"
                   }
-            ]
+            ],
+            "contentNote": "本课是第27课的练习课：名词复数及发音 /s/、/z/、/ɪz/ 和不规则变化；a / an / some；There is / There are；Are there any...? 与 Where are they?。"
       },
       {
             "id": 29,
             "number": "Lesson 29",
             "title": "Come in, Amy.",
             "chineseTitle": "进来，艾米。",
-            "grammarTag": "祈使句 · 动词原形开头 · 否定祈使句",
+            "grammarTag": "祈使句 · must 提问 · and / then 表示步骤 · 动词原形",
             "dialogue": [
                   {
-                        "speaker": "Mrs. Lee",
-                        "en": "Come in, Amy.",
-                        "zh": "进来，艾米。"
+                        "speaker": "课文内容梳理",
+                        "en": "Mrs. Jones welcomes Amy into a very untidy bedroom.",
+                        "zh": "琼斯夫人让 Amy 进来，并指出卧室很乱。"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "Good morning, Mrs. Lee.",
-                        "zh": "早上好，李太太。"
+                        "speaker": "课文内容梳理",
+                        "en": "Amy asks what she must do.",
+                        "zh": "Amy 询问自己应该做什么。"
                   },
                   {
-                        "speaker": "Mrs. Lee",
-                        "en": "Please open the window.",
-                        "zh": "请打开窗户。"
+                        "speaker": "课文内容梳理",
+                        "en": "Mrs. Jones tells her to open the window and air the room.",
+                        "zh": "琼斯夫人让她打开窗户、给房间通风。"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "All right.",
-                        "zh": "好的。"
-                  },
-                  {
-                        "speaker": "Mrs. Lee",
-                        "en": "Then put the books on the shelf.",
-                        "zh": "然后把书放到架子上。"
-                  },
-                  {
-                        "speaker": "Amy",
-                        "en": "Shall I close the door?",
-                        "zh": "我需要关门吗？"
-                  },
-                  {
-                        "speaker": "Mrs. Lee",
-                        "en": "No, don't close it, please.",
-                        "zh": "不，请不要关它。"
+                        "speaker": "课文内容梳理",
+                        "en": "Amy is asked to put clothes away, make the bed, dust the dressing table and sweep the floor.",
+                        "zh": "Amy 还要收好衣服、整理床铺、掸梳妆台并扫地。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "Open the window, please.",
-                        "sourceZh": "请打开窗户。",
+                        "sourceSentence": "Open the window and air the room.",
+                        "sourceZh": "打开窗户，给房间通风。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "Open the window, please.",
-                                    "zh": "请打开窗户。",
-                                    "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                                    "label": "祈使句",
+                                    "en": "Open the window and air the room.",
+                                    "zh": "打开窗户，给房间通风。",
+                                    "rule": "两个动词原形由 and 连接；祈使句省略 you。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "Don't open the window, please.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't open the window or air the room.",
+                                    "zh": "不要打开窗户，也不要给房间通风。",
+                                    "rule": "Don't + 动词原形；or 可连接否定命令中的动作。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Can you open the window, please? — Yes, of course.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                                    "label": "一般疑问｜征求许可（拓展）",
+                                    "en": "May I open the window?",
+                                    "zh": "我可以打开窗户吗？",
+                                    "rule": "这是礼貌征求许可的拓展，不是原文句型转换。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "What should you open? — The window.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                                    "en": "What must Amy do?",
+                                    "zh": "Amy 必须做什么？",
+                                    "rule": "What + must + 主语 + 动词原形。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Must you make the bed or sweep the floor first?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "祈使句以动词原形开头；否定形式为 Don't + 动词原形。"
+                                    "label": "步骤表达",
+                                    "en": "Then make the bed.",
+                                    "zh": "然后整理床铺。",
+                                    "rule": "then 表示接下来；make the bed 是固定搭配。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "Put the books on the shelf.",
-                        "sourceZh": "把书放到架子上。",
+                        "sourceSentence": "Dust the dressing table.",
+                        "sourceZh": "掸掉梳妆台上的灰尘。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "Put the books on the shelf.",
-                                    "zh": "把书放到架子上。",
-                                    "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                                    "label": "祈使句",
+                                    "en": "Dust the dressing table.",
+                                    "zh": "掸掉梳妆台上的灰尘。",
+                                    "rule": "dust 在这里是动词，表示掸灰。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "Don't put the books on the shelf.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
-                              },
-                              {
-                                    "label": "一般疑问及简答",
-                                    "en": "Can you put the books on the shelf? — Yes, I can.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't dust the dressing table now.",
+                                    "zh": "现在不要掸梳妆台。",
+                                    "rule": "Don't + 动词原形。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "Where should you put the books? — On the shelf.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                                    "en": "What must you dust?",
+                                    "zh": "你必须掸什么？",
+                                    "rule": "What 作 dust 的宾语。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Must I dust the table or sweep the floor?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "put + 物品 + 地点；祈使句的主语 you 通常省略。"
+                                    "label": "并列动作",
+                                    "en": "Make the bed and sweep the floor.",
+                                    "zh": "整理床铺并扫地。",
+                                    "rule": "and 连接两个并列动作。"
                               }
                         ]
                   }
@@ -12766,116 +12182,117 @@
                         "title": "please 的位置",
                         "desc": "Please 可放在句首，也可放在句末，让语气更礼貌。"
                   }
-            ]
+            ],
+            "contentNote": "已按教材核对：人物是 Mrs. Jones 和 Amy（不同版本的配套音频/印次可能有名字标注差异，以你所用版本为准）；场景是整理凌乱的卧室：关门、开窗通风、把衣服放进衣柜、整理床铺、掸梳妆台、扫地。原先写成 Mrs. Lee 并自行添加 Shall I close the door? 是错误的，已删除。"
       },
       {
             "id": 30,
             "number": "Lesson 30",
             "title": "What must I do?",
             "chineseTitle": "我应该做什么？",
-            "grammarTag": "情态动词 must · mustn't · must + 动词原形",
+            "grammarTag": "祈使句 · 动词原形 · 代词宾格位置 · 动词 + 副词小品词",
             "dialogue": [
                   {
-                        "speaker": "Amy",
-                        "en": "What must I do first?",
-                        "zh": "我首先必须做什么？"
+                        "speaker": "练习示例",
+                        "en": "The cup isn't empty. Empty it!",
+                        "zh": "杯子不是空的。把它倒空！"
                   },
                   {
-                        "speaker": "Mrs. Lee",
-                        "en": "You must air the room.",
-                        "zh": "你必须给房间通风。"
+                        "speaker": "练习示例",
+                        "en": "The window isn't clean. Clean it!",
+                        "zh": "窗户不干净。把它擦干净！"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "Must I make the bed now?",
-                        "zh": "我现在必须整理床铺吗？"
+                        "speaker": "练习示例",
+                        "en": "The door isn't shut. Shut it!",
+                        "zh": "门没有关。把它关上！"
                   },
                   {
-                        "speaker": "Mrs. Lee",
-                        "en": "Yes, you must. Then dust the table.",
-                        "zh": "是的，必须。然后擦桌子。"
+                        "speaker": "练习示例",
+                        "en": "The wardrobe isn't open. Open it!",
+                        "zh": "衣柜没有打开。把它打开！"
                   },
                   {
-                        "speaker": "Amy",
-                        "en": "Must I sweep the floor, too?",
-                        "zh": "我也必须扫地吗？"
+                        "speaker": "练习示例",
+                        "en": "Turn on the light. Turn it off.",
+                        "zh": "打开灯。把它关掉。"
                   },
                   {
-                        "speaker": "Mrs. Lee",
-                        "en": "No, you needn't. I can do it.",
-                        "zh": "不，你不必。我可以做。"
+                        "speaker": "练习示例",
+                        "en": "Put on your shirt. Take it off.",
+                        "zh": "穿上你的衬衫。把它脱下来。"
                   }
             ],
             "transformations": [
                   {
-                        "sourceSentence": "You must make the bed.",
-                        "sourceZh": "你必须整理床铺。",
+                        "sourceSentence": "The cup isn't empty.",
+                        "sourceZh": "杯子不是空的。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "You must make the bed.",
-                                    "zh": "你必须整理床铺。",
-                                    "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                                    "label": "描述句",
+                                    "en": "The cup isn't empty.",
+                                    "zh": "杯子不是空的。",
+                                    "rule": "主语 + be + not + 形容词。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "You must not (mustn't) make the bed now.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                                    "label": "改为祈使句",
+                                    "en": "Empty it!",
+                                    "zh": "把它倒空！",
+                                    "rule": "把形容词描述改成动作命令；empty 在这里是动词。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Must you make the bed now? — Yes, I must. / No, I needn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                                    "label": "否定祈使句",
+                                    "en": "Don't empty it!",
+                                    "zh": "不要把它倒空！",
+                                    "rule": "Don't + 动词原形。"
+                              },
+                              {
+                                    "label": "代词位置",
+                                    "en": "Empty the cup. → Empty it.",
+                                    "zh": "把杯子倒空。→ 把它倒空。",
+                                    "rule": "动词 + 代词宾格时，代词放在动词后面。"
                               },
                               {
                                     "label": "特殊疑问句",
-                                    "en": "What must you do? — I must make the bed.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
-                              },
-                              {
-                                    "label": "选择疑问句",
-                                    "en": "Must I make the bed or air the room first?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "must + 动词原形；mustn't 表示禁止；needn't 表示不必。"
+                                    "en": "What must I do?",
+                                    "zh": "我应该做什么？",
+                                    "rule": "What + must + 主语 + 动词原形。"
                               }
                         ]
                   },
                   {
-                        "sourceSentence": "I must sweep the floor.",
-                        "sourceZh": "我必须扫地。",
+                        "sourceSentence": "Turn on the light.",
+                        "sourceZh": "打开灯。",
                         "dimensions": [
                               {
-                                    "label": "肯定句",
-                                    "en": "I must sweep the floor.",
-                                    "zh": "我必须扫地。",
-                                    "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                                    "label": "祈使句",
+                                    "en": "Turn on the light.",
+                                    "zh": "打开灯。",
+                                    "rule": "turn on 是动词短语，表示打开电器或电源。"
                               },
                               {
-                                    "label": "否定句",
-                                    "en": "I must not (mustn't) sweep the floor now.",
-                                    "zh": "注意否定结构和助动词 / be 动词的位置。",
-                                    "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                                    "label": "代词位置",
+                                    "en": "Turn it on.",
+                                    "zh": "把它打开。",
+                                    "rule": "动词 + 副词小品词结构中，代词宾格放中间。"
                               },
                               {
-                                    "label": "一般疑问及简答",
-                                    "en": "Must I sweep the floor? — Yes, you must. / No, you needn't.",
-                                    "zh": "根据句子结构调整语序，并使用对应的简短回答。",
-                                    "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                                    "label": "关闭表达",
+                                    "en": "Turn off the light. / Turn it off.",
+                                    "zh": "关灯。/ 把它关掉。",
+                                    "rule": "turn off 表示关闭电器或电源。"
                               },
                               {
-                                    "label": "特殊疑问句",
-                                    "en": "What must I do? — You must sweep the floor.",
-                                    "zh": "根据句中需要询问的信息选择合适的疑问词。",
-                                    "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                                    "label": "穿脱表达",
+                                    "en": "Put on your coat. / Take it off.",
+                                    "zh": "穿上外套。/ 把它脱下来。",
+                                    "rule": "put on 穿上；take off 脱下；代词放中间。"
                               },
                               {
-                                    "label": "选择疑问句",
-                                    "en": "Must we clean the kitchen or the living room today?",
-                                    "zh": "用 or 连接两个选择，注意句首助动词、be 动词或情态动词的位置。",
-                                    "rule": "Must 提到句首构成一般疑问句；must 后面的动词保持原形。"
+                                    "label": "其他动作",
+                                    "en": "Read this book. / Sharpen these pencils.",
+                                    "zh": "读这本书。/ 把这些铅笔削尖。",
+                                    "rule": "祈使句用动词原形开头。"
                               }
                         ]
                   }
@@ -12955,9 +12372,10 @@
                         "title": "Must I...?",
                         "desc": "Must I clean it?（我必须打扫它吗？）肯定回答 Yes, you must.；否定回答可用 No, you needn't. 表示不必。"
                   }
-            ]
+            ],
+            "contentNote": "本课是第29课之后的操练课，重点是听图完成动作指令、把描述改写成祈使句，以及使用常见动词短语：empty、put on、take off、turn on、turn off、read、sharpen。不是一段新对话。"
       }
-];;
+];;;
 
     // =========================================================================
     // 2. 学习历史记录管理（localStorage 精确到秒 YYYY-MM-DD HH:mm:ss）
@@ -13246,7 +12664,7 @@
 
       // 课文与情景练习
       const textBox = document.getElementById("originalTextContainer");
-      textBox.innerHTML = lesson.dialogue.map((line, idx) => `
+      textBox.innerHTML = (lesson.contentNote ? `<div class="mb-3 rounded-xl border border-amber-200 bg-amber-50/70 p-3 text-xs leading-relaxed text-amber-950">${lesson.contentNote}</div>` : "") + lesson.dialogue.map((line, idx) => `
         <div id="orig-line-${idx}" class="flex items-start justify-between gap-3 p-2.5 rounded-xl bg-white border border-stone-200/70 hover:border-blue-300 transition">
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
